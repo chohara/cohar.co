@@ -96,6 +96,7 @@ body {
     background-color: #aaa;
     animation-duration: 10s;
     animation-delay: -2s; /* start at a different point in orbit */
+    z-index: -10 !important; /* ensure text appears over planets */
 }
 
 .venus {
@@ -105,6 +106,7 @@ body {
     background-color: #f5a623;
     animation-duration: 15s;
     animation-delay: -2s; 
+    z-index: -10 !important;
 }
 
 .earth {
@@ -114,6 +116,7 @@ body {
     background-color: #2a9df4;
     animation-duration: 20s;
     animation-delay: -6s;
+    z-index: -10 !important;
 }
 
 .mars {
@@ -123,6 +126,7 @@ body {
     background-color: #d14b4b;
     animation-duration: 25s;
     animation-delay: -4s;
+    z-index: -10 !important;
 }
 
 .jupiter {
@@ -132,6 +136,7 @@ body {
     background-color: #f7c873;
     animation-duration: 30s;
     animation-delay: -5s; 
+    z-index: -10 !important;
 }
 
 .saturn {
@@ -141,6 +146,7 @@ body {
     background-color: #e3c16f;
     animation-duration: 35s;
     animation-delay: -8s; 
+    z-index: -10 !important;
 }
 
 .uranus {
@@ -150,6 +156,7 @@ body {
     background-color: #76d7c4;
     animation-duration: 40s;
     animation-delay: -2s; 
+    z-index: -10 !important;
 }
 
 .neptune {
@@ -159,4 +166,5 @@ body {
     background-color: #4a90e2;
     animation-duration: 45s;
     animation-delay: 0s; 
+    z-index: -10 !important;
 }
