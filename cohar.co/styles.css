@@ -131,7 +131,7 @@ body {
     height: 80px;
     background-color: #f7c873;
     animation-duration: 30s;
-    animation-delay: 2s; 
+    animation-delay: -5s; 
 }
 
 .saturn {
@@ -140,7 +140,7 @@ body {
     height: 70px;
     background-color: #e3c16f;
     animation-duration: 35s;
-    animation-delay: 4s; 
+    animation-delay: -8s; 
 }
 
 .uranus {
