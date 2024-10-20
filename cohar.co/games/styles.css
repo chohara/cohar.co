@@ -38,6 +38,7 @@ header {
 h1 {
     font-family: 'Terminus', sans-serif;
     margin: 0;
+    margin-bottom: 10px;
     font-size: 2.5em;
     letter-spacing: 2px;
 }
@@ -46,6 +47,7 @@ h2 {
     font-family: 'Terminus', sans-serif;
     text-align: center;
     margin: 0;
+    margin-bottom: 10px;
     font-size: 2.5em;
     letter-spacing: 2px;
 }
@@ -84,10 +86,10 @@ section {
     text-align: center;
     margin: 10px;
     padding: 10px;
-    width: 150px;
+    width: 12.5%;
     background-color: #111;
     border-radius: 8px;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .game-card a {
@@ -113,6 +115,7 @@ section {
 
 .game-card:hover {
     transform: scale(1.1);
+    box-shadow: 0 0 20px #00ff00;
 }
 
 /* header Section */
@@ -145,8 +148,9 @@ section {
 
 .console-card {
     background-color: #111;
+    margin: 10px;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 8px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -157,7 +161,7 @@ section {
 
 .console-card:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px #00eaff;
+    box-shadow: 0 0 20px #00ff00;
 }
 
 footer {
