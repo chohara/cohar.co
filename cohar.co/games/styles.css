@@ -1,4 +1,87 @@
-p {
-  color:#474747
-  font-family: "Courier New", Courier, monospace
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
+
+header {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+section {
+    padding: 20px;
+}
+
+/* Recent Games Section */
+#recent-games {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#recent-games .game-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#recent-games .game-card {
+    text-align: center;
+    width: 150px;
+}
+
+#recent-games .game-card img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Consoles Section */
+#consoles {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#consoles .console-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.console-card {
+    text-align: center;
+}
+
+.console-card img {
+    width: 100px;
+    height: auto;
+}
+
+.console-card p {
+    margin: 10px 0 0;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
