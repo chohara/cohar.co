@@ -22,9 +22,12 @@ body {
 header {
     font-family: 'Terminus', sans-serif;
     text-align: center;
-    background-color: #111; /* Dark background for contrast */
-    color: #00ff00; /* Neon blue text */
+    color: #00ff00; /* Neon green text */
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
     padding: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 2px #000;
 }
 
 h1 {
@@ -80,6 +83,14 @@ section {
     transition: transform 0.3s;
 }
 
+.game-card a {
+    text-decoration: none;
+}
+
+.game-card a:hover {
+    text-decoration: underline;
+}
+
 .game-card img {
     width: 120px;
     height: auto;
@@ -87,13 +98,21 @@ section {
 }
 
 .game-card p {
-    color: #00ff00; /* Neon blue */
+    color: #d4d4f5; /* Neon green */
     font-size: 1.1em;
     margin-top: 10px;
 }
 
 .game-card:hover {
     transform: scale(1.1);
+}
+
+/* header Section */
+#header {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
 /* Consoles Section */
