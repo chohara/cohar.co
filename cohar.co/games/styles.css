@@ -132,18 +132,23 @@ section {
 }
 
 .console-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 20px;
-    justify-items: center;
+    display: flex; /* Use flexbox for centering items */
+    justify-content: center; /* Center the items horizontally */
+    flex-wrap: wrap; /* Allow wrapping to handle smaller screens */
+    gap: 20px; /* Spacing between cards */
+    padding: 20px;
 }
 
 .console-card {
+    width: 20%;
     background-color: #111;
     margin: 10px;
     padding: 10px;
     border-radius: 8px;
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .console-card img {
