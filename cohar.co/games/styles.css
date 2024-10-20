@@ -20,6 +20,8 @@ body {
 }
 
 header {
+    display: flex;
+    justify-content: center;
     font-family: 'Terminus', sans-serif;
     text-align: center;
     color: #00ff00; /* Neon green text */
