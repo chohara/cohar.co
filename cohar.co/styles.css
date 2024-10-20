@@ -4,7 +4,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: url(bg_space_seamless.png) no-repeat center center fixed;
+    background: url(images/bg_space_seamless.png) no-repeat center center fixed;
     background-size: cover;
     color: #fff;
     font-family: Arial, sans-serif;
