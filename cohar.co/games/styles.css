@@ -94,6 +94,7 @@ section {
 
 .game-card a:hover {
     text-decoration: underline;
+    text-decoration-color: #00ff00;
 }
 
 .game-card img {
@@ -103,7 +104,7 @@ section {
 }
 
 .game-card p {
-    color: #d4d4f5; /* Neon green */
+    color: #f4f4f4; /* Neon green */
     font-size: 1.1em;
     margin-top: 10px;
 }
