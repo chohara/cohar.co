@@ -1,9 +1,10 @@
-/* Ubuntu font */
+/* Terminus font */
 @font-face {
-    font-family: 'Ubuntu';
-    src: url('ubuntu-regular.woff2') format('woff2');
+    font-family: 'Terminus';
+    src: url('/fonts/terminus.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+
 }
 
 /* General Styles */
@@ -39,7 +40,7 @@ h2 {
 }
 
 p {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Terminus';
 }
 
 section {
