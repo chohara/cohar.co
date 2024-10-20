@@ -23,7 +23,7 @@ header {
     font-family: 'Terminus', sans-serif;
     text-align: center;
     background-color: #111; /* Dark background for contrast */
-    color: #00eaff; /* Neon blue text */
+    color: #00ff00; /* Neon blue text */
     padding: 20px;
 }
 
@@ -47,8 +47,8 @@ p {
 }
 
 section {
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
 /* Recent Games Section */
@@ -87,7 +87,7 @@ section {
 }
 
 .game-card p {
-    color: #00eaff; /* Neon blue */
+    color: #00ff00; /* Neon blue */
     font-size: 1.1em;
     margin-top: 10px;
 }
