@@ -1,0 +1,75 @@
+/* Container for entire review page */
+.review-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    padding: 20px;
+    max-width: 800px; /* Limit width for readability */
+    margin: 0 auto; /* Center container on page */
+    color: #fff;
+}
+
+/* Title Box */
+.title-box {
+    background-color: #222;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.title-box h1 {
+    font-size: 2em;
+    color: #00ff00;
+    margin: 0;
+}
+
+/* Cover Art Box */
+.cover-box {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.cover-box img {
+    width: 100%; /* Ensure image fits the box */
+    max-width: 300px; /* Limit max width */
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Review Content Box */
+.review-box {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 1.1em;
+    text-align: left;
+    width: 100%; /* Full width within container */
+}
+
+/* Star Rating Box */
+.rating-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #222;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-size: 1.5em;
+    color: #ffd700; /* Gold color for stars */
+}
+
+.stars {
+    font-size: 2em; /* Larger size for visibility */
+    color: #ffd700; /* Gold color for stars */
+    margin-bottom: 5px;
+}
+
