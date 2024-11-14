@@ -1,3 +1,11 @@
+/* Noto Sans Symbols 2 font */
+@font-face {
+    font-family: 'Noto-Sans-Symbols-2';
+    src: url('/fonts/notosanssymbols2.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Terminus font */
 @font-face {
     font-family: 'Terminus';
@@ -91,5 +99,6 @@ body {
     font-size: 2em; /* Larger size for visibility */
     color: #ffd700; /* Gold color for stars */
     margin-bottom: 5px;
+    font-family: "Noto-Sans-Symbols-2", sans-serif;
 }
 
