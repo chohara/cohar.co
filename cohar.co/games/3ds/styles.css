@@ -1,3 +1,22 @@
+/* Terminus font */
+@font-face {
+    font-family: 'Terminus';
+    src: url('/fonts/terminus.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Terminus', sans-serif;
+    background-color: #0b0c2a; /* Deep space blue */
+    color: #d4d4f5; /* Light gray-blue text */
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/bg_space_seamless.png'); /* Cosmic background */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 /* Container for entire review page */
 .review-container {
     display: flex;
@@ -23,6 +42,7 @@
     font-size: 2em;
     color: #00ff00;
     margin: 0;
+    font-family: 'Terminus', sans-serif;
 }
 
 /* Cover Art Box */
