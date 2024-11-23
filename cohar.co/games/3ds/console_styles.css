@@ -114,6 +114,7 @@ section {
     color: #f4f4f4; /* Neon green */
     font-size: 1.1em;
     margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .game-card:hover {
@@ -136,13 +137,10 @@ section {
     justify-content: center; /* Center the items horizontally */
     flex-wrap: wrap; /* Allow wrapping to handle smaller screens */
     gap: 20px; /* Spacing between cards */
-    padding: 20px;
 }
 
 .console-card {
-    width: 20%;
     background-color: #111;
-    margin: 10px;
     padding: 10px;
     border-radius: 8px;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -153,7 +151,6 @@ section {
 
 .console-card img {
     width: 100%;
-    height: auto;
 }
 
 footer {
