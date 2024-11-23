@@ -1,0 +1,85 @@
+/* Reset default browser margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container for the entire page */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #0b0c10;
+    color: #c5c6c7;
+    min-height: 100vh;
+}
+
+/* Title card styling */
+.title-card {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.title-card img {
+    width: 200px;
+    transition: transform 0.3s ease;
+}
+
+.title-card img:hover {
+    transform: scale(1.1);
+}
+
+/* Grid layout for cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Individual card styling */
+.card {
+    background-color: #1f2833;
+    border: 2px solid #45a29e;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #c5c6c7;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.card p {
+    padding: 10px;
+    text-align: center;
+    font-size: 1.1em;
+    background-color: #0b0c10;
+}
+
+/* Outer-space themed hover effect */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(69, 162, 158, 0.7);
+}
+
+.card:hover img {
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .title-card img {
+        width: 150px;
+    }
+}
