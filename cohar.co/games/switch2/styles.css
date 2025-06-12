@@ -82,6 +82,11 @@ body {
     width: 100%; /* Full width within container */
 }
 
+.review-box img {
+    max-width: 90%;
+    height: auto;
+}
+
 /* Star Rating Box */
 .rating-box {
     display: flex;
