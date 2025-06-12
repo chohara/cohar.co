@@ -85,6 +85,8 @@ body {
 .review-box img {
     max-width: 90%;
     height: auto;
+    justify-content: center;
+    border-radius: 8px;
 }
 
 /* Star Rating Box */
