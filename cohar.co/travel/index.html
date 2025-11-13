@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cohar's Travel Photography</title>
+    <link rel="stylesheet" href="/travel/styles.css">
+</head>
+<body>
+    <div class="atmosphere">
+        <div class="title-overlay">
+            <h1>Earth</h1>
+            <p class="subtitle">A photographic journey across the planet</p>
+        </div>
+
+        <div class="earth-container">
+            <div class="earth-sphere">
+                <!-- Destination markers positioned on the "globe" -->
+
+                <a href="/travel/banff/" class="destination-marker" style="--lat: 25%; --lon: 30%;">
+                    <div class="marker-pulse"></div>
+                    <div class="marker-label">Banff, Canada</div>
+                    <div class="preview-thumbnails">
+                        <img src="/images/travel/banff/250507_1.jpg" alt="Banff preview 1">
+                        <img src="/images/travel/banff/250508_1.jpg" alt="Banff preview 2">
+                        <img src="/images/travel/banff/250509_1.jpg" alt="Banff preview 3">
+                    </div>
+                </a>
+
+                <!-- Add more destinations with different --lat and --lon values -->
+                <!--
+                Example: North America locations use --lon: 20-35%
+                         Europe locations use --lon: 45-55%
+                         Asia locations use --lon: 65-80%
+                         Southern hemisphere uses --lat: 55-70%
+                -->
+                <!--
+                <a href="/travel/[location]/" class="destination-marker" style="--lat: Y%; --lon: X%;">
+                    <div class="marker-pulse"></div>
+                    <div class="marker-label">Location Name</div>
+                    <div class="preview-thumbnails">
+                        <img src="/images/travel/[location]/thumb1.jpg" alt="Preview 1">
+                        <img src="/images/travel/[location]/thumb2.jpg" alt="Preview 2">
+                        <img src="/images/travel/[location]/thumb3.jpg" alt="Preview 3">
+                    </div>
+                </a>
+                -->
+
+            </div>
+        </div>
+
+        <div class="camera-legend">
+            <span class="legend-item"><span class="icon ricoh"></span> Ricoh GR II</span>
+            <span class="legend-item"><span class="icon iphone"></span> iPhone</span>
+        </div>
+    </div>
+</body>
+</html>
