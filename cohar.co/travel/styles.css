@@ -202,13 +202,13 @@ body::before {
         0 0 30px rgba(77, 184, 255, 0.3);
 }
 
-/* Map wrapper - maintains exact 2:1 aspect ratio for accurate positioning */
+/* Map wrapper - maintains exact SVG aspect ratio (2000/857) for accurate positioning */
 .map-wrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 2000 / 857;
     max-height: 100%;
-    max-width: 200%;
+    max-width: calc(100% * 2000 / 857);
 }
 
 /* World Map SVG - Clear continent outlines */
