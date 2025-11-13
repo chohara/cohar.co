@@ -104,21 +104,22 @@ body::before {
     }
 }
 
-/* Navigation Console Frame */
+/* Navigation Console Frame - Tight viewport window */
 .earth-container {
     position: relative;
     width: 90%;
-    max-width: 1400px;
-    height: 70vh;
-    max-height: 700px;
+    max-width: 1600px;
+    height: 75vh;
+    max-height: 800px;
     background: rgba(0, 0, 0, 0.6);
-    border: 2px solid #4db8ff;
-    border-radius: 8px;
+    border: 3px solid #4db8ff;
+    border-radius: 4px;
     box-shadow:
         0 0 20px rgba(77, 184, 255, 0.4),
         inset 0 0 30px rgba(77, 184, 255, 0.1);
     overflow: hidden;
     animation: screenBoot 1.5s ease-out;
+    padding: 8px;
 }
 
 @keyframes screenBoot {
@@ -136,28 +137,28 @@ body::before {
     }
 }
 
-/* Corner brackets for starship UI */
+/* Corner brackets for starship UI - tight to edge */
 .earth-container::before,
 .earth-container::after {
     content: '';
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border: 2px solid #4db8ff;
     z-index: 10;
     pointer-events: none;
 }
 
 .earth-container::before {
-    top: 10px;
-    left: 10px;
+    top: 4px;
+    left: 4px;
     border-right: none;
     border-bottom: none;
 }
 
 .earth-container::after {
-    top: 10px;
-    right: 10px;
+    top: 4px;
+    right: 4px;
     border-left: none;
     border-bottom: none;
 }
@@ -168,10 +169,10 @@ body::before {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 95%;
+    width: 100%;
     aspect-ratio: 2 / 1;
-    max-height: 90%;
-    border-radius: 4px;
+    max-height: 100%;
+    border-radius: 2px;
     overflow: hidden;
 
     /* Ocean base */
