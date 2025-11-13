@@ -105,30 +105,61 @@ body {
     transform: translate(-50%, -50%);
     width: 600px;
     height: 600px;
-    perspective: 1000px;
+    perspective: 2000px;
+    perspective-origin: 50% 50%;
 }
 
-/* Earth Sphere */
+/* Earth Sphere - 3D Rotating Globe */
 .earth-sphere {
     position: relative;
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: radial-gradient(circle at 35% 35%,
-        #4a90e2 0%,
-        #2a70c2 30%,
-        #1a5090 60%,
-        #0a3060 100%);
-    box-shadow:
-        inset -40px -40px 80px rgba(0, 0, 0, 0.6),
-        inset 20px 20px 40px rgba(255, 255, 255, 0.1),
-        0 0 60px rgba(42, 157, 244, 0.4),
-        0 0 120px rgba(42, 157, 244, 0.2);
-    animation: slowRotate 120s linear infinite;
     transform-style: preserve-3d;
+    animation: rotate3D 120s linear infinite;
+
+    /* Base ocean color with realistic shading and subtle texture */
+    background:
+        /* Subtle noise texture for ocean */
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.01) 2px,
+            rgba(255, 255, 255, 0.01) 4px
+        ),
+        /* Ocean depth variations */
+        radial-gradient(ellipse 200px 180px at 40% 60%, rgba(30, 80, 140, 0.4) 0%, transparent 60%),
+        radial-gradient(ellipse 150px 140px at 70% 35%, rgba(20, 60, 120, 0.3) 0%, transparent 55%),
+        /* Main ocean gradient */
+        radial-gradient(circle at 30% 30%,
+            #6bb6ff 0%,
+            #4a9fef 20%,
+            #2b7fd9 40%,
+            #1a5fb5 60%,
+            #0d4082 80%,
+            #042654 100%);
+
+    /* Multi-layered shadows for realistic 3D sphere effect */
+    box-shadow:
+        /* Sharp terminator line (day/night boundary) */
+        inset -100px 0px 100px rgba(0, 0, 0, 0.9),
+        /* Gradual darkness towards edge */
+        inset -80px 0px 140px rgba(0, 0, 0, 0.7),
+        /* Sunlit highlight */
+        inset 80px 40px 120px rgba(255, 255, 255, 0.2),
+        /* Subtle rim lighting */
+        inset 100px 50px 80px rgba(255, 255, 255, 0.1),
+        /* Bottom shadow for curvature */
+        inset 0px -60px 100px rgba(0, 0, 0, 0.5),
+        /* Outer atmospheric glow (Rayleigh scattering) */
+        0 0 90px rgba(42, 157, 244, 0.5),
+        0 0 150px rgba(42, 157, 244, 0.25),
+        /* Space shadow beneath Earth */
+        0 20px 60px rgba(0, 0, 0, 0.7);
 }
 
-/* Subtle cloud layer effect */
+/* Continents layer - creating landmasses */
 .earth-sphere::before {
     content: '';
     position: absolute;
@@ -137,11 +168,77 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    transform-style: preserve-3d;
+
+    /* Creating continent-like shapes using multiple radial gradients */
     background:
-        radial-gradient(ellipse at 20% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 30%),
-        radial-gradient(ellipse at 60% 60%, rgba(255, 255, 255, 0.1) 0%, transparent 25%),
-        radial-gradient(ellipse at 80% 20%, rgba(255, 255, 255, 0.12) 0%, transparent 28%);
-    animation: driftClouds 40s ease-in-out infinite;
+        /* Arctic ice cap - North Pole */
+        radial-gradient(ellipse 180px 60px at 50% 8%, rgba(255, 255, 255, 0.95) 0%, rgba(240, 248, 255, 0.85) 35%, transparent 55%),
+        radial-gradient(ellipse 160px 50px at 50% 6%, rgba(245, 250, 255, 0.9) 0%, transparent 50%),
+
+        /* North America */
+        radial-gradient(ellipse 80px 120px at 28% 35%, rgba(76, 139, 89, 0.95) 0%, rgba(76, 139, 89, 0.7) 40%, transparent 60%),
+        radial-gradient(ellipse 60px 80px at 32% 28%, rgba(139, 169, 101, 0.9) 0%, transparent 50%),
+        /* Alaska/Northern Canada */
+        radial-gradient(ellipse 55px 40px at 22% 22%, rgba(139, 169, 101, 0.85) 0%, transparent 50%),
+
+        /* South America */
+        radial-gradient(ellipse 50px 100px at 35% 58%, rgba(76, 139, 89, 0.92) 0%, rgba(76, 139, 89, 0.6) 45%, transparent 55%),
+        /* Amazon rainforest - darker green */
+        radial-gradient(ellipse 40px 50px at 36% 54%, rgba(34, 139, 34, 0.7) 0%, transparent 45%),
+
+        /* Europe */
+        radial-gradient(ellipse 70px 60px at 52% 30%, rgba(139, 169, 101, 0.88) 0%, transparent 50%),
+
+        /* Africa */
+        radial-gradient(ellipse 90px 130px at 52% 50%, rgba(156, 139, 87, 0.93) 0%, rgba(156, 139, 87, 0.7) 45%, transparent 60%),
+        /* Sahara Desert - lighter */
+        radial-gradient(ellipse 70px 60px at 52% 42%, rgba(210, 180, 140, 0.6) 0%, transparent 45%),
+
+        /* Asia */
+        radial-gradient(ellipse 140px 100px at 68% 32%, rgba(139, 169, 101, 0.9) 0%, rgba(139, 169, 101, 0.6) 50%, transparent 65%),
+        radial-gradient(ellipse 80px 70px at 72% 38%, rgba(156, 139, 87, 0.85) 0%, transparent 50%),
+        /* Himalayan mountain region */
+        radial-gradient(ellipse 50px 35px at 62% 35%, rgba(180, 180, 180, 0.7) 0%, transparent 45%),
+
+        /* Australia */
+        radial-gradient(ellipse 65px 50px at 78% 62%, rgba(156, 139, 87, 0.9) 0%, transparent 50%),
+
+        /* Greenland - ice covered */
+        radial-gradient(ellipse 50px 70px at 38% 18%, rgba(245, 250, 255, 0.92) 0%, rgba(240, 245, 250, 0.7) 50%, transparent 60%),
+
+        /* Antarctica - bottom edge with ice shelf detail */
+        radial-gradient(ellipse 220px 50px at 50% 86%, rgba(255, 255, 255, 0.97) 0%, rgba(245, 250, 255, 0.8) 35%, transparent 55%),
+        radial-gradient(ellipse 200px 45px at 50% 88%, rgba(250, 252, 255, 0.95) 0%, rgba(240, 248, 255, 0.7) 40%, transparent 60%);
+
+    animation: rotateContinents 120s linear infinite;
+    mix-blend-mode: normal;
+}
+
+/* Cloud layer - rotates independently */
+.cloud-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+
+    /* Clouds using radial gradients */
+    background:
+        radial-gradient(ellipse 100px 60px at 25% 30%, rgba(255, 255, 255, 0.35) 0%, transparent 50%),
+        radial-gradient(ellipse 80px 50px at 45% 40%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse 90px 55px at 65% 25%, rgba(255, 255, 255, 0.32) 0%, transparent 50%),
+        radial-gradient(ellipse 70px 45px at 15% 60%, rgba(255, 255, 255, 0.28) 0%, transparent 50%),
+        radial-gradient(ellipse 85px 50px at 75% 55%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse 75px 48px at 55% 70%, rgba(255, 255, 255, 0.26) 0%, transparent 50%),
+        radial-gradient(ellipse 95px 58px at 85% 38%, rgba(255, 255, 255, 0.29) 0%, transparent 50%);
+
+    /* Clouds rotate slightly faster than continents */
+    animation: rotateClouds 100s linear infinite;
+    pointer-events: none;
+    mix-blend-mode: screen;
 }
 
 /* Atmospheric glow */
@@ -155,20 +252,52 @@ body {
     border-radius: 50%;
     background: radial-gradient(circle at 50% 50%,
         transparent 47%,
-        rgba(100, 180, 255, 0.3) 48%,
-        rgba(100, 180, 255, 0.1) 49%,
-        transparent 50%);
+        rgba(100, 180, 255, 0.4) 48%,
+        rgba(135, 206, 250, 0.2) 49%,
+        rgba(100, 180, 255, 0.1) 50%,
+        transparent 51%);
     pointer-events: none;
+    z-index: 10;
 }
 
-@keyframes slowRotate {
-    from { transform: rotateY(0deg); }
-    to { transform: rotateY(360deg); }
+/* 3D Earth rotation - tilted axis like real Earth (23.5°) */
+@keyframes rotate3D {
+    from {
+        transform: rotateZ(-23.5deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateZ(-23.5deg) rotateY(360deg);
+    }
 }
 
-@keyframes driftClouds {
-    0%, 100% { transform: translateX(0) scale(1); opacity: 0.6; }
-    50% { transform: translateX(10px) scale(1.05); opacity: 0.8; }
+/* Continents rotate with the sphere */
+@keyframes rotateContinents {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Clouds rotate faster than continents */
+@keyframes rotateClouds {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Markers rotate with the Earth */
+@keyframes markerRotate {
+    from {
+        transform: translate(-50%, -50%) rotateY(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotateY(360deg);
+    }
 }
 
 /* Destination Markers */
@@ -180,8 +309,9 @@ body {
     height: 20px;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    z-index: 10;
+    z-index: 20;
     transition: all 0.3s ease;
+    animation: markerRotate 120s linear infinite;
 }
 
 .marker-pulse {
@@ -380,10 +510,15 @@ body {
     .earth-container {
         width: 400px;
         height: 400px;
+        perspective: 1500px;
     }
 
     .title-overlay h1 {
         font-size: 2.5em;
+    }
+
+    .preview-thumbnails {
+        top: -100px;
     }
 
     .preview-thumbnails img {
@@ -396,6 +531,17 @@ body {
         right: 3%;
         padding: 10px 15px;
         font-size: 0.8em;
+        gap: 15px;
+    }
+
+    /* Adjust cloud sizes for smaller sphere */
+    .cloud-layer {
+        background:
+            radial-gradient(ellipse 65px 40px at 25% 30%, rgba(255, 255, 255, 0.35) 0%, transparent 50%),
+            radial-gradient(ellipse 55px 35px at 45% 40%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+            radial-gradient(ellipse 60px 38px at 65% 25%, rgba(255, 255, 255, 0.32) 0%, transparent 50%),
+            radial-gradient(ellipse 50px 30px at 15% 60%, rgba(255, 255, 255, 0.28) 0%, transparent 50%),
+            radial-gradient(ellipse 58px 35px at 75% 55%, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
     }
 }
 
@@ -403,6 +549,11 @@ body {
     .earth-container {
         width: 300px;
         height: 300px;
+        perspective: 1200px;
+    }
+
+    .title-overlay {
+        top: 10%;
     }
 
     .title-overlay h1 {
@@ -412,5 +563,32 @@ body {
 
     .subtitle {
         font-size: 0.9em;
+    }
+
+    .preview-thumbnails {
+        top: -80px;
+        gap: 6px;
+    }
+
+    .preview-thumbnails img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .camera-legend {
+        bottom: 2%;
+        right: 2%;
+        padding: 8px 12px;
+        font-size: 0.75em;
+        gap: 12px;
+    }
+
+    /* Further adjust cloud sizes */
+    .cloud-layer {
+        background:
+            radial-gradient(ellipse 50px 30px at 25% 30%, rgba(255, 255, 255, 0.35) 0%, transparent 50%),
+            radial-gradient(ellipse 40px 25px at 45% 40%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+            radial-gradient(ellipse 45px 28px at 65% 25%, rgba(255, 255, 255, 0.32) 0%, transparent 50%),
+            radial-gradient(ellipse 38px 22px at 75% 55%, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
     }
 }
