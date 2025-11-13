@@ -117,7 +117,7 @@ body::before {
     box-shadow:
         0 0 20px rgba(77, 184, 255, 0.4),
         inset 0 0 30px rgba(77, 184, 255, 0.1);
-    overflow: hidden;
+    overflow: visible;
     animation: screenBoot 1.5s ease-out;
     display: flex;
     align-items: center;
@@ -172,7 +172,7 @@ body::before {
     width: 100%;
     height: 100%;
     border-radius: 2px;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -209,6 +209,8 @@ body::before {
     aspect-ratio: 2000 / 857;
     max-height: 100%;
     max-width: calc(100% * 2000 / 857);
+    overflow: visible;
+    border-radius: 2px;
 }
 
 /* World Map SVG - Clear continent outlines */
@@ -364,7 +366,7 @@ body::before {
 /* Photo Preview Thumbnails */
 .preview-thumbnails {
     position: absolute;
-    top: -120px;
+    top: -100px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -372,11 +374,12 @@ body::before {
     opacity: 0;
     pointer-events: none;
     transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 30;
 }
 
 .destination-marker:hover .preview-thumbnails {
     opacity: 1;
-    transform: translateX(-50%) translateY(-20px);
+    transform: translateX(-50%) translateY(-10px);
 }
 
 .preview-thumbnails img {
