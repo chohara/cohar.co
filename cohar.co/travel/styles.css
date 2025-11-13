@@ -119,7 +119,10 @@ body::before {
         inset 0 0 30px rgba(77, 184, 255, 0.1);
     overflow: hidden;
     animation: screenBoot 1.5s ease-out;
-    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5%;
 }
 
 @keyframes screenBoot {
@@ -165,13 +168,9 @@ body::before {
 
 /* Flat World Map - Equirectangular Projection */
 .earth-sphere {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     width: 100%;
-    aspect-ratio: 2 / 1;
-    max-height: 100%;
+    height: 100%;
     border-radius: 2px;
     overflow: hidden;
 
@@ -468,6 +467,7 @@ body::before {
     .earth-container {
         width: 95%;
         height: 65vh;
+        padding: 0.6%;
     }
 
     .title-overlay h1 {
@@ -489,13 +489,10 @@ body::before {
         letter-spacing: 4px;
     }
 
-    .subtitle {
-        font-size: 0.85em;
-    }
-
     .earth-container {
         width: 95%;
         height: 60vh;
+        padding: 0.7%;
     }
 
     .preview-thumbnails {
@@ -526,13 +523,11 @@ body::before {
         letter-spacing: 2px;
     }
 
-    .subtitle {
-        font-size: 0.75em;
-    }
-
     .earth-container {
         width: 98%;
         height: 55vh;
+        padding: 0.8%;
+        border-width: 2px;
     }
 
     .preview-thumbnails {
@@ -551,5 +546,11 @@ body::before {
         padding: 8px 12px;
         font-size: 0.75em;
         gap: 12px;
+    }
+
+    .earth-container::before,
+    .earth-container::after {
+        width: 15px;
+        height: 15px;
     }
 }
