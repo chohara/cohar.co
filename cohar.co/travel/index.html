@@ -15,40 +15,42 @@
 
         <div class="earth-container">
             <div class="earth-sphere">
-                <div class="cloud-layer"></div>
+                <div class="map-wrapper">
+                    <div class="cloud-layer"></div>
 
-                <!-- Destination markers positioned using real lat/lon coordinates -->
-                <!-- Formula: left = (lon + 180) / 360 * 100%, top = (90 - lat) / 180 * 100% -->
+                    <!-- Destination markers positioned using real lat/lon coordinates -->
+                    <!-- Formula: left = (lon + 180) / 360 * 100%, top = (90 - lat) / 180 * 100% -->
 
-                <!-- Banff, Canada: 51.1784°N, 115.5708°W -->
-                <a href="/travel/banff/" class="destination-marker" style="left: 17.9%; top: 21.6%;">
-                    <div class="marker-pulse"></div>
-                    <div class="marker-label">Banff, Canada</div>
-                    <div class="preview-thumbnails">
-                        <img src="/images/travel/banff/250507_1.jpg" alt="Banff preview 1">
-                        <img src="/images/travel/banff/250508_1.jpg" alt="Banff preview 2">
-                        <img src="/images/travel/banff/250509_1.jpg" alt="Banff preview 3">
-                    </div>
-                </a>
+                    <!-- Banff, Canada: 51.1784°N, 115.5708°W -->
+                    <a href="/travel/banff/" class="destination-marker" style="left: 17.9%; top: 21.6%;">
+                        <div class="marker-pulse"></div>
+                        <div class="marker-label">Banff, Canada</div>
+                        <div class="preview-thumbnails">
+                            <img src="/images/travel/banff/250507_1.jpg" alt="Banff preview 1">
+                            <img src="/images/travel/banff/250508_1.jpg" alt="Banff preview 2">
+                            <img src="/images/travel/banff/250509_1.jpg" alt="Banff preview 3">
+                        </div>
+                    </a>
 
-                <!-- Template for adding new destinations:
-                1. Get real latitude and longitude for your destination
-                2. Calculate position:
-                   - left: (longitude + 180) / 360 * 100%
-                   - top: (90 - latitude) / 180 * 100%
-                3. Copy the marker structure below:
+                    <!-- Template for adding new destinations:
+                    1. Get real latitude and longitude for your destination
+                    2. Calculate position:
+                       - left: (longitude + 180) / 360 * 100%
+                       - top: (90 - latitude) / 180 * 100%
+                    3. Copy the marker structure below:
 
-                <a href="/travel/[location]/" class="destination-marker" style="left: X%; top: Y%;">
-                    <div class="marker-pulse"></div>
-                    <div class="marker-label">Location Name</div>
-                    <div class="preview-thumbnails">
-                        <img src="/images/travel/[location]/photo1.jpg" alt="Preview 1">
-                        <img src="/images/travel/[location]/photo2.jpg" alt="Preview 2">
-                        <img src="/images/travel/[location]/photo3.jpg" alt="Preview 3">
-                    </div>
-                </a>
-                -->
+                    <a href="/travel/[location]/" class="destination-marker" style="left: X%; top: Y%;">
+                        <div class="marker-pulse"></div>
+                        <div class="marker-label">Location Name</div>
+                        <div class="preview-thumbnails">
+                            <img src="/images/travel/[location]/photo1.jpg" alt="Preview 1">
+                            <img src="/images/travel/[location]/photo2.jpg" alt="Preview 2">
+                            <img src="/images/travel/[location]/photo3.jpg" alt="Preview 3">
+                        </div>
+                    </a>
+                    -->
 
+                </div>
             </div>
         </div>
 

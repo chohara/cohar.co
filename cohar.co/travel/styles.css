@@ -173,6 +173,9 @@ body::before {
     height: 100%;
     border-radius: 2px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     /* Ocean base */
     background:
@@ -199,23 +202,17 @@ body::before {
         0 0 30px rgba(77, 184, 255, 0.3);
 }
 
-/* Latitude/Longitude Grid Overlay */
-.earth-sphere::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Map wrapper - maintains exact 2:1 aspect ratio for accurate positioning */
+.map-wrapper {
+    position: relative;
     width: 100%;
-    height: 100%;
-    background-image:
-        repeating-linear-gradient(0deg, rgba(77, 184, 255, 0.1) 0px, transparent 1px, transparent 11.11%, rgba(77, 184, 255, 0.1) calc(11.11% + 1px)),
-        repeating-linear-gradient(90deg, rgba(77, 184, 255, 0.1) 0px, transparent 1px, transparent 10%, rgba(77, 184, 255, 0.1) calc(10% + 1px));
-    pointer-events: none;
-    opacity: 0.3;
+    aspect-ratio: 2 / 1;
+    max-height: 100%;
+    max-width: 200%;
 }
 
 /* World Map SVG - Clear continent outlines */
-.earth-sphere::before {
+.map-wrapper::before {
     content: '';
     position: absolute;
     top: 0;
@@ -223,7 +220,7 @@ body::before {
     width: 100%;
     height: 100%;
     background-image: url('/images/travel/world-map.svg');
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
     pointer-events: none;
@@ -235,6 +232,21 @@ body::before {
         saturate(0.6)
         brightness(0.7)
         contrast(1.1);
+}
+
+/* Latitude/Longitude Grid Overlay */
+.map-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        repeating-linear-gradient(0deg, rgba(77, 184, 255, 0.1) 0px, transparent 1px, transparent 11.11%, rgba(77, 184, 255, 0.1) calc(11.11% + 1px)),
+        repeating-linear-gradient(90deg, rgba(77, 184, 255, 0.1) 0px, transparent 1px, transparent 10%, rgba(77, 184, 255, 0.1) calc(10% + 1px));
+    pointer-events: none;
+    opacity: 0.3;
 }
 
 .cloud-layer {
