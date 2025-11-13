@@ -171,6 +171,12 @@ body {
     }
 }
 
+.photo-card a {
+    display: block;
+    text-decoration: none;
+    line-height: 0;
+}
+
 .photo-card img {
     width: 100%;
     height: auto;
