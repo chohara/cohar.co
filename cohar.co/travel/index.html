@@ -8,22 +8,33 @@
     <!-- World map provided by Simplemaps.com (MIT License) -->
 </head>
 <body>
+    <!-- Hidden radio buttons for view state management -->
+    <input type="radio" name="view" id="view-world" class="view-control" checked>
+    <input type="radio" name="view" id="view-usa" class="view-control">
+    <input type="radio" name="view" id="view-europe" class="view-control">
+
     <div class="atmosphere">
         <div class="title-overlay">
             <h1>Earth Travels</h1>
         </div>
 
+        <!-- Sector Navigator Controls -->
+        <div class="sector-navigator">
+            <label for="view-world" class="sector-btn">GLOBAL</label>
+            <label for="view-usa" class="sector-btn">AMERICAS</label>
+            <label for="view-europe" class="sector-btn">EUROPE</label>
+        </div>
+
         <div class="earth-container">
             <div class="earth-sphere">
-                <div class="map-wrapper">
-                    <div class="cloud-layer"></div>
 
-                    <!-- Destination markers positioned using real lat/lon coordinates -->
-                    <!-- Formula: left = (lon + 180) / 360 * 100%, top = (90 - lat) / 180 * 100% -->
+                <!-- GLOBAL VIEW - World Map -->
+                <div class="map-layer map-world">
+                    <div class="cloud-layer"></div>
 
                     <!-- Banff, Canada: 51.1784°N, 115.5708°W -->
                     <!-- Robinson projection adjusted: +4% east, -1% north from equirectangular calculation -->
-                    <a href="/travel/banff/" class="destination-marker" style="left: 21.897%; top: 19.067%;">
+                    <a href="/travel/banff/" class="destination-marker region-world region-usa" style="left: 21.897%; top: 19.067%;">
                         <div class="marker-pulse"></div>
                         <div class="marker-label">Banff, Canada</div>
                         <div class="preview-thumbnails">
@@ -32,17 +43,33 @@
                             <img src="/images/travel/banff/250509_1.jpg" alt="Banff preview 3">
                         </div>
                     </a>
+                </div>
 
-                    <!-- Template for adding new destinations:
-                    1. Get real latitude and longitude for your destination
-                    2. Calculate position:
-                       - left: (longitude + 180) / 360 * 100%
-                       - top: (90 - latitude) / 180 * 100%
-                    3. Copy the marker structure below:
+                <!-- USA/AMERICAS VIEW - Zoomed Map -->
+                <div class="map-layer map-usa">
+                    <div class="cloud-layer"></div>
 
-                    <a href="/travel/[location]/" class="destination-marker" style="left: X%; top: Y%;">
+                    <!-- Banff, Canada - USA view positioning (will need adjustment based on SVG) -->
+                    <a href="/travel/banff/" class="destination-marker region-world region-usa" style="left: 30%; top: 15%;">
                         <div class="marker-pulse"></div>
-                        <div class="marker-label">Location Name</div>
+                        <div class="marker-label">Banff, Canada</div>
+                        <div class="preview-thumbnails">
+                            <img src="/images/travel/banff/250507_1.jpg" alt="Banff preview 1">
+                            <img src="/images/travel/banff/250508_1.jpg" alt="Banff preview 2">
+                            <img src="/images/travel/banff/250509_1.jpg" alt="Banff preview 3">
+                        </div>
+                    </a>
+                </div>
+
+                <!-- EUROPE VIEW - Zoomed Map -->
+                <div class="map-layer map-europe">
+                    <div class="cloud-layer"></div>
+
+                    <!-- European destinations will go here -->
+                    <!-- Example placeholder for future European destination:
+                    <a href="/travel/[location]/" class="destination-marker region-world region-europe" style="left: X%; top: Y%;">
+                        <div class="marker-pulse"></div>
+                        <div class="marker-label">Location, Country</div>
                         <div class="preview-thumbnails">
                             <img src="/images/travel/[location]/photo1.jpg" alt="Preview 1">
                             <img src="/images/travel/[location]/photo2.jpg" alt="Preview 2">
@@ -50,8 +77,8 @@
                         </div>
                     </a>
                     -->
-
                 </div>
+
             </div>
         </div>
     </div>
