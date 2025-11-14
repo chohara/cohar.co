@@ -580,7 +580,7 @@ body::after {
 /* Location Label */
 .marker-label {
     position: absolute;
-    top: 14px;
+    top: 24px;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.9);
@@ -604,7 +604,7 @@ body::after {
 /* Photo Preview Thumbnails */
 .preview-thumbnails {
     position: absolute;
-    top: -94px;
+    top: -84px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
