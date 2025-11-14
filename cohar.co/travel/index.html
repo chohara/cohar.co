@@ -21,7 +21,7 @@
         <!-- Sector Navigator Controls -->
         <div class="sector-navigator">
             <label for="view-world" class="sector-btn">GLOBAL</label>
-            <label for="view-usa" class="sector-btn">AMERICAS</label>
+            <label for="view-usa" class="sector-btn">USA</label>
             <label for="view-europe" class="sector-btn">EUROPE</label>
         </div>
 
@@ -33,8 +33,8 @@
                     <div class="cloud-layer"></div>
 
                     <!-- Banff, Canada: 51.1784°N, 115.5708°W -->
-                    <!-- Robinson projection adjusted: +4% east, -1% north from equirectangular calculation -->
-                    <a href="/travel/banff/" class="destination-marker region-world region-usa" style="left: 21.897%; top: 19.067%;">
+                    <!-- Adjusted for new map layer system: +15% south from previous position -->
+                    <a href="/travel/banff/" class="destination-marker region-world" style="left: 21.897%; top: 34.067%;">
                         <div class="marker-pulse"></div>
                         <div class="marker-label">Banff, Canada</div>
                         <div class="preview-thumbnails">
@@ -45,20 +45,22 @@
                     </a>
                 </div>
 
-                <!-- USA/AMERICAS VIEW - Zoomed Map -->
+                <!-- USA VIEW - Zoomed Map -->
                 <div class="map-layer map-usa">
                     <div class="cloud-layer"></div>
 
-                    <!-- Banff, Canada - USA view positioning (will need adjustment based on SVG) -->
-                    <a href="/travel/banff/" class="destination-marker region-world region-usa" style="left: 30%; top: 15%;">
+                    <!-- USA destinations will go here -->
+                    <!-- Example placeholder for future USA destination:
+                    <a href="/travel/[location]/" class="destination-marker region-world region-usa" style="left: X%; top: Y%;">
                         <div class="marker-pulse"></div>
-                        <div class="marker-label">Banff, Canada</div>
+                        <div class="marker-label">Location, State</div>
                         <div class="preview-thumbnails">
-                            <img src="/images/travel/banff/250507_1.jpg" alt="Banff preview 1">
-                            <img src="/images/travel/banff/250508_1.jpg" alt="Banff preview 2">
-                            <img src="/images/travel/banff/250509_1.jpg" alt="Banff preview 3">
+                            <img src="/images/travel/[location]/photo1.jpg" alt="Preview 1">
+                            <img src="/images/travel/[location]/photo2.jpg" alt="Preview 2">
+                            <img src="/images/travel/[location]/photo3.jpg" alt="Preview 3">
                         </div>
                     </a>
+                    -->
                 </div>
 
                 <!-- EUROPE VIEW - Zoomed Map -->
