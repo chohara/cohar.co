@@ -34,9 +34,9 @@ body {
     justify-content: center;
     background:
         radial-gradient(ellipse at 50% 50%, rgba(42, 157, 244, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(0, 255, 0, 0.05) 0%, transparent 30%);
+        radial-gradient(circle at 80% 20%, rgba(77, 184, 255, 0.05) 0%, transparent 30%);
     overflow: hidden;
-    border-bottom: 2px solid rgba(0, 255, 0, 0.3);
+    border-bottom: 2px solid rgba(77, 184, 255, 0.3);
 }
 
 /* Animated background stars */
@@ -80,21 +80,21 @@ body {
 
 .back-button {
     display: inline-block;
-    color: #00ff00;
+    color: #4db8ff;
     text-decoration: none;
     font-size: 1em;
     padding: 8px 16px;
-    border: 1px solid #00ff00;
+    border: 1px solid #4db8ff;
     border-radius: 4px;
     background: rgba(0, 0, 0, 0.7);
     margin-bottom: 20px;
     transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 10px rgba(77, 184, 255, 0.2);
 }
 
 .back-button:hover {
-    background: rgba(0, 255, 0, 0.1);
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+    background: rgba(77, 184, 255, 0.1);
+    box-shadow: 0 0 20px rgba(77, 184, 255, 0.4);
     transform: translateX(-5px);
 }
 
@@ -187,7 +187,7 @@ body {
 .photo-card:hover {
     transform: translateY(-5px);
     box-shadow:
-        0 0 30px rgba(0, 255, 0, 0.4),
+        0 0 30px rgba(77, 184, 255, 0.4),
         0 10px 25px rgba(0, 0, 0, 0.6);
     z-index: 10;
 }
@@ -260,11 +260,11 @@ body {
     padding: 40px 20px;
     text-align: center;
     background: rgba(0, 0, 0, 0.5);
-    border-top: 2px solid rgba(0, 255, 0, 0.3);
+    border-top: 2px solid rgba(77, 184, 255, 0.3);
 }
 
 .footer-link {
-    color: #00ff00;
+    color: #4db8ff;
     text-decoration: none;
     font-size: 1.1em;
     padding: 10px 20px;
@@ -352,6 +352,6 @@ html {
 
 /* Selection styling */
 ::selection {
-    background: rgba(0, 255, 0, 0.3);
+    background: rgba(77, 184, 255, 0.3);
     color: #fff;
 }
