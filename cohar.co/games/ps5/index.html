@@ -3,66 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PS5 Games</title>
+    <title>PS5 ARCHIVE TERMINAL</title>
     <link rel="stylesheet" href="console_styles.css">
 </head>
 <body>
-    <!-- Console Header Section -->
-    <section id="consoles">
-        <div class="console-grid">
-            <div class="console-card">
-		<img src="/images/console_logos/ps5.png" alt="PS5">
-            </div>
+    <!-- Hidden Sort Controls -->
+    <input type="radio" name="sort" id="sort-date" class="sort-control" checked>
+    <input type="radio" name="sort" id="sort-rating" class="sort-control">
+
+    <!-- CRT Screen Container -->
+    <div class="crt-screen">
+        <!-- Scanline Overlay -->
+        <div class="scanlines"></div>
+
+        <!-- Terminal Container -->
+        <div class="terminal-container">
+            <!-- Header -->
+            <header class="terminal-header">
+                <div class="terminal-border-top">╔═══════════════════════════════════════════════════════════════╗</div>
+                <div class="terminal-title">
+                    <span class="terminal-prompt">█</span> PLAYSTATION 5 ARCHIVE
+                    <span class="cursor-blink">_</span>
+                </div>
+                <div class="terminal-border-bottom">╚═══════════════════════════════════════════════════════════════╝</div>
+                <div class="system-info">DATABASE LOADED: <span class="status-ok">7 ENTRIES</span></div>
+            </header>
+
+            <!-- Console Logo -->
+            <section class="console-display">
+                <div class="console-logo-container">
+                    <img src="/images/console_logos/ps5.png" alt="PlayStation 5">
+                </div>
+            </section>
+
+            <!-- Sort Controls -->
+            <section class="sort-section">
+                <div class="sort-header">[ SORT PARAMETERS ]</div>
+                <div class="sort-buttons">
+                    <label for="sort-date" class="sort-btn">
+                        <span class="btn-bracket">&gt;</span> DATE
+                        <span class="sort-indicator">●</span>
+                    </label>
+                    <label for="sort-rating" class="sort-btn">
+                        <span class="btn-bracket">&gt;</span> RATING
+                        <span class="sort-indicator">●</span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Games Grid -->
+            <section class="games-section">
+                <div class="games-grid">
+                    <!-- Silent Hill f: 2025-11-13, 4.0 -->
+                    <div class="game-card" data-date="20251113" data-rating="40">
+                        <a href="/games/ps5/silent_hill_f.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/silent_hill_f.jpg" alt="Silent Hill f">
+                                <div class="game-title">Silent Hill f</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-11-13</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- MGS Delta: 2025-9-22, 4.5 -->
+                    <div class="game-card" data-date="20250922" data-rating="45">
+                        <a href="/games/ps5/mgs_delta_snake_eater.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/mgs_delta_snake_eater.jpg" alt="Metal Gear Solid Delta: Snake Eater">
+                                <div class="game-title">Metal Gear Solid Delta: Snake Eater</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-09-22</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Expedition 33: 2025-6-2, 4.5 -->
+                    <div class="game-card" data-date="20250602" data-rating="45">
+                        <a href="/games/ps5/expedition_33.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/expedition_33.jpg" alt="Clair Obscur: Expedition 33">
+                                <div class="game-title">Clair Obscur: Expedition 33</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-06-02</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- First Berserker: 2025-5-18, 4.5 -->
+                    <div class="game-card" data-date="20250518" data-rating="45">
+                        <a href="/games/ps5/first_berserker_khazan.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/first_berserker_khazan.jpg" alt="The First Berserker: Khazan">
+                                <div class="game-title">The First Berserker: Khazan</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-05-18</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Stellar Blade: 2025-3-10, 4.5 -->
+                    <div class="game-card" data-date="20250310" data-rating="45">
+                        <a href="/games/ps5/stellar_blade.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/stellar_blade.jpg" alt="Stellar Blade">
+                                <div class="game-title">Stellar Blade</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-03-10</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Indika: 2025-2-1, 3.5 -->
+                    <div class="game-card" data-date="20250201" data-rating="35">
+                        <a href="/games/ps5/indika.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/indika.jpg" alt="Indika">
+                                <div class="game-title">Indika</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-02-01</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Astro Bot: 2024-9-23, 4.5 -->
+                    <div class="game-card" data-date="20240923" data-rating="45">
+                        <a href="/games/ps5/astro_bot.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/astro_bot.jpg" alt="Astro Bot">
+                                <div class="game-title">Astro Bot</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2024-09-23</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="terminal-footer">
+                <div class="footer-line">═══════════════════════════════════════════════════════════════</div>
+                <div class="footer-text">END OF ARCHIVE</div>
+            </footer>
         </div>
-    </section>
-    <!-- All Games Section -->
-    <section id="all-games">
-        <div class="game-grid">
-            <!-- Add more  as needed -->
-	    <div class="game-card">
-                <a href="/games/ps5/silent_hill_f.html">
-                    <img src="/images/game_covers/silent_hill_f.jpg" alt="Silent Hill f">
-                    <p>Silent Hill f</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/ps5/mgs_delta_snake_eater.html">
-                    <img src="/images/game_covers/mgs_delta_snake_eater.jpg" alt="Metal Gear Solid Delta: Snake Eater">
-                    <p>Metal Gear Solid Delta: Snake Eater</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/ps5/expedition_33.html">
-                    <img src="/images/game_covers/expedition_33.jpg" alt="Clair Obscur: Expedition 33">
-                    <p>Clair Obscur: Expedition 33</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/ps5/first_berserker_khazan.html">
-                    <img src="/images/game_covers/first_berserker_khazan.jpg" alt="The First Berserker: Khazan">
-                    <p>The First Berserker: Khazan</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/ps5/stellar_blade.html">
-                    <img src="/images/game_covers/stellar_blade.jpg" alt="Stellar Blade">
-                    <p>Stellar Blade</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/ps5/indika.html">
-                    <img src="/images/game_covers/indika.jpg" alt="Indika">
-                    <p>Indika</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/ps5/astro_bot.html">
-                    <img src="/images/game_covers/astro_bot.jpg" alt="Astro Bot">
-                    <p>Astro Bot</p>
-                </a>
-            </div>
-        </div>
-    </section>
+    </div>
 </body>
 </html>
-
