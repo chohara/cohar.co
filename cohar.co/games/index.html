@@ -3,120 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cohar Games</title>
+    <title>GAME ARCHIVE TERMINAL</title>
     <link rel="stylesheet" href="/games/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Cohar's Game Log</h1>
-    </header>
+    <!-- CRT Screen Container -->
+    <div class="crt-screen">
+        <!-- Scanline Overlay -->
+        <div class="scanlines"></div>
 
-    <!-- Recent Games Section -->
-    <section id="recent-games">
-        <h2>Recently Played</h2>
-        <div class="game-row">
-           <div class="game-card">
-                <a href="/games/gba/riviera_the_promised_land.html">
-                    <img src="/images/game_covers/riviera_the_promised_land.jpg" alt="Riviera: The Promised Land">
-                    <p>Riviera: The Promised Land</p>
-                </a>
-            </div>
-           <div class="game-card">
-                <a href="/games/switch2/metroid_prime_4_beyond.html">
-                    <img src="/images/game_covers/metroid_prime_4.jpg" alt="Metroid Prime 4: Beyond">
-                    <p>Metroid Prime 4: Beyond</p>
-                </a>
-            </div>
-           <div class="game-card">
-                <a href="/games/switch2/kirby_air_riders.html">
-                    <img src="/images/game_covers/kirby_air_riders.jpg" alt="Kirby Air Riders">
-                    <p>Kirby Air Riders</p>
-                </a>
-            </div>
-           <div class="game-card">
-                <a href="/games/steam/mass_effect.html">
-                    <img src="/images/game_covers/mass_effect.jpg" alt="Mass Effect">
-                    <p>Mass Effect</p>
-                </a>
-            </div>
-           <div class="game-card">
-                <a href="/games/playdate/tiny_turnip.html">
-                    <img src="/images/game_covers/tiny_turnip.png" alt="Tiny Turnip">
-                    <p>Tiny Turnip</p>
-                </a>
-            </div>
-           <!-- Add up to 5 recent games -->
-        </div>
-    </section>
+        <!-- Terminal Container -->
+        <div class="terminal-container">
+            <!-- Header -->
+            <header class="terminal-header">
+                <div class="terminal-border-top">╔═══════════════════════════════════════════════════════════════╗</div>
+                <div class="terminal-title">
+                    <span class="terminal-prompt">█</span> GAME ARCHIVE SYSTEM v2.0
+                    <span class="cursor-blink">_</span>
+                </div>
+                <div class="terminal-border-bottom">╚═══════════════════════════════════════════════════════════════╝</div>
+                <div class="system-info">INITIALIZING DATABASE... <span class="status-ok">[OK]</span></div>
+            </header>
 
-    <!-- Consoles Section -->
-    <section id="consoles">
-        <h2>Browse by Console</h2>
-        <div class="console-grid">
-            <div class="console-card">
-                <a href="/games/switch2/">
-                    <img src="/images/console_logos/switch2.png" alt="Nintendo Switch 2">
-                </a>
-            </div>
-            <div class="console-card">
-                <a href="/games/gamecube/">
-                    <img src="/images/console_logos/gamecube.png" alt="Nintendo Gamecube">
-                </a>
-            </div>
-            <div class="console-card">
-                <a href="/games/switch/">
-                    <img src="/images/console_logos/switch.png" alt="Nintendo Switch">
-                </a>
-            </div>
-            <div class="console-card">
-                <a href="/games/wiiu/">
-                    <img src="/images/console_logos/wiiu.png" alt="Wii U">
-                </a>
-            </div>
-            <div class="console-card">
-                <a href="/games/3ds/">
-                    <img src="/images/console_logos/3ds.png" alt="Nintendo 3DS">
-                </a>
-            </div>
-             <div class="console-card">
-                <a href="/games/steam/">
-                    <img src="/images/console_logos/steam.png" alt="Steam">
-                </a>
-            </div>
-            <div class="console-card">
-                <a href="/games/wii/">
-                    <img src="/images/console_logos/wii.png" alt="Wii">
-                </a>
-            </div>
-            <div class="console-card">
-                <a href="/games/gba/">
-                    <img src="/images/console_logos/gba.png" alt="Nintendo Gameboy Advance">
-                </a>
-            </div>
-            <div class="console-card">
-                <a href="/games/ps5/">
-                    <img src="/images/console_logos/ps5.png" alt="Sony Playstation 5">
-                </a>
-            </div>
-            <div class="console-card">
-                <a href="/games/ps2/">
-                    <img src="/images/console_logos/ps2.png" alt="Sony Playstation 2">
-                </a>
-            </div>
-             <div class="console-card">
-                <a href="/games/ds/">
-                    <img src="/images/console_logos/ds.png" alt="Nintendo DS">
-                </a>
-            </div>
-             <div class="console-card">
-                <a href="/games/playdate/">
-                    <img src="/images/console_logos/playdate.png" alt="Playdate">
-                </a>
-            </div>
- 
-	    <!-- Add more consoles as needed -->
+            <!-- Recently Played Section -->
+            <section id="recent-games" class="terminal-section">
+                <div class="section-header">
+                    <span class="section-bracket">[</span> RECENTLY PLAYED <span class="section-bracket">]</span>
+                </div>
+                <div class="game-grid">
+                    <div class="game-card">
+                        <a href="/games/gba/riviera_the_promised_land.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/riviera_the_promised_land.jpg" alt="Riviera: The Promised Land">
+                                <div class="game-title">Riviera: The Promised Land</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="game-card">
+                        <a href="/games/switch2/metroid_prime_4_beyond.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/metroid_prime_4.jpg" alt="Metroid Prime 4: Beyond">
+                                <div class="game-title">Metroid Prime 4: Beyond</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="game-card">
+                        <a href="/games/switch2/kirby_air_riders.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/kirby_air_riders.jpg" alt="Kirby Air Riders">
+                                <div class="game-title">Kirby Air Riders</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="game-card">
+                        <a href="/games/steam/mass_effect.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/mass_effect.jpg" alt="Mass Effect">
+                                <div class="game-title">Mass Effect</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="game-card">
+                        <a href="/games/playdate/tiny_turnip.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/tiny_turnip.png" alt="Tiny Turnip">
+                                <div class="game-title">Tiny Turnip</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Console Archive Section -->
+            <section id="consoles" class="terminal-section">
+                <div class="section-header">
+                    <span class="section-bracket">[</span> CONSOLE ARCHIVE <span class="section-bracket">]</span>
+                </div>
+                <div class="console-grid">
+                    <div class="console-card">
+                        <a href="/games/switch2/">
+                            <div class="console-card-inner">
+                                <div class="console-img-container">
+                                    <img src="/images/console_logos/switch2.png" alt="Nintendo Switch 2">
+                                </div>
+                                <div class="console-label">SWITCH 2</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="console-card">
+                        <a href="/games/gamecube/">
+                            <div class="console-card-inner">
+                                <div class="console-img-container">
+                                    <img src="/images/console_logos/gamecube.png" alt="Nintendo Gamecube">
+                                </div>
+                                <div class="console-label">GAMECUBE</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="console-card">
+                        <a href="/games/switch/">
+                            <div class="console-card-inner">
+                                <div class="console-img-container">
+                                    <img src="/images/console_logos/switch.png" alt="Nintendo Switch">
+                                </div>
+                                <div class="console-label">SWITCH</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="console-card">
+                        <a href="/games/wiiu/">
+                            <div class="console-card-inner">
+                                <div class="console-img-container">
+                                    <img src="/images/console_logos/wiiu.png" alt="Wii U">
+                                </div>
+                                <div class="console-label">WII U</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="console-card">
+                        <a href="/games/3ds/">
+                            <div class="console-card-inner">
+                                <div class="console-img-container">
+                                    <img src="/images/console_logos/3ds.png" alt="Nintendo 3DS">
+                                </div>
+                                <div class="console-label">3DS</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="console-card">
+                        <a href="/games/steam/">
+                            <div class="console-card-inner">
+                                <div class="console-img-container">
+                                    <img src="/images/console_logos/steam.png" alt="Steam">
+                                </div>
+                                <div class="console-label">STEAM</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="console-card">
+                        <a href="/games/wii/">
+                            <div class="console-card-inner">
+                                <div class="console-img-container">
+                                    <img src="/images/console_logos/wii.png" alt="Wii">
+                                </div>
+                                <div class="console-label">WII</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="console-card">
+                        <a href="/games/gba/">
+                            <div class="console-card-inner">
+                                <div class="console-img-container">
+                                    <img src="/images/console_logos/gba.png" alt="Game Boy Advance">
+                                </div>
+                                <div class="console-label">GBA</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="console-card">
+                        <a href="/games/ps5/">
+                            <div class="console-card-inner">
+                                <div class="console-img-container">
+                                    <img src="/images/console_logos/ps5.png" alt="PlayStation 5">
+                                </div>
+                                <div class="console-label">PS5</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="console-card">
+                        <a href="/games/ps2/">
+                            <div class="console-card-inner">
+                                <div class="console-img-container">
+                                    <img src="/images/console_logos/ps2.png" alt="PlayStation 2">
+                                </div>
+                                <div class="console-label">PS2</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="console-card">
+                        <a href="/games/ds/">
+                            <div class="console-card-inner">
+                                <div class="console-img-container">
+                                    <img src="/images/console_logos/ds.png" alt="Nintendo DS">
+                                </div>
+                                <div class="console-label">DS</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="console-card">
+                        <a href="/games/playdate/">
+                            <div class="console-card-inner">
+                                <div class="console-img-container">
+                                    <img src="/images/console_logos/playdate.png" alt="Playdate">
+                                </div>
+                                <div class="console-label">PLAYDATE</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="terminal-footer">
+                <div class="footer-line">═══════════════════════════════════════════════════════════════</div>
+                <div class="footer-text">END OF TRANSMISSION</div>
+            </footer>
         </div>
-    </section>
+    </div>
 </body>
 </html>
-
