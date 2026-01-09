@@ -3,114 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GBA Games</title>
+    <title>GBA ARCHIVE TERMINAL</title>
     <link rel="stylesheet" href="console_styles.css">
 </head>
 <body>
-    <!-- Console Header Section -->
-    <section id="consoles">
-        <div class="console-grid">
-            <div class="console-card">
-		<img src="/images/console_logos/gba.png" alt="Gameboy Advance">
-            </div>
+    <!-- Hidden Sort Controls -->
+    <input type="radio" name="sort" id="sort-date" class="sort-control" checked>
+    <input type="radio" name="sort" id="sort-rating" class="sort-control">
+
+    <!-- CRT Screen Container -->
+    <div class="crt-screen">
+        <!-- Scanline Overlay -->
+        <div class="scanlines"></div>
+
+        <!-- Terminal Container -->
+        <div class="terminal-container">
+            <!-- Header -->
+            <header class="terminal-header">
+                <div class="terminal-border-top">╔═══════════════════════════════════════════════════════════════╗</div>
+                <div class="terminal-title">
+                    <span class="terminal-prompt">█</span> GAME BOY ADVANCE ARCHIVE
+                    <span class="cursor-blink">_</span>
+                </div>
+                <div class="terminal-border-bottom">╚═══════════════════════════════════════════════════════════════╝</div>
+                <div class="system-info">DATABASE LOADED: <span class="status-ok">15 ENTRIES</span></div>
+            </header>
+
+            <!-- Console Logo -->
+            <section class="console-display">
+                <div class="console-logo-container">
+                    <img src="/images/console_logos/gba.png" alt="Game Boy Advance">
+                </div>
+            </section>
+
+            <!-- Sort Controls -->
+            <section class="sort-section">
+                <div class="sort-header">[ SORT PARAMETERS ]</div>
+                <div class="sort-buttons">
+                    <label for="sort-date" class="sort-btn">
+                        <span class="btn-bracket">&gt;</span> DATE
+                        <span class="sort-indicator">●</span>
+                    </label>
+                    <label for="sort-rating" class="sort-btn">
+                        <span class="btn-bracket">&gt;</span> RATING
+                        <span class="sort-indicator">●</span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Games Grid -->
+            <section class="games-section">
+                <div class="games-grid">
+                    <!-- Riviera: 2026-01-07, 3.5 -->
+                    <div class="game-card" data-date="20260107" data-rating="35">
+                        <a href="/games/gba/riviera_the_promised_land.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/riviera_the_promised_land.jpg" alt="Riviera: The Promised Land">
+                                <div class="game-title">Riviera: The Promised Land</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2026-01-07</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Metal Slug: 2025-11-07, 3.5 -->
+                    <div class="game-card" data-date="20251107" data-rating="35">
+                        <a href="/games/gba/metal_slug_advance.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/metal_slug_advance.jpg" alt="Metal Slug Advance">
+                                <div class="game-title">Metal Slug Advance</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-11-07</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Muppet Pinball: 2025-09-05, 3.0 -->
+                    <div class="game-card" data-date="20250905" data-rating="30">
+                        <a href="/games/gba/muppet_pinball_mayhem.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/muppet_pinball_mayhem.jpg" alt="Muppet Pinball Mayhem">
+                                <div class="game-title">Muppet Pinball Mayhem</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-09-05</span>
+                                    <span class="meta-rating">★★★☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Jet Grind Radio: 2025-08-05, 4.0 -->
+                    <div class="game-card" data-date="20250805" data-rating="40">
+                        <a href="/games/gba/jet_grind_radio.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/jet_grind_radio.jpg" alt="Jet Grind Radio">
+                                <div class="game-title">Jet Grind Radio</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-08-05</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Pokemon Pinball: 2025-08-04, 4.0 -->
+                    <div class="game-card" data-date="20250804" data-rating="40">
+                        <a href="/games/gba/pokemon_pinball_ruby_sapphire.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/pokemon_pinball_ruby_sapphire.jpg" alt="Pokémon Pinball: Ruby & Sapphire">
+                                <div class="game-title">Pokémon Pinball: Ruby & Sapphire</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-08-04</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Iridion 3D: 2025-04-21, 3.0 -->
+                    <div class="game-card" data-date="20250421" data-rating="30">
+                        <a href="/games/gba/iridion_3d.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/iridion_3d.png" alt="Iridion 3D">
+                                <div class="game-title">Iridion 3D</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-04-21</span>
+                                    <span class="meta-rating">★★★☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Pinball of the Dead: 2025-02-20, 3.0 -->
+                    <div class="game-card" data-date="20250220" data-rating="30">
+                        <a href="/games/gba/pinball_of_the_dead.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/pinball_of_the_dead.png" alt="The Pinball of the Dead">
+                                <div class="game-title">The Pinball of the Dead</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-02-20</span>
+                                    <span class="meta-rating">★★★☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Advance Wars: 2025-02-05, 3.5 -->
+                    <div class="game-card" data-date="20250205" data-rating="35">
+                        <a href="/games/gba/advance_wars.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/advance_wars.jpg" alt="Advance Wars">
+                                <div class="game-title">Advance Wars</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-02-05</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Kirby Amazing Mirror: 2025-02-01, 5.0 -->
+                    <div class="game-card" data-date="20250201" data-rating="50">
+                        <a href="/games/gba/kirby_amazing_mirror.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/kirby_amazing_mirror.png" alt="Kirby & the Amazing Mirror">
+                                <div class="game-title">Kirby & the Amazing Mirror</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-02-01</span>
+                                    <span class="meta-rating">★★★★★</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- WarioWare: 2025-01-22, 2.5 -->
+                    <div class="game-card" data-date="20250122" data-rating="25">
+                        <a href="/games/gba/warioware_mega_microgames.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/warioware_mega_microgames.jpg" alt="WarioWare, Inc.: Mega Microgame$!">
+                                <div class="game-title">WarioWare, Inc.: Mega Microgame$!</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-01-22</span>
+                                    <span class="meta-rating">★★⯪☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Kirby Nightmare: 2025-01-12, 3.0 -->
+                    <div class="game-card" data-date="20250112" data-rating="30">
+                        <a href="/games/gba/kirby_nightmare_in_dreamland.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/kirby_nightmare_in_dreamland.png" alt="Kirby: Nightmare in Dreamland">
+                                <div class="game-title">Kirby: Nightmare in Dreamland</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-01-12</span>
+                                    <span class="meta-rating">★★★☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Metroid Zero Mission: 2024-12-30, 4.0 -->
+                    <div class="game-card" data-date="20241230" data-rating="40">
+                        <a href="/games/gba/metroid_zero_mission.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/metroid_zero_mission.png" alt="Metroid: Zero Mission">
+                                <div class="game-title">Metroid: Zero Mission</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2024-12-30</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Jazz Jackrabbit: 2024-12-28, 3.0 -->
+                    <div class="game-card" data-date="20241228" data-rating="30">
+                        <a href="/games/gba/jazz_jackrabbit.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/jazz_jackrabbit.jpg" alt="Jazz Jackrabbit">
+                                <div class="game-title">Jazz Jackrabbit</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2024-12-28</span>
+                                    <span class="meta-rating">★★★☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Kelly Slater: 2024-12-27, 1.5 -->
+                    <div class="game-card" data-date="20241227" data-rating="15">
+                        <a href="/games/gba/kelly_slater.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/kelly_slater.jpg" alt="Kelly Slater's Pro Surfer">
+                                <div class="game-title">Kelly Slater's Pro Surfer</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2024-12-27</span>
+                                    <span class="meta-rating">★⯪☆☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Yoshi's Island: 2024-05-20, 5.0 -->
+                    <div class="game-card" data-date="20240520" data-rating="50">
+                        <a href="/games/gba/yoshis_island.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/yoshis_island.jpg" alt="Yoshi's Island: Super Mario Advance 3">
+                                <div class="game-title">Yoshi's Island: Super Mario Advance 3</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2024-05-20</span>
+                                    <span class="meta-rating">★★★★★</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="terminal-footer">
+                <div class="footer-line">═══════════════════════════════════════════════════════════════</div>
+                <div class="footer-text">END OF ARCHIVE</div>
+            </footer>
         </div>
-    </section>
-    <!-- All Games Section -->
-    <section id="all-games">
-        <div class="game-grid">
-            <!-- Add more  as needed -->
-	    <div class="game-card">
-                <a href="/games/gba/riviera_the_promised_land.html">
-                    <img src="/images/game_covers/riviera_the_promised_land.jpg" alt="Riviera: The Promised Land">
-                    <p>Riviera: The Promised Land</p>
-                </a>
-            </div>
-             <div class="game-card">
-                <a href="/games/gba/metal_slug_advance.html">
-                    <img src="/images/game_covers/metal_slug_advance.jpg" alt="Metal Slug Advance">
-                    <p>Metal Slug Advance</p>
-                </a>
-            </div>
-             <div class="game-card">
-                <a href="/games/gba/muppet_pinball_mayhem.html">
-                    <img src="/images/game_covers/muppet_pinball_mayhem.jpg" alt="Muppet Pinball Mayhem">
-                    <p>Muppet Pinball Mayhem</p>
-                </a>
-            </div>
-             <div class="game-card">
-                <a href="/games/gba/jet_grind_radio.html">
-                    <img src="/images/game_covers/jet_grind_radio.jpg" alt="Jet Grind Radio">
-                    <p>Jet Grind Radio</p>
-                </a>
-            </div>
-             <div class="game-card">
-                <a href="/games/gba/pokemon_pinball_ruby_sapphire.html">
-                    <img src="/images/game_covers/pokemon_pinball_ruby_sapphire.jpg" alt="Pokémon Pinball: Ruby & Sapphire">
-                    <p>Pokémon Pinball: Ruby & Sapphire</p>
-                </a>
-            </div>
-             <div class="game-card">
-                <a href="/games/gba/iridion_3d.html">
-                    <img src="/images/game_covers/iridion_3d.png" alt="Iridion 3D">
-                    <p>Iridion 3D</p>
-                </a>
-            </div>
-             <div class="game-card">
-                <a href="/games/gba/pinball_of_the_dead.html">
-                    <img src="/images/game_covers/pinball_of_the_dead.png" alt="The Pinball of the Dead">
-                    <p>The Pinball of the Dead</p>
-                </a>
-            </div>
-             <div class="game-card">
-                <a href="/games/gba/advance_wars.html">
-                    <img src="/images/game_covers/advance_wars.jpg" alt="Advance Wars">
-                    <p>Advance Wars</p>
-                </a>
-            </div>
-             <div class="game-card">
-                <a href="/games/gba/kirby_amazing_mirror.html">
-                    <img src="/images/game_covers/kirby_amazing_mirror.png" alt="Kirby & the Amazing Mirror">
-                    <p>Kirby & the Amazing Mirror</p>
-                </a>
-            </div>
-              <div class="game-card">
-                <a href="/games/gba/warioware_mega_microgames.html">
-                    <img src="/images/game_covers/warioware_mega_microgames.jpg" alt="WarioWare, Inc.: Mega Microgame$!">
-                    <p>WarioWare, Inc.: Mega Microgame$!</p>
-                </a>
-            </div>
-            <div class="game-card">
-                <a href="/games/gba/kirby_nightmare_in_dreamland.html">
-                    <img src="/images/game_covers/kirby_nightmare_in_dreamland.png" alt="Kirby: Nightmare in Dreamland">
-                    <p>Kirby: Nightmare in Dreamland</p>
-                </a>
-            </div>
-             <div class="game-card">
-                <a href="/games/gba/jazz_jackrabbit.html">
-                    <img src="/images/game_covers/jazz_jackrabbit.jpg" alt="Jazz Jackrabbit">
-                    <p>Jazz Jackrabbit</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/gba/kelly_slater.html">
-                    <img src="/images/game_covers/kelly_slater.jpg" alt="Kelly Slater's Pro Surfer">
-                    <p>Kelly Slater's Pro Surfer</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/gba/metroid_zero_mission.html">
-                    <img src="/images/game_covers/metroid_zero_mission.png" alt="Metroid: Zero Mission">
-                    <p>Metroid: Zero Mission</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/gba/yoshis_island.html">
-                    <img src="/images/game_covers/yoshis_island.jpg" alt="Yoshi's Island: Super Mario Advance 3">
-                    <p>Yoshi's Island: Super Mario Advance 3</p>
-                </a>
-            </div>
-         </div>
-    </section>
+    </div>
 </body>
 </html>
-
