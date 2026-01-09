@@ -3,66 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Switch 2 Games</title>
+    <title>SWITCH 2 ARCHIVE TERMINAL</title>
     <link rel="stylesheet" href="console_styles.css">
 </head>
 <body>
-    <!-- Console Header Section -->
-    <section id="consoles">
-        <div class="console-grid">
-            <div class="console-card">
-		<img src="/images/console_logos/switch2.png" alt="Switch 2">
-            </div>
+    <!-- Hidden Sort Controls -->
+    <input type="radio" name="sort" id="sort-date" class="sort-control" checked>
+    <input type="radio" name="sort" id="sort-rating" class="sort-control">
+
+    <!-- CRT Screen Container -->
+    <div class="crt-screen">
+        <!-- Scanline Overlay -->
+        <div class="scanlines"></div>
+
+        <!-- Terminal Container -->
+        <div class="terminal-container">
+            <!-- Header -->
+            <header class="terminal-header">
+                <div class="terminal-border-top">╔═══════════════════════════════════════════════════════════════╗</div>
+                <div class="terminal-title">
+                    <span class="terminal-prompt">█</span> NINTENDO SWITCH 2 ARCHIVE
+                    <span class="cursor-blink">_</span>
+                </div>
+                <div class="terminal-border-bottom">╚═══════════════════════════════════════════════════════════════╝</div>
+                <div class="system-info">DATABASE LOADED: <span class="status-ok">7 ENTRIES</span></div>
+            </header>
+
+            <!-- Console Logo -->
+            <section class="console-display">
+                <div class="console-logo-container">
+                    <img src="/images/console_logos/switch2.png" alt="Nintendo Switch 2">
+                </div>
+            </section>
+
+            <!-- Sort Controls -->
+            <section class="sort-section">
+                <div class="sort-header">[ SORT PARAMETERS ]</div>
+                <div class="sort-buttons">
+                    <label for="sort-date" class="sort-btn">
+                        <span class="btn-bracket">&gt;</span> DATE
+                        <span class="sort-indicator">●</span>
+                    </label>
+                    <label for="sort-rating" class="sort-btn">
+                        <span class="btn-bracket">&gt;</span> RATING
+                        <span class="sort-indicator">●</span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Games Grid -->
+            <section class="games-section">
+                <div class="games-grid">
+                    <!-- Metroid Prime 4: 2025-12-08, 4.0 -->
+                    <div class="game-card" data-date="20251208" data-rating="40">
+                        <a href="/games/switch2/metroid_prime_4_beyond.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/metroid_prime_4.jpg" alt="Metroid Prime 4: Beyond">
+                                <div class="game-title">Metroid Prime 4: Beyond</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-12-08</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Kirby Air Riders: 2025-12-04, 4.5 -->
+                    <div class="game-card" data-date="20251204" data-rating="45">
+                        <a href="/games/switch2/kirby_air_riders.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/kirby_air_riders.jpg" alt="Kirby Air Riders">
+                                <div class="game-title">Kirby Air Riders</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-12-04</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Kirby Forgotten Land: 2025-09-06, 4.5 -->
+                    <div class="game-card" data-date="20250906" data-rating="45">
+                        <a href="/games/switch2/kirby_forgotten_land_star_crossed_world.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/kirby_forgotten_land_star_crossed_world.jpg" alt="Kirby and the Forgotten Land + Star Crossed World">
+                                <div class="game-title">Kirby and the Forgotten Land + Star Crossed World</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-09-06</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- DK Bananza: 2025-07-24, 5.0 -->
+                    <div class="game-card" data-date="20250724" data-rating="50">
+                        <a href="/games/switch2/dk_bananza.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/dk_bananza.jpg" alt="Donkey Kong Bananza">
+                                <div class="game-title">Donkey Kong Bananza</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-07-24</span>
+                                    <span class="meta-rating">★★★★★</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Cyberpunk 2077: 2025-07-09, 4.0 -->
+                    <div class="game-card" data-date="20250709" data-rating="40">
+                        <a href="/games/switch2/cyberpunk_2077.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/cyberpunk_2077.jpg" alt="Cyberpunk 2077">
+                                <div class="game-title">Cyberpunk 2077 [Ultimate Edition]</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-07-09</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Tears of the Kingdom: 2025-07-07, 4.5 -->
+                    <div class="game-card" data-date="20250707" data-rating="45">
+                        <a href="/games/switch2/tears_of_the_kingdom.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/tears_of_the_kingdom.jpg" alt="The Legend of Zelda: Tears of the Kingdom">
+                                <div class="game-title">The Legend of Zelda: Tears of the Kingdom</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-07-07</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Mario Kart World: 2025-06-12, 4.5 -->
+                    <div class="game-card" data-date="20250612" data-rating="45">
+                        <a href="/games/switch2/mario_kart_world.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/mario_kart_world.jpg" alt="Mario Kart World">
+                                <div class="game-title">Mario Kart World</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-06-12</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="terminal-footer">
+                <div class="footer-line">═══════════════════════════════════════════════════════════════</div>
+                <div class="footer-text">END OF ARCHIVE</div>
+            </footer>
         </div>
-    </section>
-    <!-- All Games Section -->
-    <section id="all-games">
-        <div class="game-grid">
-            <!-- Add more  as needed -->
-	    <div class="game-card">
-                <a href="/games/switch2/metroid_prime_4_beyond.html">
-                    <img src="/images/game_covers/metroid_prime_4.jpg" alt="Metroid Prime 4: Beyond">
-                    <p>Metroid Prime 4: Beyond</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/switch2/kirby_air_riders.html">
-                    <img src="/images/game_covers/kirby_air_riders.jpg" alt="Kirby Air Riders">
-                    <p>Kirby Air Riders</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/switch2/kirby_forgotten_land_star_crossed_world.html">
-                    <img src="/images/game_covers/kirby_forgotten_land_star_crossed_world.jpg" alt="Kirby and the Forgotten Land + Star Crossed World">
-                    <p>Kirby and the Forgotten Land + Star Crossed World</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/switch2/dk_bananza.html">
-                    <img src="/images/game_covers/dk_bananza.jpg" alt="Donkey Kong Bananza">
-                    <p>Donkey Kong Bananza</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/switch2/cyberpunk_2077.html">
-                    <img src="/images/game_covers/cyberpunk_2077.jpg" alt="Cyberpunk 2077">
-                    <p>Cyberpunk 2077</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/switch2/tears_of_the_kingdom.html">
-                    <img src="/images/game_covers/tears_of_the_kingdom.jpg" alt="The Legend of Zelda: Tears of the Kingdom">
-                    <p>The Legend of Zelda: Tears of the Kingdom</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/switch2/mario_kart_world.html">
-                    <img src="/images/game_covers/mario_kart_world.jpg" alt="Mario Kart World">
-                    <p>Mario Kart World</p>
-                </a>
-            </div>
-        </div>
-    </section>
+    </div>
 </body>
 </html>
-
