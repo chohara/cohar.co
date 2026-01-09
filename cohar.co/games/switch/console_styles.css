@@ -1,138 +1,106 @@
-/* Terminus font */
-@font-face {
-    font-family: 'Terminus';
-    src: url('/fonts/terminus.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* General Styles */
-body {
-    font-family: 'Terminus', sans-serif;
-    background-color: #0b0c2a; /* Deep space blue */
-    color: #d4d4f5; /* Light gray-blue text */
-    margin: 0;
-    padding: 0;
-    background-image: url('/images/bg_space_seamless.png'); /* Cosmic background */
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-header {
-    display: flex;
-    justify-content: center;
-    font-family: 'Terminus', sans-serif;
+.terminal-footer {
     text-align: center;
-    color: #00ff00; /* Neon green text */
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
+    margin-top: 50px;
     padding: 20px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    text-shadow: 1px 1px 2px #000;
-    margin: 0;
+    border-top: 2px solid var(--phosphor-green-dark);
+}
+
+.footer-line {
+    color: var(--text-dim);
+    font-size: 0.9em;
+    letter-spacing: -0.05em;
     margin-bottom: 10px;
-    margin-top: 10px;
-    margin-right: 33%;
-    margin-left: 33%;
 }
 
-section {
-    padding: 10px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    margin-left: 10px;
+.footer-text {
+    color: var(--text-secondary);
+    font-size: 1.2em;
+    letter-spacing: 3px;
+    text-shadow: var(--shadow-glow);
 }
 
-/* Recent Games Section */
-#all-games {
-    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black */
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+/* ═══ RESPONSIVE DESIGN ═══ */
+@media (max-width: 1200px) {
+    .games-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-.game-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+@media (max-width: 768px) {
+    .crt-screen {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .terminal-title {
+        font-size: 1.5em;
+    }
+
+    .sort-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .game-card-inner img {
+        height: 250px;
+    }
 }
 
-.game-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 10px;
-    padding: 10px;
-    width: 20%;
-    background-color: #111;
-    border-radius: 8px;
-    transition: transform 0.3s, box-shadow 0.3s;
+@media (max-width: 480px) {
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .terminal-border-top,
+    .terminal-border-bottom {
+        font-size: 0.6em;
+    }
+
+    .console-logo-container img {
+        max-width: 200px;
+    }
 }
 
-.game-card a {
-    text-decoration: none;
-}
-
-.game-card a:hover {
-    text-decoration: underline;
-    text-decoration-color: #00ff00;
-}
-
-.game-card img {
-    width: 100%;
-    border-radius: 5px;
-}
-
-.game-card p {
-    color: #f4f4f4; /* Neon green */
-    font-size: 1.1em;
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-
-.game-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px #00ff00;
-}
-
-/* Consoles Section */
-#consoles {
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    margin-left: 33%;
-    margin-right: 33%;
-}
-
-.console-grid {
-    display: flex; /* Use flexbox for centering items */
-    justify-content: center; /* Center the items horizontally */
-    flex-wrap: wrap; /* Allow wrapping to handle smaller screens */
-    gap: 20px; /* Spacing between cards */
-}
-
-.console-card {
-    padding: 10px;
-    border-radius: 8px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.console-card img {
-    width: 100%;
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #111;
-    color: #00eaff;
-    position: fixed;
-    width: 100%;
+/* ═══ SCREEN EFFECTS ═══ */
+.crt-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
+    background: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        transparent 60%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
+    pointer-events: none;
+    border-radius: 20px;
+    z-index: 999;
+}
+
+.crt-screen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.03) 0%,
+        transparent 10%,
+        transparent 90%,
+        rgba(0, 0, 0, 0.2) 100%
+    );
+    pointer-events: none;
+    border-radius: 20px;
+    z-index: 998;
 }
 
