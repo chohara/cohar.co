@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" fill="none" stroke="#00b8ff" stroke-width="0.5">
+  <!-- Simplified world map for navigation interface -->
+  <!-- Equirectangular projection -->
+
+  <!-- North America -->
+  <path d="M 140 80 L 160 70 L 180 75 L 200 70 L 220 80 L 230 95 L 235 115 L 230 140 L 220 160 L 210 180 L 200 190 L 180 185 L 170 175 L 160 160 L 150 140 L 145 120 L 140 100 Z" fill="#001a33" opacity="0.6"/>
+  <path d="M 145 185 L 155 200 L 165 210 L 175 220 L 180 235 L 175 245 L 165 250 L 155 245 L 145 235 L 140 220 L 145 200 Z" fill="#001a33" opacity="0.6"/>
+
+  <!-- South America -->
+  <path d="M 240 250 L 250 260 L 260 280 L 265 305 L 270 330 L 268 355 L 260 375 L 250 385 L 240 380 L 230 365 L 225 345 L 222 320 L 225 295 L 230 270 L 235 255 Z" fill="#001a33" opacity="0.6"/>
+
+  <!-- Europe -->
+  <path d="M 480 100 L 495 95 L 510 100 L 520 110 L 525 120 L 520 135 L 510 145 L 495 148 L 480 145 L 470 135 L 468 120 L 472 108 Z" fill="#001a33" opacity="0.6"/>
+
+  <!-- Africa -->
+  <path d="M 485 155 L 500 160 L 515 175 L 525 195 L 530 220 L 532 250 L 530 280 L 520 310 L 505 330 L 490 335 L 475 330 L 465 315 L 460 290 L 462 260 L 470 230 L 478 200 L 482 175 Z" fill="#001a33" opacity="0.6"/>
+
+  <!-- Asia -->
+  <path d="M 535 85 L 560 80 L 590 85 L 620 95 L 650 100 L 680 110 L 710 120 L 735 130 L 750 145 L 755 165 L 750 185 L 735 195 L 710 190 L 685 180 L 660 175 L 635 180 L 610 190 L 585 195 L 560 190 L 545 180 L 535 165 L 532 145 L 530 125 L 532 105 Z" fill="#001a33" opacity="0.6"/>
+  <path d="M 620 200 L 640 210 L 660 225 L 675 245 L 680 265 L 675 280 L 660 285 L 640 278 L 625 265 L 618 245 L 618 225 Z" fill="#001a33" opacity="0.6"/>
+
+  <!-- Australia -->
+  <path d="M 750 310 L 770 315 L 790 325 L 805 340 L 810 355 L 805 370 L 790 375 L 770 370 L 755 360 L 745 345 L 743 328 Z" fill="#001a33" opacity="0.6"/>
+
+  <!-- Antarctica (bottom strip) -->
+  <path d="M 0 450 L 1000 450 L 1000 480 L 0 480 Z" fill="#001a33" opacity="0.4"/>
+
+  <!-- Greenland -->
+  <path d="M 330 40 L 350 35 L 370 40 L 380 55 L 375 75 L 360 85 L 345 82 L 330 70 L 325 55 Z" fill="#001a33" opacity="0.6"/>
+
+  <!-- Japan -->
+  <path d="M 825 145 L 835 140 L 845 145 L 850 160 L 845 175 L 835 180 L 825 175 L 820 160 Z" fill="#001a33" opacity="0.6"/>
+
+  <!-- UK -->
+  <path d="M 465 105 L 472 102 L 478 108 L 475 118 L 468 120 L 462 115 Z" fill="#001a33" opacity="0.6"/>
+
+  <!-- New Zealand -->
+  <path d="M 870 370 L 880 375 L 885 390 L 880 405 L 870 408 L 862 400 L 860 385 Z" fill="#001a33" opacity="0.6"/>
+</svg>

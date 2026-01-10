@@ -3,86 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cohar's Travel Photography</title>
+    <title>Planetary Navigation - Travel Archive</title>
     <link rel="stylesheet" href="/travel/styles.css">
-    <!-- World map provided by Simplemaps.com (MIT License) -->
 </head>
 <body>
-    <!-- Hidden radio buttons for view state management -->
-    <input type="radio" name="view" id="view-world" class="view-control" checked>
-    <input type="radio" name="view" id="view-usa" class="view-control">
-    <input type="radio" name="view" id="view-europe" class="view-control">
+    <!-- Starship Navigation Console -->
+    <div class="nav-console">
 
-    <div class="atmosphere">
-        <div class="title-overlay">
-            <h1>Earth Travels</h1>
-        </div>
+        <!-- Header Section -->
+        <header class="console-header">
+            <div class="header-left">
+                <span class="console-id">NAVIGATION</span>
+                <span class="separator">│</span>
+                <span class="system-name">PLANETARY ARCHIVE</span>
+            </div>
+            <div class="header-center">
+                <h1 class="console-title">Earth Destinations</h1>
+            </div>
+            <div class="header-right">
+                <a href="/" class="return-btn">
+                    <span class="btn-bracket">[</span>
+                    <span class="btn-text">RETURN TO STATION</span>
+                    <span class="btn-bracket">]</span>
+                </a>
+            </div>
+        </header>
 
-        <!-- Sector Navigator Controls -->
-        <div class="sector-navigator">
-            <label for="view-world" class="sector-btn">GLOBAL</label>
-            <label for="view-usa" class="sector-btn">USA</label>
-            <label for="view-europe" class="sector-btn">EUROPE</label>
-        </div>
+        <!-- Main Navigation Display -->
+        <main class="nav-display">
+            <div class="display-frame">
 
-        <div class="earth-container">
-            <div class="earth-sphere">
+                <!-- World Map Container -->
+                <div class="map-container">
 
-                <!-- GLOBAL VIEW - World Map -->
-                <div class="map-layer map-world">
-                    <div class="cloud-layer"></div>
+                    <!-- Coordinate Grid Overlay -->
+                    <div class="coord-grid"></div>
+
+                    <!-- Scanline Effect -->
+                    <div class="scanline"></div>
+
+                    <!-- World Map Background -->
+                    <div class="world-map"></div>
+
+                    <!-- Destination Markers -->
 
                     <!-- Banff, Canada: 51.1784°N, 115.5708°W -->
-                    <!-- Adjusted for new map layer system -->
-                    <a href="/travel/banff/" class="destination-marker region-world" style="left: 21.897%; top: 32.067%;">
+                    <!-- Position: left = (-115.5708 + 180) / 360 * 100 = 17.897% -->
+                    <!--          top = (90 - 51.1784) / 180 * 100 = 21.567% -->
+                    <div class="nav-marker" style="left: 17.897%; top: 21.567%;">
                         <div class="marker-pulse"></div>
-                        <div class="marker-label">Banff, Canada</div>
-                        <div class="preview-thumbnails">
-                            <img src="/images/travel/banff/250507_1.jpg" alt="Banff preview 1">
-                            <img src="/images/travel/banff/250508_1.jpg" alt="Banff preview 2">
-                            <img src="/images/travel/banff/250509_1.jpg" alt="Banff preview 3">
-                        </div>
-                    </a>
-                </div>
+                        <a href="/travel/banff/" class="marker-link">
+                            <span class="marker-label">Banff, Canada</span>
+                            <div class="marker-preview">
+                                <img src="/images/travel/banff/250507_1.jpg" alt="Banff 1">
+                                <img src="/images/travel/banff/250508_1.jpg" alt="Banff 2">
+                                <img src="/images/travel/banff/250509_1.jpg" alt="Banff 3">
+                            </div>
+                        </a>
+                    </div>
 
-                <!-- USA VIEW - Zoomed Map -->
-                <div class="map-layer map-usa">
-                    <div class="cloud-layer"></div>
+                    <!-- ═══════════════════════════════════════════════════════════
+                         NEW LOCATION TEMPLATE
+                         ═══════════════════════════════════════════════════════════
 
-                    <!-- USA destinations will go here -->
-                    <!-- Example placeholder for future USA destination:
-                    <a href="/travel/[location]/" class="destination-marker region-world region-usa" style="left: X%; top: Y%;">
+                         Copy the block below for each new destination:
+
+                         1. Get coordinates from Google Maps (e.g., Paris: 48.8566°N, 2.3522°E)
+
+                         2. Calculate position percentages:
+                            left = (longitude + 180) / 360 * 100
+                            top = (90 - latitude) / 180 * 100
+
+                            Example for Paris (48.8566°N, 2.3522°E):
+                            left = (2.3522 + 180) / 360 * 100 = 50.65%
+                            top = (90 - 48.8566) / 180 * 100 = 22.86%
+
+                         3. Update: position, name, href, and image paths
+
+                         4. Paste the block below in the markers section above
+
+                         ═══════════════════════════════════════════════════════════
+
+                    <div class="nav-marker" style="left: XX.XX%; top: YY.YY%;">
                         <div class="marker-pulse"></div>
-                        <div class="marker-label">Location, State</div>
-                        <div class="preview-thumbnails">
-                            <img src="/images/travel/[location]/photo1.jpg" alt="Preview 1">
-                            <img src="/images/travel/[location]/photo2.jpg" alt="Preview 2">
-                            <img src="/images/travel/[location]/photo3.jpg" alt="Preview 3">
-                        </div>
-                    </a>
-                    -->
-                </div>
+                        <a href="/travel/LOCATION/" class="marker-link">
+                            <span class="marker-label">City, Country</span>
+                            <div class="marker-preview">
+                                <img src="/images/travel/LOCATION/photo1.jpg" alt="Preview 1">
+                                <img src="/images/travel/LOCATION/photo2.jpg" alt="Preview 2">
+                                <img src="/images/travel/LOCATION/photo3.jpg" alt="Preview 3">
+                            </div>
+                        </a>
+                    </div>
 
-                <!-- EUROPE VIEW - Zoomed Map -->
-                <div class="map-layer map-europe">
-                    <div class="cloud-layer"></div>
+                         ═══════════════════════════════════════════════════════════
+                         END TEMPLATE
+                         ═══════════════════════════════════════════════════════════ -->
 
-                    <!-- European destinations will go here -->
-                    <!-- Example placeholder for future European destination:
-                    <a href="/travel/[location]/" class="destination-marker region-world region-europe" style="left: X%; top: Y%;">
-                        <div class="marker-pulse"></div>
-                        <div class="marker-label">Location, Country</div>
-                        <div class="preview-thumbnails">
-                            <img src="/images/travel/[location]/photo1.jpg" alt="Preview 1">
-                            <img src="/images/travel/[location]/photo2.jpg" alt="Preview 2">
-                            <img src="/images/travel/[location]/photo3.jpg" alt="Preview 3">
-                        </div>
-                    </a>
-                    -->
                 </div>
 
             </div>
-        </div>
+        </main>
+
+        <!-- Status Bar -->
+        <footer class="status-bar">
+            <div class="status-left">
+                <span class="status-label">SYSTEM STATUS</span>
+                <span class="status-value status-operational">OPERATIONAL</span>
+            </div>
+            <div class="status-center">
+                <span class="stat-item">
+                    <span class="stat-label">LOCATIONS:</span>
+                    <span class="stat-value">01</span>
+                </span>
+                <span class="separator">│</span>
+                <span class="stat-item">
+                    <span class="stat-label">PHOTOS:</span>
+                    <span class="stat-value">07</span>
+                </span>
+            </div>
+            <div class="status-right">
+                <span class="status-timestamp">NAV.SYS v2.0</span>
+            </div>
+        </footer>
+
     </div>
 </body>
 </html>
