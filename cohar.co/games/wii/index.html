@@ -7,32 +7,70 @@
     <link rel="stylesheet" href="console_styles.css">
 </head>
 <body>
+    <!-- Hidden Sort Controls -->
+    <input type="radio" name="sort" id="sort-date" class="sort-control" checked>
+    <input type="radio" name="sort" id="sort-rating" class="sort-control">
+
+    <!-- CRT Screen Container -->
     <div class="crt-screen">
+        <!-- Scanline Overlay -->
         <div class="scanlines"></div>
+
+        <!-- Terminal Container -->
         <div class="terminal-container">
+            <!-- Header -->
             <header class="terminal-header">
                 <div class="terminal-border-top">╔═══════════════════════════════════════════════════════════════╗</div>
-                <div class="terminal-title"><span class="terminal-prompt">█</span> WII ARCHIVE<span class="cursor-blink">_</span></div>
+                <div class="terminal-title">
+                    <span class="terminal-prompt">█</span> NINTENDO WII ARCHIVE
+                    <span class="cursor-blink">_</span>
+                </div>
                 <div class="terminal-border-bottom">╚═══════════════════════════════════════════════════════════════╝</div>
                 <div class="system-info">DATABASE LOADED: <span class="status-ok">1 ENTRY</span></div>
             </header>
+
+            <!-- Console Logo -->
             <section class="console-display">
                 <div class="console-logo-container">
-                    <img src="/images/console_logos/wii.png" alt="WII">
+                    <img src="/images/console_logos/wii.png" alt="Nintendo Wii">
                 </div>
             </section>
+
+            <!-- Sort Controls -->
+            <section class="sort-section">
+                <div class="sort-header">[ SORT PARAMETERS ]</div>
+                <div class="sort-buttons">
+                    <label for="sort-date" class="sort-btn">
+                        <span class="btn-bracket">&gt;</span> DATE
+                        <span class="sort-indicator">●</span>
+                    </label>
+                    <label for="sort-rating" class="sort-btn">
+                        <span class="btn-bracket">&gt;</span> RATING
+                        <span class="sort-indicator">●</span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Games Grid -->
             <section class="games-section">
                 <div class="games-grid">
-                    <div class="game-card">
+                    <!-- Gunslingers: 2025-07-31, 2.5 -->
+                    <div class="game-card" data-date="20250731" data-rating="25">
                         <a href="/games/wii/gunslingers.html">
                             <div class="game-card-inner">
-                                <img src="/images/game_covers/.html.jpg" alt="Gunslingers">
+                                <img src="/images/game_covers/gunslingers.jpg" alt="Gunslingers">
                                 <div class="game-title">Gunslingers</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-07-31</span>
+                                    <span class="meta-rating">★★⯪☆☆</span>
+                                </div>
                             </div>
                         </a>
                     </div>
                 </div>
             </section>
+
+            <!-- Footer -->
             <footer class="terminal-footer">
                 <div class="footer-line">═══════════════════════════════════════════════════════════════</div>
                 <div class="footer-text">END OF ARCHIVE</div>

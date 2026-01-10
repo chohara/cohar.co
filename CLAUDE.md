@@ -106,6 +106,245 @@ Every game review page includes:
 - Cover art: stored in `/images/game_covers/`
 - Screenshots: stored in `/images/game_screenshots/`
 
+## 📋 COMPLETE GUIDE: Adding a New Game to Any Console
+
+**IMPORTANT**: All console pages use the same CRT terminal design with pure CSS sorting. This guide ensures consistency across all consoles.
+
+### Prerequisites
+Before adding a game, ensure you have:
+1. ✅ Game cover art image (JPG format, portrait orientation recommended)
+2. ✅ Game screenshot(s) (JPG format, landscape orientation)
+3. ✅ Review text written
+4. ✅ Rating decided (1-5 stars, half-stars supported with ⯪ symbol)
+5. ✅ Review date (format: YYYY-MM-DD)
+
+### Step 1: Prepare Assets
+
+**A. Add Cover Art**
+```bash
+# Place cover art in /cohar.co/images/game_covers/
+# Filename: {game_name}.jpg (lowercase, underscores)
+# Example: /cohar.co/images/game_covers/silent_hill_f.jpg
+```
+
+**B. Add Screenshot**
+```bash
+# Place screenshot in /cohar.co/images/game_screenshots/
+# Filename: {game_name}.jpg (must match cover art name)
+# Example: /cohar.co/images/game_screenshots/silent_hill_f.jpg
+```
+
+### Step 2: Create Game Review Page
+
+Navigate to the console directory (e.g., `/cohar.co/games/ps5/`) and create `{game_name}.html`:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Title (Console)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="review-container">
+    <div class="title-box">
+        <h1>Game Title</h1>
+    </div>
+
+    <div class="cover-box">
+        <img src="/images/game_covers/game_name.jpg" alt="Cover Art">
+    </div>
+
+    <div class="review-box">
+        <p>Your review text here with <i>game titles</i> in italics.<br><br>
+        Play it for the:
+        </p>
+        <ul>
+            <li>Reason one</li>
+            <li>Reason two</li>
+            <li>Reason three</li>
+        </ul>
+        <p style="text-align: right">Reviewed on YYYY-MM-DD</p>
+        <br>
+        <p style="text-align: center"><i>Optional memorable quote</i></p>
+        <img src="/images/game_screenshots/game_name.jpg">
+    </div>
+
+    <div class="rating-box">
+        <span class="stars">★★★★☆</span> <!-- Adjust stars for rating -->
+        <p>4 out of 5</p>
+    </div>
+</div>
+
+</body>
+</html>
+```
+
+**Star Rating Reference:**
+- 5.0 stars: `★★★★★` (5 out of 5)
+- 4.5 stars: `★★★★⯪` (4.5 out of 5)
+- 4.0 stars: `★★★★☆` (4 out of 5)
+- 3.5 stars: `★★★⯪☆` (3.5 out of 5)
+- 3.0 stars: `★★★☆☆` (3 out of 5)
+- 2.5 stars: `★★⯪☆☆` (2.5 out of 5)
+- 2.0 stars: `★★☆☆☆` (2 out of 5)
+- 1.5 stars: `★⯪☆☆☆` (1.5 out of 5)
+- 1.0 stars: `★☆☆☆☆` (1 out of 5)
+
+### Step 3: Update Console Index Page
+
+**A. Add Game Card to HTML**
+
+Open `/cohar.co/games/{console}/index.html` and add a new game card within the `<div class="games-grid">` section:
+
+```html
+<!-- Game Title: YYYY-MM-DD, X.X -->
+<div class="game-card" data-date="YYYYMMDD" data-rating="XX">
+    <a href="/games/{console}/game_name.html">
+        <div class="game-card-inner">
+            <img src="/images/game_covers/game_name.jpg" alt="Game Title">
+            <div class="game-title">Game Title</div>
+            <div class="game-meta">
+                <span class="meta-date">YYYY-MM-DD</span>
+                <span class="meta-rating">★★★★☆</span>
+            </div>
+        </div>
+    </a>
+</div>
+```
+
+**Data Attribute Format:**
+- `data-date`: Remove hyphens from review date (e.g., 2025-11-13 → 20251113)
+- `data-rating`: Rating × 10 (e.g., 4.5 → 45, 3.0 → 30)
+
+**B. Update Entry Count**
+
+Update the "DATABASE LOADED" count in the header:
+```html
+<div class="system-info">DATABASE LOADED: <span class="status-ok">X ENTRIES</span></div>
+```
+
+### Step 4: Update CSS Sorting Rules
+
+**CRITICAL**: The pure CSS sorting must be updated to include the new game!
+
+Open `/cohar.co/games/{console}/console_styles.css` and locate the sorting section (around line 357).
+
+**A. Update the Comment**
+```css
+/* ═══════════════════════════════════════════════════════════════
+   PURE CSS SORTING MAGIC - X GAMES  ← Update this number!
+   ═══════════════════════════════════════════════════════════════ */
+```
+
+**B. Add to Date Sorting (newest first)**
+
+Insert the new game in the correct chronological position:
+
+```css
+/* Sort by DATE (newest first - default) */
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20251113"] { order: 1; }  ← Newest
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250922"] { order: 2; }
+/* ... ADD NEW GAME IN CORRECT DATE ORDER ... */
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20240923"] { order: 7; }  ← Oldest
+```
+
+**C. Add to Rating Sorting (highest first)**
+
+Insert the new game in the correct rating position (highest to lowest, with date as tiebreaker):
+
+```css
+/* Sort by RATING (highest first) */
+/* Tie-breaking: when ratings are equal, maintain date order */
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="45"][data-date="20250922"] { order: 1; }  ← Highest rated
+/* ... ADD NEW GAME IN CORRECT RATING ORDER ... */
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="35"] { order: 7; }  ← Lowest rated
+```
+
+**Important Sorting Notes:**
+- If multiple games have the same rating, sort by date (newest first)
+- Use both `data-rating` and `data-date` attributes when games share a rating
+- Update ALL existing `order` values to maintain correct sequence
+
+### Step 5: Test Locally (Optional)
+
+1. Open `index.html` in a browser
+2. Verify the game appears in the grid
+3. Click the DATE and RATING sort buttons to ensure proper ordering
+4. Click the game card to verify the review page displays correctly
+
+### Step 6: Commit and Deploy
+
+```bash
+# Stage all changes
+git add cohar.co/images/game_covers/{game_name}.jpg
+git add cohar.co/images/game_screenshots/{game_name}.jpg
+git add cohar.co/games/{console}/{game_name}.html
+git add cohar.co/games/{console}/index.html
+git add cohar.co/games/{console}/console_styles.css
+
+# Commit with descriptive message
+git commit -m "Add {Game Title} review to {Console}"
+
+# Push to deploy (triggers automatic S3 upload)
+git push origin main
+```
+
+---
+
+## Quick Reference: Console-Specific Details
+
+| Console | Directory | Logo | Entry Count Variable |
+|---------|-----------|------|---------------------|
+| Nintendo DS | `games/ds/` | `ds.png` | Currently: 1 |
+| GameCube | `games/gamecube/` | `gamecube.png` | Currently: 1 |
+| Game Boy Advance | `games/gba/` | `gba.png` | Currently: 15 |
+| Nintendo 3DS | `games/3ds/` | `3ds.png` | Currently: 5 |
+| Playdate | `games/playdate/` | `playdate.png` | Currently: 6 |
+| PlayStation 2 | `games/ps2/` | `ps2.png` | Currently: 1 |
+| PlayStation 5 | `games/ps5/` | `ps5.png` | Currently: 7 |
+| Steam/PC | `games/steam/` | `steam.png` | Currently: 22 |
+| Nintendo Switch | `games/switch/` | `switch.png` | Currently: 11 |
+| Nintendo Switch 2 | `games/switch2/` | `switch2.png` | Currently: 7 |
+| Nintendo Wii | `games/wii/` | `wii.png` | Currently: 1 |
+| Wii U | `games/wiiu/` | `wiiu.png` | Currently: 3 |
+
+---
+
+## Common Pitfalls & Troubleshooting
+
+### ❌ Issue: Game not appearing on console page
+**Solution**: Check that:
+- Game card HTML is inside `<div class="games-grid">`
+- `data-date` and `data-rating` attributes are present
+- CSS sorting rules include this game
+
+### ❌ Issue: Image not displaying
+**Solution**: Verify:
+- Image path is absolute from root: `/images/game_covers/...`
+- Filename matches exactly (case-sensitive)
+- File extension is `.jpg` (not `.png` or `.jpeg`)
+
+### ❌ Issue: Sorting not working
+**Solution**: Ensure:
+- Hidden radio inputs exist at top of HTML
+- `data-date` format is `YYYYMMDD` (no hyphens)
+- `data-rating` is rating × 10 (integer)
+- CSS sorting rules updated with correct `order` values
+- All existing games have sequential `order` numbers
+
+### ❌ Issue: Stars not displaying correctly
+**Solution**: Check:
+- Using proper star symbols: `★` (filled) `☆` (empty) `⯪` (half)
+- Noto Sans Symbols 2 font is loaded in CSS
+- Review page uses: `<span class="stars">★★★★☆</span>`
+- Console index uses: `<span class="meta-rating">★★★★☆</span>`
+
+---
+
 ### 2. Travel Section
 
 The travel page features an interactive globe with multiple view levels:
