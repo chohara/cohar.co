@@ -338,13 +338,54 @@ body::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/images/world-map-simplified.svg');
+    background-image: url('/images/travel/world-map.svg');
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.85;
-    filter: drop-shadow(0 0 2px rgba(0, 184, 255, 0.3));
+    opacity: 1;
     pointer-events: none;
+
+    /* Advanced CSS Mastery: Transform SVG into holographic display */
+    filter:
+        /* Shift to cyan/blue tones */
+        hue-rotate(90deg)
+        /* Boost saturation for vivid colors */
+        saturate(1.4)
+        /* Increase brightness for holographic glow */
+        brightness(1.3)
+        /* Add contrast for definition */
+        contrast(1.2)
+        /* Holographic glow effect */
+        drop-shadow(0 0 3px rgba(0, 184, 255, 0.4))
+        drop-shadow(0 0 8px rgba(0, 184, 255, 0.2));
+}
+
+/* Subtle holographic shimmer overlay */
+.world-map::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(0, 184, 255, 0.03) 50%,
+        transparent 70%
+    );
+    background-size: 200% 200%;
+    animation: holoShimmer 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes holoShimmer {
+    0%, 100% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
 }
 
 /* Coordinate Grid Overlay */
