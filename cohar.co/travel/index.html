@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planetary Navigation - Travel Archive</title>
+    <title>Travel Archive - Mission Log</title>
     <link rel="stylesheet" href="/travel/styles.css">
 </head>
 <body>
-    <!-- Starship Navigation Console -->
-    <div class="nav-console">
+    <!-- Mission Log Console -->
+    <div class="mission-console">
 
         <!-- Header Section -->
         <header class="console-header">
             <div class="header-left">
-                <span class="console-id">NAVIGATION</span>
+                <span class="console-id">ARCHIVE</span>
                 <span class="separator">│</span>
-                <span class="system-name">PLANETARY ARCHIVE</span>
+                <span class="system-name">TRAVEL LOG</span>
             </div>
             <div class="header-center">
-                <h1 class="console-title">Earth Destinations</h1>
+                <h1 class="console-title">Mission Archive</h1>
             </div>
             <div class="header-right">
                 <a href="/" class="return-btn">
@@ -29,87 +29,81 @@
             </div>
         </header>
 
-        <!-- Main Navigation Display -->
-        <main class="nav-display">
-            <div class="display-frame">
+        <!-- Mission Log Grid -->
+        <main class="mission-log">
+            <div class="log-container">
 
-                <!-- World Map Container -->
-                <div class="map-container">
-
-                    <!-- Coordinate Grid Overlay -->
-                    <div class="coord-grid"></div>
-
-                    <!-- Scanline Effect -->
-                    <div class="scanline"></div>
-
-                    <!-- Map Wrapper (maintains SVG aspect ratio 2000:857) -->
-                    <div class="map-wrapper">
-
-                        <!-- World Map Background -->
-                        <div class="world-map"></div>
-
-                        <!-- Destination Markers -->
-
-                        <!-- Banff, Canada: 51.1784°N, 115.5708°W -->
-                        <!-- SVG Coordinates: ~X: 400, Y: 242 (in viewBox 0 0 2000 857) -->
-                        <!-- Position: left = 400/2000 * 100 = 20.0% -->
-                        <!--          top = 242/857 * 100 = 28.24% -->
-                        <div class="nav-marker" style="left: 20.0%; top: 28.24%;">
-                        <div class="marker-pulse"></div>
-                        <a href="/travel/banff/" class="marker-link">
-                            <span class="marker-label">Banff, Canada</span>
-                            <div class="marker-preview">
-                                <img src="/images/travel/banff/250507_1.jpg" alt="Banff 1">
-                                <img src="/images/travel/banff/250508_1.jpg" alt="Banff 2">
-                                <img src="/images/travel/banff/250509_1.jpg" alt="Banff 3">
+                <!-- Mission Entry: Banff -->
+                <article class="mission-card">
+                    <a href="/travel/banff/" class="card-link">
+                        <div class="card-image">
+                            <img src="/images/travel/banff/250507_1.jpg" alt="Banff, Canada">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h2 class="location-name">Banff</h2>
+                                <span class="location-country">Canada</span>
                             </div>
-                        </a>
-                    </div>
-
-                    <!-- ═══════════════════════════════════════════════════════════
-                         NEW LOCATION TEMPLATE
-                         ═══════════════════════════════════════════════════════════
-
-                         Copy the block below for each new destination:
-
-                         POSITIONING METHOD (SVG-based for accuracy):
-                         The world-map.svg uses viewBox="0 0 2000 857"
-
-                         1. Get lat/long from Google Maps
-                         2. Estimate SVG X,Y coordinates from map regions:
-                            - Width: 0-2000 (West to East)
-                            - Height: 0-857 (North to South)
-                            Reference points:
-                            • Western N. America coast: X ≈ 350-370
-                            • Europe: X ≈ 970-1050
-                            • Northern latitudes (60°N+): Y ≈ 180-220
-                            • Mid latitudes (30-50°N): Y ≈ 230-300
-                         3. Convert to percentages:
-                            left = X / 2000 * 100
-                            top = Y / 857 * 100
-                         4. Test and adjust position as needed
-
-                         ═══════════════════════════════════════════════════════════
-
-                    <div class="nav-marker" style="left: XX.XX%; top: YY.YY%;">
-                        <div class="marker-pulse"></div>
-                        <a href="/travel/LOCATION/" class="marker-link">
-                            <span class="marker-label">City, Country</span>
-                            <div class="marker-preview">
-                                <img src="/images/travel/LOCATION/photo1.jpg" alt="Preview 1">
-                                <img src="/images/travel/LOCATION/photo2.jpg" alt="Preview 2">
-                                <img src="/images/travel/LOCATION/photo3.jpg" alt="Preview 3">
+                            <div class="card-meta">
+                                <span class="meta-item">
+                                    <span class="meta-label">DATE:</span>
+                                    <span class="meta-value">2025-05-07</span>
+                                </span>
+                                <span class="meta-divider">│</span>
+                                <span class="meta-item">
+                                    <span class="meta-label">IMAGES:</span>
+                                    <span class="meta-value">07</span>
+                                </span>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
+                </article>
 
-                         ═══════════════════════════════════════════════════════════
-                         END TEMPLATE
-                         ═══════════════════════════════════════════════════════════ -->
+                <!-- ═══════════════════════════════════════════════════════════
+                     NEW LOCATION TEMPLATE
+                     ═══════════════════════════════════════════════════════════
 
-                    </div> <!-- /map-wrapper -->
+                     Copy the block below for each new destination:
 
-                </div> <!-- /map-container -->
+                     1. Update location name and country
+                     2. Update href to match folder name
+                     3. Update hero image path (use first/best photo)
+                     4. Update visit date (YYYY-MM-DD format)
+                     5. Update image count
+                     6. Paste at the TOP for newest-first order
+
+                     ═══════════════════════════════════════════════════════════
+
+                <article class="mission-card">
+                    <a href="/travel/LOCATION/" class="card-link">
+                        <div class="card-image">
+                            <img src="/images/travel/LOCATION/PHOTO.jpg" alt="City, Country">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h2 class="location-name">City Name</h2>
+                                <span class="location-country">Country</span>
+                            </div>
+                            <div class="card-meta">
+                                <span class="meta-item">
+                                    <span class="meta-label">DATE:</span>
+                                    <span class="meta-value">YYYY-MM-DD</span>
+                                </span>
+                                <span class="meta-divider">│</span>
+                                <span class="meta-item">
+                                    <span class="meta-label">IMAGES:</span>
+                                    <span class="meta-value">XX</span>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                     ═══════════════════════════════════════════════════════════
+                     END TEMPLATE
+                     ═══════════════════════════════════════════════════════════ -->
 
             </div>
         </main>
@@ -122,17 +116,17 @@
             </div>
             <div class="status-center">
                 <span class="stat-item">
-                    <span class="stat-label">LOCATIONS:</span>
+                    <span class="stat-label">DESTINATIONS:</span>
                     <span class="stat-value">01</span>
                 </span>
                 <span class="separator">│</span>
                 <span class="stat-item">
-                    <span class="stat-label">PHOTOS:</span>
+                    <span class="stat-label">TOTAL IMAGES:</span>
                     <span class="stat-value">07</span>
                 </span>
             </div>
             <div class="status-right">
-                <span class="status-timestamp">NAV.SYS v2.0</span>
+                <span class="status-timestamp">ARCHIVE v2.0</span>
             </div>
         </footer>
 
