@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALL GAMES ARCHIVE TERMINAL</title>
+    <link rel="stylesheet" href="console_styles.css">
+</head>
+<body>
+    <!-- Hidden Sort Controls -->
+    <input type="radio" name="sort" id="sort-date" class="sort-control" checked>
+    <input type="radio" name="sort" id="sort-rating" class="sort-control">
+
+    <!-- CRT Screen Container -->
+    <div class="crt-screen">
+        <!-- Scanline Overlay -->
+        <div class="scanlines"></div>
+
+        <!-- Terminal Container -->
+        <div class="terminal-container">
+            <!-- Header -->
+            <header class="terminal-header">
+                <div class="terminal-border-top">╔═══════════════════════════════════════════════════════════════╗</div>
+                <div class="terminal-title">
+                    <span class="terminal-prompt">█</span> MASTER GAME ARCHIVE
+                    <span class="cursor-blink">_</span>
+                </div>
+                <div class="terminal-border-bottom">╚═══════════════════════════════════════════════════════════════╝</div>
+                <div class="system-info">DATABASE LOADED: <span class="status-ok">80 ENTRIES</span></div>
+            </header>
+
+            <!-- Sort Controls -->
+            <section class="sort-section">
+                <div class="sort-header">[ SORT PARAMETERS ]</div>
+                <div class="sort-buttons">
+                    <label for="sort-date" class="sort-btn">
+                        <span class="btn-bracket">&gt;</span> DATE
+                        <span class="sort-indicator">●</span>
+                    </label>
+                    <label for="sort-rating" class="sort-btn">
+                        <span class="btn-bracket">&gt;</span> RATING
+                        <span class="sort-indicator">●</span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Games Grid -->
+            <section class="games-section">
+                <div class="games-grid">
+                    <!-- Riviera: The Promised Land (GBA) -->
+                    <div class="game-card" data-date="20260107" data-rating="35" data-console="gba">
+                        <a href="/games/gba/riviera_the_promised_land.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/riviera_the_promised_land.jpg" alt="Riviera: The Promised Land">
+                                <div class="game-title">Riviera: The Promised Land</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">GBA</span>
+                                    <span class="meta-date">2026-01-07</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- and Roger (Steam) -->
+                    <div class="game-card" data-date="20251208" data-rating="35" data-console="steam">
+                        <a href="/games/steam/and_roger.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/and_roger.jpg" alt="and Roger">
+                                <div class="game-title">and Roger</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-12-08</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Metroid Prime 4: Beyond (Switch 2) -->
+                    <div class="game-card" data-date="20251208" data-rating="40" data-console="switch2">
+                        <a href="/games/switch2/metroid_prime_4_beyond.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/metroid_prime_4.jpg" alt="Metroid Prime 4: Beyond">
+                                <div class="game-title">Metroid Prime 4: Beyond</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">SWITCH 2</span>
+                                    <span class="meta-date">2025-12-08</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Kirby Air Riders (Switch 2) -->
+                    <div class="game-card" data-date="20251204" data-rating="45" data-console="switch2">
+                        <a href="/games/switch2/kirby_air_riders.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/kirby_air_riders.jpg" alt="Kirby Air Riders">
+                                <div class="game-title">Kirby Air Riders</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">SWITCH 2</span>
+                                    <span class="meta-date">2025-12-04</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Mass Effect (Steam) -->
+                    <div class="game-card" data-date="20251115" data-rating="40" data-console="steam">
+                        <a href="/games/steam/mass_effect.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/mass_effect.jpg" alt="Mass Effect">
+                                <div class="game-title">Mass Effect</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-11-15</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Silent Hill f (PS5) -->
+                    <div class="game-card" data-date="20251113" data-rating="40" data-console="ps5">
+                        <a href="/games/ps5/silent_hill_f.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/silent_hill_f.jpg" alt="Silent Hill f">
+                                <div class="game-title">Silent Hill f</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">PS5</span>
+                                    <span class="meta-date">2025-11-13</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Metal Slug Advance (GBA) -->
+                    <div class="game-card" data-date="20251107" data-rating="35" data-console="gba">
+                        <a href="/games/gba/metal_slug_advance.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/metal_slug_advance.jpg" alt="Metal Slug Advance">
+                                <div class="game-title">Metal Slug Advance</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">GBA</span>
+                                    <span class="meta-date">2025-11-07</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Tiny Turnip (Playdate) -->
+                    <div class="game-card" data-date="20251106" data-rating="40" data-console="playdate">
+                        <a href="/games/playdate/tiny_turnip.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/tiny_turnip.png" alt="Tiny Turnip">
+                                <div class="game-title">Tiny Turnip</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">PLAYDATE</span>
+                                    <span class="meta-date">2025-11-06</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Borderlands 4 (Steam) -->
+                    <div class="game-card" data-date="20251105" data-rating="45" data-console="steam">
+                        <a href="/games/steam/borderlands_4.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/borderlands_4.jpg" alt="Borderlands 4">
+                                <div class="game-title">Borderlands 4</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-11-05</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Kentucky Route Zero (Steam) -->
+                    <div class="game-card" data-date="20251105" data-rating="30" data-console="steam">
+                        <a href="/games/steam/kentucky_route_zero.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/kentucky_route_zero.jpg" alt="Kentucky Route Zero">
+                                <div class="game-title">Kentucky Route Zero</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-11-05</span>
+                                    <span class="meta-rating">★★★☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Birth (Steam) -->
+                    <div class="game-card" data-date="20251029" data-rating="25" data-console="steam">
+                        <a href="/games/steam/birth.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/birth.jpg" alt="Birth">
+                                <div class="game-title">Birth</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-10-29</span>
+                                    <span class="meta-rating">★★⯪☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Spilled Mushrooms (Playdate) -->
+                    <div class="game-card" data-date="20251023" data-rating="50" data-console="playdate">
+                        <a href="/games/playdate/spilled_mushrooms.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/spilled_mushrooms.png" alt="Spilled Mushrooms">
+                                <div class="game-title">Spilled Mushrooms</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">PLAYDATE</span>
+                                    <span class="meta-date">2025-10-23</span>
+                                    <span class="meta-rating">★★★★★</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Cassette Beasts (Steam) -->
+                    <div class="game-card" data-date="20250922" data-rating="35" data-console="steam">
+                        <a href="/games/steam/cassette_beasts.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/cassette_beasts.jpg" alt="Cassette Beasts">
+                                <div class="game-title">Cassette Beasts</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-09-22</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Metal Gear Solid Delta: Snake Eater (PS5) -->
+                    <div class="game-card" data-date="20250922" data-rating="45" data-console="ps5">
+                        <a href="/games/ps5/mgs_delta_snake_eater.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/mgs_delta_snake_eater.jpg" alt="Metal Gear Solid Delta: Snake Eater">
+                                <div class="game-title">Metal Gear Solid Delta: Snake Eater</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">PS5</span>
+                                    <span class="meta-date">2025-09-22</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Xenoblade Chronicles X: Definitive Edition (Switch) -->
+                    <div class="game-card" data-date="20250906" data-rating="45" data-console="switch">
+                        <a href="/games/switch/xenoblade_chronicles_x_de.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/xenoblade_chronicles_x_de.jpg" alt="Xenoblade Chronicles X: Definitive Edition">
+                                <div class="game-title">Xenoblade Chronicles X: Definitive Edition</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">SWITCH</span>
+                                    <span class="meta-date">2025-09-06</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Kirby and the Forgotten Land + Star Crossed World (Switch 2) -->
+                    <div class="game-card" data-date="20250906" data-rating="45" data-console="switch2">
+                        <a href="/games/switch2/kirby_forgotten_land_star_crossed_world.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/kirby_forgotten_land_star_crossed_world.jpg" alt="Kirby and the Forgotten Land + Star Crossed World">
+                                <div class="game-title">Kirby and the Forgotten Land + Star Crossed World</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">SWITCH 2</span>
+                                    <span class="meta-date">2025-09-06</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Muppet Pinball Mayhem (GBA) -->
+                    <div class="game-card" data-date="20250905" data-rating="30" data-console="gba">
+                        <a href="/games/gba/muppet_pinball_mayhem.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/muppet_pinball_mayhem.jpg" alt="Muppet Pinball Mayhem">
+                                <div class="game-title">Muppet Pinball Mayhem</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">GBA</span>
+                                    <span class="meta-date">2025-09-05</span>
+                                    <span class="meta-rating">★★★☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Sanabi (Steam) -->
+                    <div class="game-card" data-date="20250905" data-rating="35" data-console="steam">
+                        <a href="/games/steam/sanabi.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/sanabi.jpg" alt="Sanabi">
+                                <div class="game-title">Sanabi</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-09-05</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Jet Grind Radio (GBA) -->
+                    <div class="game-card" data-date="20250805" data-rating="40" data-console="gba">
+                        <a href="/games/gba/jet_grind_radio.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/jet_grind_radio.jpg" alt="Jet Grind Radio">
+                                <div class="game-title">Jet Grind Radio</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">GBA</span>
+                                    <span class="meta-date">2025-08-05</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Pokémon Pinball: Ruby & Sapphire (GBA) -->
+                    <div class="game-card" data-date="20250804" data-rating="40" data-console="gba">
+                        <a href="/games/gba/pokemon_pinball_ruby_sapphire.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/pokemon_pinball_ruby_sapphire.jpg" alt="Pokémon Pinball: Ruby & Sapphire">
+                                <div class="game-title">Pokémon Pinball: Ruby & Sapphire</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">GBA</span>
+                                    <span class="meta-date">2025-08-04</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Otto's Galactic Groove (Playdate) -->
+                    <div class="game-card" data-date="20250731" data-rating="35" data-console="playdate">
+                        <a href="/games/playdate/ottos_galactic_groove.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/ottos_galactic_groove.jpg" alt="Otto's Galactic Groove">
+                                <div class="game-title">Otto's Galactic Groove</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">PLAYDATE</span>
+                                    <span class="meta-date">2025-07-31</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Donkey Kong Bananza (Switch 2) -->
+                    <div class="game-card" data-date="20250724" data-rating="50" data-console="switch2">
+                        <a href="/games/switch2/dk_bananza.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/dk_bananza.jpg" alt="Donkey Kong Bananza">
+                                <div class="game-title">Donkey Kong Bananza</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">SWITCH 2</span>
+                                    <span class="meta-date">2025-07-24</span>
+                                    <span class="meta-rating">★★★★★</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Furi (Steam) -->
+                    <div class="game-card" data-date="20250720" data-rating="35" data-console="steam">
+                        <a href="/games/steam/furi.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/furi.jpg" alt="Furi">
+                                <div class="game-title">Furi</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-07-20</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Tunic (Steam) -->
+                    <div class="game-card" data-date="20250711" data-rating="45" data-console="steam">
+                        <a href="/games/steam/tunic.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/tunic.jpg" alt="Tunic">
+                                <div class="game-title">Tunic</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-07-11</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Cyberpunk 2077 [Ultimate Edition] (Switch 2) -->
+                    <div class="game-card" data-date="20250709" data-rating="40" data-console="switch2">
+                        <a href="/games/switch2/cyberpunk_2077.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/cyberpunk_2077.jpg" alt="Cyberpunk 2077">
+                                <div class="game-title">Cyberpunk 2077 [Ultimate Edition]</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">SWITCH 2</span>
+                                    <span class="meta-date">2025-07-09</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- The Legend of Zelda: Tears of the Kingdom (Switch 2) -->
+                    <div class="game-card" data-date="20250707" data-rating="45" data-console="switch2">
+                        <a href="/games/switch2/tears_of_the_kingdom.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/tears_of_the_kingdom.jpg" alt="The Legend of Zelda: Tears of the Kingdom">
+                                <div class="game-title">The Legend of Zelda: Tears of the Kingdom</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">SWITCH 2</span>
+                                    <span class="meta-date">2025-07-07</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- DOOM Eternal (Steam) -->
+                    <div class="game-card" data-date="20250623" data-rating="40" data-console="steam">
+                        <a href="/games/steam/doom_eternal.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/doom_eternal.jpg" alt="DOOM Eternal">
+                                <div class="game-title">DOOM Eternal</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-06-23</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Cruelty Squad (Steam) -->
+                    <div class="game-card" data-date="20250619" data-rating="30" data-console="steam">
+                        <a href="/games/steam/cruelty_squad.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/cruelty_squad.jpg" alt="Cruelty Squad">
+                                <div class="game-title">Cruelty Squad</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-06-19</span>
+                                    <span class="meta-rating">★★★☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Dreams of Aether (Steam) -->
+                    <div class="game-card" data-date="20250619" data-rating="35" data-console="steam">
+                        <a href="/games/steam/dreams_of_aether.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/dreams_of_aether.jpg" alt="Dreams of Aether">
+                                <div class="game-title">Dreams of Aether</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-06-19</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Wheelsprung (Playdate) -->
+                    <div class="game-card" data-date="20250619" data-rating="35" data-console="playdate">
+                        <a href="/games/playdate/wheelsprung.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/wheelsprung.png" alt="Wheelsprung">
+                                <div class="game-title">Wheelsprung</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">PLAYDATE</span>
+                                    <span class="meta-date">2025-06-19</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Mario Kart World (Switch 2) -->
+                    <div class="game-card" data-date="20250612" data-rating="45" data-console="switch2">
+                        <a href="/games/switch2/mario_kart_world.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/mario_kart_world.jpg" alt="Mario Kart World">
+                                <div class="game-title">Mario Kart World</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">SWITCH 2</span>
+                                    <span class="meta-date">2025-06-12</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Clair Obscur: Expedition 33 (PS5) -->
+                    <div class="game-card" data-date="20250602" data-rating="45" data-console="ps5">
+                        <a href="/games/ps5/expedition_33.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/expedition_33.jpg" alt="Clair Obscur: Expedition 33">
+                                <div class="game-title">Clair Obscur: Expedition 33</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">PS5</span>
+                                    <span class="meta-date">2025-06-02</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Dig Dig Dino (Playdate) -->
+                    <div class="game-card" data-date="20250602" data-rating="40" data-console="playdate">
+                        <a href="/games/playdate/dig_dig_dino.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/dig_dig_dino.png" alt="Dig Dig Dino">
+                                <div class="game-title">Dig Dig Dino</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">PLAYDATE</span>
+                                    <span class="meta-date">2025-06-02</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Grunn (Steam) -->
+                    <div class="game-card" data-date="20250602" data-rating="35" data-console="steam">
+                        <a href="/games/steam/grunn.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/grunn.jpg" alt="Grunn">
+                                <div class="game-title">Grunn</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-06-02</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- The Scrolling Enigma (Playdate) -->
+                    <div class="game-card" data-date="20250602" data-rating="20" data-console="playdate">
+                        <a href="/games/playdate/scrolling_enigma.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/scrolling_enigma.webp" alt="The Scrolling Enigma">
+                                <div class="game-title">The Scrolling Enigma</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">PLAYDATE</span>
+                                    <span class="meta-date">2025-06-02</span>
+                                    <span class="meta-rating">★★☆☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- The First Berserker: Khazan (PS5) -->
+                    <div class="game-card" data-date="20250518" data-rating="45" data-console="ps5">
+                        <a href="/games/ps5/first_berserker_khazan.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/first_berserker_khazan.jpg" alt="The First Berserker: Khazan">
+                                <div class="game-title">The First Berserker: Khazan</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">PS5</span>
+                                    <span class="meta-date">2025-05-18</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Pizza Tower (Steam) -->
+                    <div class="game-card" data-date="20250514" data-rating="40" data-console="steam">
+                        <a href="/games/steam/pizza_tower.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/pizza_tower.jpg" alt="Pizza Tower">
+                                <div class="game-title">Pizza Tower</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-05-14</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Duck Detective: The Secret Salami (Steam) -->
+                    <div class="game-card" data-date="20250502" data-rating="35" data-console="steam">
+                        <a href="/games/steam/duck_detective_secret_salami.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/duck_detective_secret_salami.jpg" alt="Duck Detective: The Secret Salami">
+                                <div class="game-title">Duck Detective: The Secret Salami</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-05-02</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- The Elder Scrolls IV: Oblivion Remastered (Steam) -->
+                    <div class="game-card" data-date="20250502" data-rating="45" data-console="steam">
+                        <a href="/games/steam/oblivion_remastered.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/oblivion_remastered.jpg" alt="The Elder Scrolls IV: Oblivion Remastered">
+                                <div class="game-title">The Elder Scrolls IV: Oblivion Remastered</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-05-02</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 1000xRESIST (Steam) -->
+                    <div class="game-card" data-date="20250421" data-rating="40" data-console="steam">
+                        <a href="/games/steam/1000xresist.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/1000xresist.jpg" alt="1000xRESIST">
+                                <div class="game-title">1000xRESIST</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-04-21</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Iridion 3D (GBA) -->
+                    <div class="game-card" data-date="20250421" data-rating="30" data-console="gba">
+                        <a href="/games/gba/iridion_3d.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/iridion_3d.png" alt="Iridion 3D">
+                                <div class="game-title">Iridion 3D</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">GBA</span>
+                                    <span class="meta-date">2025-04-21</span>
+                                    <span class="meta-rating">★★★☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Fire Emblem Engage (Switch) -->
+                    <div class="game-card" data-date="20250414" data-rating="40" data-console="switch">
+                        <a href="/games/switch/fe_engage.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/fe_engage.jpg" alt="Fire Emblem Engage">
+                                <div class="game-title">Fire Emblem Engage</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">SWITCH</span>
+                                    <span class="meta-date">2025-04-14</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Game & Wario (Wii U) -->
+                    <div class="game-card" data-date="20250324" data-rating="30" data-console="wiiu">
+                        <a href="/games/wiiu/game_and_wario.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/game_and_wario.jpg" alt="Game & Wario">
+                                <div class="game-title">Game & Wario</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">WII U</span>
+                                    <span class="meta-date">2025-03-24</span>
+                                    <span class="meta-rating">★★★☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Persona 3 Reload (Steam) -->
+                    <div class="game-card" data-date="20250324" data-rating="35" data-console="steam">
+                        <a href="/games/steam/persona_3_reload.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/persona_3_reload.jpg" alt="Persona 3 Reload">
+                                <div class="game-title">Persona 3 Reload</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-03-24</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- SCHiM (Switch) -->
+                    <div class="game-card" data-date="20250313" data-rating="40" data-console="switch">
+                        <a href="/games/switch/schim.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/schim.jpg" alt="SCHiM">
+                                <div class="game-title">SCHiM</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">SWITCH</span>
+                                    <span class="meta-date">2025-03-13</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- WarioWare Gold (3DS) -->
+                    <div class="game-card" data-date="20250311" data-rating="40" data-console="3ds">
+                        <a href="/games/3ds/warioware_gold.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/warioware_gold.jpg" alt="WarioWare Gold">
+                                <div class="game-title">WarioWare Gold</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">3DS</span>
+                                    <span class="meta-date">2025-03-11</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Paper Mario: Color Splash (Wii U) -->
+                    <div class="game-card" data-date="20250310" data-rating="35" data-console="wiiu">
+                        <a href="/games/wiiu/paper_mario_color_splash.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/paper_mario_color_splash.jpg" alt="Paper Mario: Color Splash">
+                                <div class="game-title">Paper Mario: Color Splash</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">WII U</span>
+                                    <span class="meta-date">2025-03-10</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Stellar Blade (PS5) -->
+                    <div class="game-card" data-date="20250310" data-rating="45" data-console="ps5">
+                        <a href="/games/ps5/stellar_blade.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/stellar_blade.jpg" alt="Stellar Blade">
+                                <div class="game-title">Stellar Blade</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">PS5</span>
+                                    <span class="meta-date">2025-03-10</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Pikmin 4 (Switch) -->
+                    <div class="game-card" data-date="20250226" data-rating="40" data-console="switch">
+                        <a href="/games/switch/pikmin_4.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/pikmin_4.jpg" alt="Pikmin 4">
+                                <div class="game-title">Pikmin 4</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">SWITCH</span>
+                                    <span class="meta-date">2025-02-26</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- The Pinball of the Dead (GBA) -->
+                    <div class="game-card" data-date="20250220" data-rating="30" data-console="gba">
+                        <a href="/games/gba/pinball_of_the_dead.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/pinball_of_the_dead.png" alt="The Pinball of the Dead">
+                                <div class="game-title">The Pinball of the Dead</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">GBA</span>
+                                    <span class="meta-date">2025-02-20</span>
+                                    <span class="meta-rating">★★★☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Kirby Battle Royale (3DS) -->
+                    <div class="game-card" data-date="20250208" data-rating="25" data-console="3ds">
+                        <a href="/games/3ds/kirby_battle_royale.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/kirby_battle_royale.jpg" alt="Kirby Battle Royale">
+                                <div class="game-title">Kirby Battle Royale</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">3DS</span>
+                                    <span class="meta-date">2025-02-08</span>
+                                    <span class="meta-rating">★★⯪☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Advance Wars (GBA) -->
+                    <div class="game-card" data-date="20250205" data-rating="35" data-console="gba">
+                        <a href="/games/gba/advance_wars.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/advance_wars.jpg" alt="Advance Wars">
+                                <div class="game-title">Advance Wars</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">GBA</span>
+                                    <span class="meta-date">2025-02-05</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Indika (PS5) -->
+                    <div class="game-card" data-date="20250201" data-rating="35" data-console="ps5">
+                        <a href="/games/ps5/indika.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/indika.jpg" alt="Indika">
+                                <div class="game-title">Indika</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">PS5</span>
+                                    <span class="meta-date">2025-02-01</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Kirby & the Amazing Mirror (GBA) -->
+                    <div class="game-card" data-date="20250201" data-rating="50" data-console="gba">
+                        <a href="/games/gba/kirby_amazing_mirror.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/kirby_amazing_mirror.png" alt="Kirby & the Amazing Mirror">
+                                <div class="game-title">Kirby & the Amazing Mirror</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">GBA</span>
+                                    <span class="meta-date">2025-02-01</span>
+                                    <span class="meta-rating">★★★★★</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Mario vs. Donkey Kong (Switch) -->
+                    <div class="game-card" data-date="20250131" data-rating="40" data-console="switch">
+                        <a href="/games/switch/mario_vs_dk.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/mario_vs_dk.jpg" alt="Mario vs. Donkey Kong">
+                                <div class="game-title">Mario vs. Donkey Kong</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">SWITCH</span>
+                                    <span class="meta-date">2025-01-31</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Star Fox Zero (Wii U) -->
+                    <div class="game-card" data-date="20250127" data-rating="30" data-console="wiiu">
+                        <a href="/games/wiiu/star_fox_zero.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/star_fox_zero.jpg" alt="Star Fox Zero">
+                                <div class="game-title">Star Fox Zero</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">WII U</span>
+                                    <span class="meta-date">2025-01-27</span>
+                                    <span class="meta-rating">★★★☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- WarioWare, Inc.: Mega Microgame$! (GBA) -->
+                    <div class="game-card" data-date="20250122" data-rating="25" data-console="gba">
+                        <a href="/games/gba/warioware_mega_microgames.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/warioware_mega_microgames.jpg" alt="WarioWare, Inc.: Mega Microgame$!">
+                                <div class="game-title">WarioWare, Inc.: Mega Microgame$!</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">GBA</span>
+                                    <span class="meta-date">2025-01-22</span>
+                                    <span class="meta-rating">★★⯪☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- WarioWare: Move It! (Switch) -->
+                    <div class="game-card" data-date="20250120" data-rating="40" data-console="switch">
+                        <a href="/games/switch/warioware_move_it.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/warioware_move_it.jpg" alt="WarioWare: Move It!">
+                                <div class="game-title">WarioWare: Move It!</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">SWITCH</span>
+                                    <span class="meta-date">2025-01-20</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Metroid Prime Remastered (Switch) -->
+                    <div class="game-card" data-date="20250118" data-rating="45" data-console="switch">
+                        <a href="/games/switch/metroid_prime_remastered.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/metroid_prime_remastered.jpg" alt="Metroid Prime Remastered">
+                                <div class="game-title">Metroid Prime Remastered</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">SWITCH</span>
+                                    <span class="meta-date">2025-01-18</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Crow Country (Steam) -->
+                    <div class="game-card" data-date="20250115" data-rating="35" data-console="steam">
+                        <a href="/games/steam/crow_country.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/crow_country.jpg" alt="Crow Country">
+                                <div class="game-title">Crow Country</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-01-15</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Kirby: Nightmare in Dreamland (GBA) -->
+                    <div class="game-card" data-date="20250112" data-rating="30" data-console="gba">
+                        <a href="/games/gba/kirby_nightmare_in_dreamland.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/kirby_nightmare_in_dreamland.png" alt="Kirby: Nightmare in Dreamland">
+                                <div class="game-title">Kirby: Nightmare in Dreamland</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">GBA</span>
+                                    <span class="meta-date">2025-01-12</span>
+                                    <span class="meta-rating">★★★☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Kid Icarus: Uprising (3DS) -->
+                    <div class="game-card" data-date="20250110" data-rating="45" data-console="3ds">
+                        <a href="/games/3ds/kid_icarus_uprising.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/kid_icarus_uprising.jpg" alt="Kid Icarus: Uprising">
+                                <div class="game-title">Kid Icarus: Uprising</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">3DS</span>
+                                    <span class="meta-date">2025-01-10</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Thronefall (Steam) -->
+                    <div class="game-card" data-date="20250104" data-rating="40" data-console="steam">
+                        <a href="/games/steam/thronefall.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/thronefall.jpg" alt="Thronefall">
+                                <div class="game-title">Thronefall</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2025-01-04</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Metroid: Zero Mission (GBA) -->
+                    <div class="game-card" data-date="20241230" data-rating="40" data-console="gba">
+                        <a href="/games/gba/metroid_zero_mission.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/metroid_zero_mission.png" alt="Metroid: Zero Mission">
+                                <div class="game-title">Metroid: Zero Mission</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">GBA</span>
+                                    <span class="meta-date">2024-12-30</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Jazz Jackrabbit (GBA) -->
+                    <div class="game-card" data-date="20241228" data-rating="30" data-console="gba">
+                        <a href="/games/gba/jazz_jackrabbit.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/jazz_jackrabbit.jpg" alt="Jazz Jackrabbit">
+                                <div class="game-title">Jazz Jackrabbit</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">GBA</span>
+                                    <span class="meta-date">2024-12-28</span>
+                                    <span class="meta-rating">★★★☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Kelly Slater's Pro Surfer (GBA) -->
+                    <div class="game-card" data-date="20241227" data-rating="15" data-console="gba">
+                        <a href="/games/gba/kelly_slater.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/kelly_slater.jpg" alt="Kelly Slater's Pro Surfer">
+                                <div class="game-title">Kelly Slater's Pro Surfer</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">GBA</span>
+                                    <span class="meta-date">2024-12-27</span>
+                                    <span class="meta-rating">★⯪☆☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Cult of the Lamb (Steam) -->
+                    <div class="game-card" data-date="20241214" data-rating="40" data-console="steam">
+                        <a href="/games/steam/cult_of_the_lamb.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/cult_of_the_lamb.jpg" alt="Cult of the Lamb">
+                                <div class="game-title">Cult of the Lamb</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2024-12-14</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Mario & Luigi: Brothership (Switch) -->
+                    <div class="game-card" data-date="20241208" data-rating="45" data-console="switch">
+                        <a href="/games/switch/mario_and_luigi_brothership.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/mario_and_luigi_brothership.jpg" alt="Mario & Luigi: Brothership">
+                                <div class="game-title">Mario & Luigi: Brothership</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">SWITCH</span>
+                                    <span class="meta-date">2024-12-08</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Rivals of Aether II (Steam) -->
+                    <div class="game-card" data-date="20241202" data-rating="45" data-console="steam">
+                        <a href="/games/steam/rivals_of_aether_2.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/rivals_of_aether_2.jpg" alt="Rivals of Aether II">
+                                <div class="game-title">Rivals of Aether II</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">STEAM</span>
+                                    <span class="meta-date">2024-12-02</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Fire Emblem Echoes: Shadows of Valentia (3DS) -->
+                    <div class="game-card" data-date="20241120" data-rating="35" data-console="3ds">
+                        <a href="/games/3ds/fe_echoes_sov.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/fe_echoes_sov.jpg" alt="Fire Emblem Echoes: Shadows of Valentia">
+                                <div class="game-title">Fire Emblem Echoes: Shadows of Valentia</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">3DS</span>
+                                    <span class="meta-date">2024-11-20</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Fire Emblem: Awakening (3DS) -->
+                    <div class="game-card" data-date="20241120" data-rating="45" data-console="3ds">
+                        <a href="/games/3ds/fe_awakening.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/fe_awakening.jpg" alt="Fire Emblem: Awakening">
+                                <div class="game-title">Fire Emblem: Awakening</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">3DS</span>
+                                    <span class="meta-date">2024-11-20</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Yoshi's Crafted World (Switch) -->
+                    <div class="game-card" data-date="20241018" data-rating="25" data-console="switch">
+                        <a href="/games/switch/yoshis_crafted_world.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/yoshis_crafted_world.jpg" alt="Yoshi's Crafted World">
+                                <div class="game-title">Yoshi's Crafted World</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">SWITCH</span>
+                                    <span class="meta-date">2024-10-18</span>
+                                    <span class="meta-rating">★★⯪☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- The Legend of Zelda: Echoes of Wisdom (Switch) -->
+                    <div class="game-card" data-date="20241010" data-rating="40" data-console="switch">
+                        <a href="/games/switch/echoes_of_wisdom.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/echoes_of_wisdom.jpg" alt="The Legend of Zelda: Echoes of Wisdom">
+                                <div class="game-title">The Legend of Zelda: Echoes of Wisdom</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">SWITCH</span>
+                                    <span class="meta-date">2024-10-10</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Astro Bot (PS5) -->
+                    <div class="game-card" data-date="20240923" data-rating="45" data-console="ps5">
+                        <a href="/games/ps5/astro_bot.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/astro_bot.jpg" alt="Astro Bot">
+                                <div class="game-title">Astro Bot</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">PS5</span>
+                                    <span class="meta-date">2024-09-23</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Fire Emblem: Three Houses (Switch) -->
+                    <div class="game-card" data-date="20240916" data-rating="40" data-console="switch">
+                        <a href="/games/switch/fe_3h.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/fe_3h.jpg" alt="Fire Emblem: Three Houses">
+                                <div class="game-title">Fire Emblem: Three Houses</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">SWITCH</span>
+                                    <span class="meta-date">2024-09-16</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Yoshi's Island: Super Mario Advance 3 (GBA) -->
+                    <div class="game-card" data-date="20240520" data-rating="50" data-console="gba">
+                        <a href="/games/gba/yoshis_island.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/yoshis_island.jpg" alt="Yoshi's Island: Super Mario Advance 3">
+                                <div class="game-title">Yoshi's Island: Super Mario Advance 3</div>
+                                <div class="game-meta">
+                                    <span class="meta-console">GBA</span>
+                                    <span class="meta-date">2024-05-20</span>
+                                    <span class="meta-rating">★★★★★</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="terminal-footer">
+                <div class="footer-line">═══════════════════════════════════════════════════════════════</div>
+                <div class="footer-text">END OF ARCHIVE</div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
