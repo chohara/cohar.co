@@ -293,12 +293,104 @@ git commit -m "Add {Game Title} review to {Console}"
 git push origin main
 ```
 
+### Step 7: Update All Games Master Archive
+
+**CRITICAL**: After adding a game to any console, you MUST also update the All Games master archive!
+
+The All Games page (`/games/all/`) displays all games from all consoles in one sortable view. When you add a new game, follow these steps:
+
+**A. Update HTML - Add Game Card**
+
+Open `/cohar.co/games/all/index.html` and add the new game card within `<div class="games-grid">` in the **correct chronological position** (newest first):
+
+```html
+<!-- Game Title (Console) -->
+<div class="game-card" data-date="YYYYMMDD" data-rating="XX" data-console="console">
+    <a href="/games/{console}/game_name.html">
+        <div class="game-card-inner">
+            <img src="/images/game_covers/game_name.jpg" alt="Game Title">
+            <div class="game-title">Game Title</div>
+            <div class="game-meta">
+                <span class="meta-console">CONSOLE</span>
+                <span class="meta-date">YYYY-MM-DD</span>
+                <span class="meta-rating">★★★★☆</span>
+            </div>
+        </div>
+    </a>
+</div>
+```
+
+**Important Notes:**
+- Add `data-console` attribute with console identifier (e.g., `data-console="ps5"`)
+- Include `<span class="meta-console">CONSOLE</span>` tag (e.g., "PS5", "STEAM", "SWITCH")
+- Insert in chronological order (newest at top)
+- Use console identifiers: `3ds`, `ds`, `gamecube`, `gba`, `playdate`, `ps2`, `ps5`, `steam`, `switch`, `switch2`, `wii`, `wiiu`
+
+**B. Update Entry Count**
+
+Update the total game count in the header:
+```html
+<div class="system-info">DATABASE LOADED: <span class="status-ok">81 ENTRIES</span></div>
+```
+
+**C. Update CSS Sorting Rules**
+
+Open `/cohar.co/games/all/console_styles.css` and update BOTH sorting sections:
+
+**1. Update the Comment**
+```css
+/* ═══════════════════════════════════════════════════════════════
+   PURE CSS SORTING MAGIC - 81 GAMES  ← Increment this number!
+   ═══════════════════════════════════════════════════════════════ */
+```
+
+**2. Add to Date Sorting (newest first)**
+
+Find the correct position based on date and insert:
+```css
+/* If game has unique date */
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="YYYYMMDD"] { order: X; }
+
+/* If multiple games share the same date, use data-console or data-rating to differentiate */
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="YYYYMMDD"][data-console="ps5"] { order: X; }
+```
+
+**3. Add to Rating Sorting (highest first)**
+
+Find the correct position based on rating (and date for tiebreaker):
+```css
+/* If game has unique rating */
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="XX"][data-date="YYYYMMDD"] { order: Y; }
+
+/* Games with same rating are sorted by date (newest first) */
+```
+
+**4. Renumber All Subsequent Games**
+
+After inserting the new game, **increment the `order` value** for ALL games that come after it in each sorting section.
+
+**Example:**
+If you add a new 4.5-star game reviewed on 2026-01-15:
+- In date sorting: It becomes `order: 1`, all previous games shift down (1→2, 2→3, etc.)
+- In rating sorting: Find where 4.5-star games are, insert by date, renumber all lower-rated games
+
+**D. Update Games Hub (Optional)**
+
+If the new game should appear in "Recently Played" on `/games/index.html`:
+1. Replace one of the 5 games in the "Recently Played" section
+2. Keep the 5 most recent/notable games displayed
+
+**E. Update Documentation Counts**
+
+Update the Quick Reference table below with the new console entry count and total game count.
+
 ---
 
 ## Quick Reference: Console-Specific Details
 
 | Console | Directory | Logo | Entry Count Variable |
 |---------|-----------|------|---------------------|
+| **All Games (Master)** | `games/all/` | N/A | **Currently: 80** |
 | Nintendo DS | `games/ds/` | `ds.png` | Currently: 1 |
 | GameCube | `games/gamecube/` | `gamecube.png` | Currently: 1 |
 | Game Boy Advance | `games/gba/` | `gba.png` | Currently: 15 |
@@ -311,6 +403,8 @@ git push origin main
 | Nintendo Switch 2 | `games/switch2/` | `switch2.png` | Currently: 7 |
 | Nintendo Wii | `games/wii/` | `wii.png` | Currently: 1 |
 | Wii U | `games/wiiu/` | `wiiu.png` | Currently: 3 |
+
+**Total Games Across All Consoles: 80**
 
 ---
 
@@ -342,6 +436,28 @@ git push origin main
 - Noto Sans Symbols 2 font is loaded in CSS
 - Review page uses: `<span class="stars">★★★★☆</span>`
 - Console index uses: `<span class="meta-rating">★★★★☆</span>`
+
+### ❌ Issue: Game appears on console page but not on All Games page
+**Solution**: You likely forgot Step 7! Verify:
+- Game card exists in `/cohar.co/games/all/index.html`
+- Game has `data-console` attribute (e.g., `data-console="ps5"`)
+- CSS sorting rules in `/cohar.co/games/all/console_styles.css` include this game
+- Entry count is updated in the All Games header
+- All subsequent games have incremented `order` values
+
+### ❌ Issue: All Games sorting broken after adding new game
+**Solution**: Check that:
+- You renumbered ALL games that come after the new game in BOTH sorting sections
+- The new game's `order` value doesn't conflict with existing games
+- You didn't skip any numbers in the sequence (1, 2, 3... not 1, 2, 4)
+- Both date sorting AND rating sorting rules were updated
+
+### ❌ Issue: Console tag not showing on All Games page
+**Solution**: Verify:
+- `data-console` attribute is set on the game card
+- `<span class="meta-console">CONSOLE</span>` exists in the game meta section
+- Console name is uppercase (e.g., "PS5" not "ps5")
+- CSS for `.meta-console` is present in `/cohar.co/games/all/console_styles.css`
 
 ---
 
