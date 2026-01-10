@@ -116,16 +116,16 @@ body::after {
     50% { opacity: 0.98; }
 }
 
-/* Home Button */
-.home-button {
+/* Home Button - positioned within title box */
+.title-box .home-button {
     position: absolute;
-    top: 15px;
-    left: 20px;
+    top: 12px;
+    left: 15px;
     color: var(--text-dim);
     text-decoration: none;
-    font-size: 0.85em;
+    font-size: 0.75em;
     letter-spacing: 1px;
-    padding: 5px 10px;
+    padding: 4px 8px;
     border: 1px solid var(--phosphor-green-dark);
     background: rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
@@ -133,7 +133,7 @@ body::after {
     z-index: 10;
 }
 
-.home-button:hover {
+.title-box .home-button:hover {
     color: var(--text-primary);
     border-color: var(--phosphor-green);
     background: rgba(0, 255, 65, 0.1);
@@ -293,11 +293,11 @@ body::after {
         padding: 20px 10px;
     }
 
-    .home-button {
-        font-size: 0.75em;
-        padding: 4px 8px;
-        top: 12px;
-        left: 15px;
+    .title-box .home-button {
+        font-size: 0.65em;
+        padding: 3px 6px;
+        top: 10px;
+        left: 12px;
     }
 
     .title-box h1 {
@@ -328,11 +328,11 @@ body::after {
 }
 
 @media (max-width: 480px) {
-    .home-button {
-        font-size: 0.65em;
-        padding: 3px 6px;
-        top: 10px;
-        left: 10px;
+    .title-box .home-button {
+        font-size: 0.6em;
+        padding: 2px 5px;
+        top: 8px;
+        left: 8px;
         letter-spacing: 0.5px;
     }
 
