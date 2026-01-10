@@ -121,6 +121,31 @@ body {
     border: 2px solid var(--border-color);
     background: rgba(0, 255, 65, 0.02);
     box-shadow: var(--shadow-glow);
+    position: relative;
+}
+
+/* Home Button */
+.home-button {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.85em;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    border: 1px solid var(--phosphor-green-dark);
+    background: rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    text-shadow: 0 0 3px rgba(0, 255, 65, 0.3);
+}
+
+.home-button:hover {
+    color: var(--text-primary);
+    border-color: var(--phosphor-green);
+    background: rgba(0, 255, 65, 0.1);
+    box-shadow: var(--shadow-glow);
+    text-shadow: var(--shadow-glow);
 }
 
 .terminal-border-top,
@@ -419,6 +444,13 @@ body {
         font-size: 1.5em;
     }
 
+    .home-button {
+        font-size: 0.75em;
+        padding: 4px 8px;
+        top: 12px;
+        left: 15px;
+    }
+
     .sort-buttons {
         flex-direction: column;
         gap: 15px;
@@ -437,6 +469,14 @@ body {
     .terminal-border-top,
     .terminal-border-bottom {
         font-size: 0.6em;
+    }
+
+    .home-button {
+        font-size: 0.65em;
+        padding: 3px 6px;
+        top: 10px;
+        left: 10px;
+        letter-spacing: 0.5px;
     }
 
     .console-logo-container img {
