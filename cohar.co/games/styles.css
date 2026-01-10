@@ -241,6 +241,100 @@ body {
     justify-content: center;
 }
 
+/* ═══ ALL GAMES FEATURED SECTION ═══ */
+.terminal-section.featured {
+    border: 3px solid var(--phosphor-green);
+    background: rgba(0, 255, 65, 0.05);
+    box-shadow: var(--shadow-glow-strong);
+}
+
+.featured-header {
+    font-size: 2em;
+    color: var(--phosphor-green);
+    text-shadow: var(--shadow-glow-strong);
+}
+
+.all-games-card {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.all-games-card a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    max-width: 800px;
+}
+
+.all-games-inner {
+    background: rgba(0, 20, 0, 0.6);
+    border: 3px solid var(--phosphor-green);
+    padding: 50px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.all-games-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 255, 65, 0.1),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.all-games-inner:hover::before {
+    left: 100%;
+}
+
+.all-games-inner:hover {
+    background: rgba(0, 40, 0, 0.8);
+    border-color: var(--phosphor-green);
+    box-shadow:
+        var(--shadow-glow-strong),
+        inset 0 0 50px rgba(0, 255, 65, 0.2);
+    transform: scale(1.02);
+}
+
+.archive-icon {
+    font-size: 4em;
+    color: var(--phosphor-green);
+    text-shadow: var(--shadow-glow-strong);
+    margin-bottom: 20px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.archive-title {
+    font-size: 2.5em;
+    color: var(--text-primary);
+    letter-spacing: 8px;
+    text-shadow: var(--shadow-glow-strong);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.archive-subtitle {
+    font-size: 1.1em;
+    color: var(--text-secondary);
+    letter-spacing: 3px;
+    text-shadow: var(--shadow-glow);
+}
+
 /* ═══ CONSOLE GRID ═══ */
 .console-grid {
     display: grid;
@@ -370,6 +464,23 @@ body {
     .game-card-inner img {
         height: 200px;
     }
+
+    .all-games-inner {
+        padding: 30px;
+    }
+
+    .archive-icon {
+        font-size: 3em;
+    }
+
+    .archive-title {
+        font-size: 1.8em;
+        letter-spacing: 4px;
+    }
+
+    .archive-subtitle {
+        font-size: 0.9em;
+    }
 }
 
 @media (max-width: 480px) {
@@ -384,6 +495,24 @@ body {
     .terminal-border-top,
     .terminal-border-bottom {
         font-size: 0.6em;
+    }
+
+    .all-games-inner {
+        padding: 20px;
+    }
+
+    .archive-icon {
+        font-size: 2.5em;
+    }
+
+    .archive-title {
+        font-size: 1.5em;
+        letter-spacing: 3px;
+    }
+
+    .archive-subtitle {
+        font-size: 0.8em;
+        letter-spacing: 2px;
     }
 }
 
