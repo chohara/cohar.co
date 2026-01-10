@@ -1,12 +1,9 @@
-/* Noto Sans Symbols 2 font */
-@font-face {
-    font-family: 'Noto-Sans-Symbols-2';
-    src: url('/fonts/notosanssymbols2.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
+/* ═══════════════════════════════════════════════════════════════
+   GAME REVIEW PAGE - CRT TERMINAL DESIGN
+   Pure CSS transformation - no HTML changes required
+   ═══════════════════════════════════════════════════════════════ */
 
-/* Terminus font */
+/* Terminus Font */
 @font-face {
     font-family: 'Terminus';
     src: url('/fonts/terminus.woff2') format('woff2');
@@ -14,99 +11,327 @@
     font-style: normal;
 }
 
-body {
-    font-family: 'Terminus', sans-serif;
-    background-color: #0b0c2a; /* Deep space blue */
-    color: #d4d4f5; /* Light gray-blue text */
+/* Noto Sans Symbols 2 for stars */
+@font-face {
+    font-family: 'Noto-Sans-Symbols-2';
+    src: url('/fonts/notosanssymbols2.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ═══ ROOT VARIABLES ═══ */
+:root {
+    --phosphor-green: #00ff41;
+    --phosphor-green-dim: #00cc33;
+    --phosphor-green-dark: #008822;
+    --screen-bg: #0a0e0a;
+    --terminal-bg: #000000;
+    --text-primary: #00ff41;
+    --text-secondary: #33ff66;
+    --text-dim: #00aa2a;
+    --border-color: #00ff41;
+    --shadow-glow: 0 0 10px rgba(0, 255, 65, 0.5);
+    --shadow-glow-strong: 0 0 20px rgba(0, 255, 65, 0.8);
+}
+
+/* ═══ BASE STYLES ═══ */
+* {
     margin: 0;
     padding: 0;
-    background-image: url('/images/bg_space_seamless.png'); /* Cosmic background */
-    background-size: cover;
-    background-attachment: fixed;
+    box-sizing: border-box;
 }
 
-/* Container for entire review page */
+html {
+    background: #000;
+}
+
+body {
+    font-family: 'Terminus', 'Courier New', monospace;
+    background: var(--screen-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* ═══ SCANLINES OVERLAY ═══ */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(0, 0, 0, 0.15) 3px
+    );
+    z-index: 1000;
+    animation: scanlineMove 8s linear infinite;
+}
+
+@keyframes scanlineMove {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(4px); }
+}
+
+/* ═══ CRT SCREEN GLOW ═══ */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        transparent 60%,
+        rgba(0, 0, 0, 0.3) 100%
+    );
+    z-index: 999;
+}
+
+/* ═══ REVIEW CONTAINER ═══ */
 .review-container {
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
-    padding: 20px;
-    max-width: 800px; /* Limit width for readability */
-    margin: 0 auto; /* Center container on page */
-    color: #fff;
+    align-items: center;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 1;
+    animation: screenFlicker 0.15s infinite alternate;
 }
 
-/* Title Box */
+@keyframes screenFlicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.98; }
+}
+
+/* ═══ TITLE BOX ═══ */
 .title-box {
-    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black */
-    padding: 15px 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
+    background: rgba(0, 255, 65, 0.03);
+    padding: 20px 30px;
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-glow);
+    margin-bottom: 30px;
     text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+.title-box::before {
+    content: '╔═══════════════════════════════════════════════════════════════╗';
+    display: block;
+    color: var(--text-primary);
+    font-size: 0.7em;
+    letter-spacing: -0.05em;
+    text-shadow: var(--shadow-glow);
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.title-box::after {
+    content: '╚═══════════════════════════════════════════════════════════════╝';
+    display: block;
+    color: var(--text-primary);
+    font-size: 0.7em;
+    letter-spacing: -0.05em;
+    text-shadow: var(--shadow-glow);
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: clip;
 }
 
 .title-box h1 {
     font-size: 2em;
-    color: #00ff00;
+    color: var(--text-primary);
+    text-shadow: var(--shadow-glow-strong);
     margin: 0;
-    font-family: 'Terminus', sans-serif;
+    font-family: 'Terminus', monospace;
+    letter-spacing: 2px;
 }
 
-/* Cover Art Box */
+/* ═══ COVER BOX ═══ */
 .cover-box {
-    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black */
+    background: #000;
     padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--phosphor-green-dark);
+    box-shadow: var(--shadow-glow);
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .cover-box img {
-    width: 100%; /* Ensure image fits the box */
-    max-width: 300px; /* Limit max width */
+    width: 100%;
+    max-width: 350px;
     height: auto;
-    border-radius: 8px;
+    border: 1px solid var(--phosphor-green-dark);
+    filter: brightness(0.9) contrast(1.1);
+    display: block;
+    margin: 0 auto;
 }
 
-/* Review Content Box */
+/* ═══ REVIEW BOX ═══ */
 .review-box {
-    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
-    line-height: 1.6;
-    font-size: 1.1em;
+    background: rgba(0, 20, 0, 0.3);
+    padding: 30px;
+    border: 2px solid var(--phosphor-green-dark);
+    box-shadow: var(--shadow-glow);
+    margin-bottom: 30px;
+    line-height: 1.8;
+    font-size: 1em;
     text-align: left;
-    width: 100%; /* Full width within container */
+    width: 100%;
+    color: var(--text-secondary);
+}
+
+.review-box p {
+    margin-bottom: 15px;
+    text-shadow: 0 0 3px rgba(0, 255, 65, 0.3);
+}
+
+.review-box i {
+    color: var(--text-primary);
+    font-style: italic;
+}
+
+.review-box ul {
+    margin: 15px 0 15px 30px;
+    list-style-type: none;
+}
+
+.review-box ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+}
+
+.review-box ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--phosphor-green);
 }
 
 .review-box img {
     display: block;
-    margin: auto;
-    max-width: 90%;
+    margin: 20px auto;
+    max-width: 100%;
     height: auto;
-    border-radius: 8px;
+    border: 2px solid var(--phosphor-green-dark);
+    box-shadow: var(--shadow-glow);
+    filter: brightness(0.9) contrast(1.1);
 }
 
-/* Star Rating Box */
+/* ═══ RATING BOX ═══ */
 .rating-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black */
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    font-size: 1.5em;
-    color: #ffd700; /* Gold color for stars */
+    background: rgba(0, 255, 65, 0.05);
+    padding: 20px 40px;
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-glow-strong);
+    font-size: 1.2em;
+    width: auto;
+}
+
+.rating-box p {
+    color: var(--text-primary);
+    margin: 10px 0 0 0;
+    text-shadow: var(--shadow-glow);
+    font-size: 1em;
 }
 
 .stars {
-    font-size: 2em; /* Larger size for visibility */
-    color: #ffd700; /* Gold color for stars */
+    font-size: 2.5em;
+    color: #ffd700;
+    font-family: 'Noto-Sans-Symbols-2', sans-serif;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
     margin-bottom: 5px;
-    font-family: "Noto-Sans-Symbols-2", sans-serif;
 }
 
+/* ═══ RESPONSIVE DESIGN ═══ */
+@media (max-width: 768px) {
+    .review-container {
+        padding: 20px 10px;
+    }
+
+    .title-box h1 {
+        font-size: 1.5em;
+    }
+
+    .title-box::before,
+    .title-box::after {
+        font-size: 0.5em;
+    }
+
+    .review-box {
+        padding: 20px;
+        font-size: 0.95em;
+    }
+
+    .cover-box {
+        padding: 15px;
+    }
+
+    .cover-box img {
+        max-width: 280px;
+    }
+
+    .stars {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-box h1 {
+        font-size: 1.2em;
+        letter-spacing: 1px;
+    }
+
+    .title-box::before,
+    .title-box::after {
+        font-size: 0.4em;
+    }
+
+    .review-box {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+
+    .cover-box img {
+        max-width: 220px;
+    }
+
+    .rating-box {
+        padding: 15px 30px;
+    }
+
+    .stars {
+        font-size: 1.8em;
+    }
+}
+
+/* ═══ LINK STYLES (if any) ═══ */
+a {
+    color: var(--text-primary);
+    text-decoration: none;
+    text-shadow: var(--shadow-glow);
+}
+
+a:hover {
+    color: var(--phosphor-green);
+    text-shadow: var(--shadow-glow-strong);
+}
