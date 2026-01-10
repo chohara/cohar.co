@@ -2,192 +2,172 @@
 
 ## Concept
 
-A tactical starship navigation interface with **multi-view map system**. Users can switch between three orbital perspectives:
-- **GLOBAL** - Full world equirectangular projection
-- **AMERICAS** - Zoomed North/South America view
-- **EUROPE** - Zoomed European region view
+A **Mission Log Archive** interface displaying travel destinations as tactical briefing cards. Mass Effect-inspired design with a scrollable grid of location cards, each featuring a hero image, metadata, and direct links to photo galleries.
 
-The futuristic console features cyan holographic aesthetics, smooth view transitions, and red tactical markers. Pure CSS implementation with no JavaScript required.
+The futuristic console features cyan holographic aesthetics, scanline overlays, and card-based organization. Pure CSS implementation with no JavaScript required.
 
 ## Structure
 
 ```
 /travel/
-  ├── index.html          (Starship navigation console - flat Earth map)
+  ├── index.html          (Mission Log archive with card grid)
   ├── styles.css
   └── /[location]/
       ├── index.html      (Photo gallery)
       └── styles.css
 
 /images/travel/[location]/
-  └── photo*.jpg          (1200-1800px gallery images + thumbnails)
+  └── photo*.jpg          (1200-1800px gallery images)
 ```
 
-## Adding Locations (Multi-View System)
+## Adding New Locations
 
-### Step 1: Create Gallery Page
-1. **Copy `/travel/banff/` as template** for new location
-2. **Update gallery HTML** with location name and photo paths
+### Quick 6-Step Process
 
-### Step 2: Determine Which Views to Show
-Decide which map views should display your marker:
-- **North/South America locations**: Add to GLOBAL + AMERICAS
-- **European locations**: Add to GLOBAL + EUROPE
-- **Other continents**: Add to GLOBAL only (for now)
+1. **Copy the template** from HTML comments in `/travel/index.html`
+2. **Update location name** and country
+3. **Update `href`** to match folder name (e.g., `/travel/paris/`)
+4. **Update hero image path** (use your best photo from the location)
+5. **Update visit date** (format: YYYY-MM-DD)
+6. **Update image count** (total photos in that location's gallery)
+7. **Paste at the TOP** of the grid for newest-first chronological order
 
-### Step 3: Calculate Positions for Each View
+### Detailed Example: Adding Paris, France
 
-**For GLOBAL view** (world-map.svg):
-- Get real coordinates from Google Maps
-- Formula:
-  - `left: (longitude + 180) / 360 × 100%`
-  - `top: (90 - latitude) / 180 × 100%`
+**Step 1: Copy the template block from HTML comments**
 
-**For AMERICAS view** (usa.svg):
-- Position visually based on the zoomed USA/Canada map
-- Typical range: `left: 20-80%`, `top: 10-70%`
+The template is located in `/travel/index.html` between the comment markers:
+```html
+<!-- ═══════════════════════════════════════════════════════════
+     NEW LOCATION TEMPLATE
+     ═══════════════════════════════════════════════════════════
+```
 
-**For EUROPE view** (europe.svg):
-- Position visually based on the zoomed Europe map
-- Typical range: `left: 30-70%`, `top: 20-60%`
-
-### Step 4: Add Markers to HTML
-
-**Example: Adding Paris, France**
-
-Paris should appear in GLOBAL + EUROPE views, so add to both layers:
+**Step 2: Customize the template**
 
 ```html
-<!-- In the GLOBAL VIEW layer (map-world) -->
-<div class="map-layer map-world">
-    <div class="cloud-layer"></div>
-
-    <!-- Paris: 48.8566°N, 2.3522°E -->
-    <!-- GLOBAL position: left = (2.3522 + 180) / 360 * 100 = 50.65% -->
-    <!--                 top = (90 - 48.8566) / 180 * 100 = 22.86% -->
-    <a href="/travel/paris/" class="destination-marker region-world region-europe"
-       style="left: 50.65%; top: 22.86%;">
-        <div class="marker-pulse"></div>
-        <div class="marker-label">Paris, France</div>
-        <div class="preview-thumbnails">
-            <img src="/images/travel/paris/photo1.jpg" alt="Preview 1">
-            <img src="/images/travel/paris/photo2.jpg" alt="Preview 2">
-            <img src="/images/travel/paris/photo3.jpg" alt="Preview 3">
+<article class="mission-card">
+    <a href="/travel/paris/" class="card-link">
+        <div class="card-image">
+            <img src="/images/travel/paris/250815_1.jpg" alt="Paris, France">
+            <div class="image-overlay"></div>
+        </div>
+        <div class="card-content">
+            <div class="card-header">
+                <h2 class="location-name">Paris</h2>
+                <span class="location-country">France</span>
+            </div>
+            <div class="card-meta">
+                <span class="meta-item">
+                    <span class="meta-label">DATE:</span>
+                    <span class="meta-value">2025-08-15</span>
+                </span>
+                <span class="meta-divider">│</span>
+                <span class="meta-item">
+                    <span class="meta-label">IMAGES:</span>
+                    <span class="meta-value">24</span>
+                </span>
+            </div>
         </div>
     </a>
-</div>
-
-<!-- In the EUROPE VIEW layer (map-europe) -->
-<div class="map-layer map-europe">
-    <div class="cloud-layer"></div>
-
-    <!-- Paris - EUROPE zoomed position (adjust visually) -->
-    <a href="/travel/paris/" class="destination-marker region-world region-europe"
-       style="left: 45%; top: 35%;">
-        <div class="marker-pulse"></div>
-        <div class="marker-label">Paris, France</div>
-        <div class="preview-thumbnails">
-            <img src="/images/travel/paris/photo1.jpg" alt="Preview 1">
-            <img src="/images/travel/paris/photo2.jpg" alt="Preview 2">
-            <img src="/images/travel/paris/photo3.jpg" alt="Preview 3">
-        </div>
-    </a>
-</div>
+</article>
 ```
 
-**Example: Adding New York, USA**
+**Step 3: Paste at the top**
 
-New York should appear in GLOBAL + AMERICAS views:
+Insert the new card as the **first entry** in `<div class="log-container">` to maintain chronological order (newest first).
 
-```html
-<!-- In GLOBAL VIEW (map-world) -->
-<a href="/travel/nyc/" class="destination-marker region-world region-usa"
-   style="left: 19.8%; top: 27.6%;">
-    <div class="marker-pulse"></div>
-    <div class="marker-label">New York, USA</div>
-    <div class="preview-thumbnails">
-        <img src="/images/travel/nyc/photo1.jpg" alt="Preview 1">
-        <img src="/images/travel/nyc/photo2.jpg" alt="Preview 2">
-        <img src="/images/travel/nyc/photo3.jpg" alt="Preview 3">
-    </div>
-</a>
+**Step 4: Update status bar counters**
 
-<!-- In AMERICAS VIEW (map-usa) -->
-<a href="/travel/nyc/" class="destination-marker region-world region-usa"
-   style="left: 72%; top: 32%;">
-    <div class="marker-pulse"></div>
-    <div class="marker-label">New York, USA</div>
-    <div class="preview-thumbnails">
-        <img src="/images/travel/nyc/photo1.jpg" alt="Preview 1">
-        <img src="/images/travel/nyc/photo2.jpg" alt="Preview 2">
-        <img src="/images/travel/nyc/photo3.jpg" alt="Preview 3">
-    </div>
-</a>
-```
+In the footer, update:
+- `DESTINATIONS:` count (increment by 1)
+- `TOTAL IMAGES:` count (add the new location's image count)
 
-### Key Points:
-- **Region classes are critical**: `region-world`, `region-usa`, `region-europe`
-- **Duplicate the entire marker** in each view it should appear
-- **Adjust positions** separately for each map's coordinate system
-- **GLOBAL positions** use geographic formula, **zoomed views** need visual adjustment
+### File Naming Conventions
 
-## GLOBAL View Position Reference
-
-These positions are calculated using the geographic formula and work for the world map:
-
-**Americas:**
-- Banff, Canada: `left: 21.9%; top: 19.1%`
-- New York, USA: `left: 19.8%; top: 27.6%`
-- Los Angeles, USA: `left: 17.3%; top: 31.1%`
-- Buenos Aires, Argentina: `left: 30.5%; top: 68.9%`
-
-**Europe:**
-- London, UK: `left: 49.9%; top: 28.5%`
-- Paris, France: `left: 50.7%; top: 27.3%`
-- Rome, Italy: `left: 51.4%; top: 26.8%`
-
-**Asia:**
-- Tokyo, Japan: `left: 88.8%; top: 30.2%`
-- Bangkok, Thailand: `left: 77.8%; top: 36.1%`
-- Dubai, UAE: `left: 54.3%; top: 36.2%`
-
-**Oceania:**
-- Sydney, Australia: `left: 84.2%; top: 68.9%`
-
-**Note:** AMERICAS and EUROPE zoomed views require visual positioning - use the browser inspector to fine-tune placement.
-
-## View System
-
-The interface uses **hidden radio buttons** for state management:
-- Click **GLOBAL** - Shows world map with all destinations
-- Click **AMERICAS** - Zooms to USA/Canada/South America
-- Click **EUROPE** - Zooms to European region
-
-Smooth 0.6s crossfade transitions with subtle zoom effect (scale 0.95 → 1.0).
+- **Location folders**: lowercase with hyphens (e.g., `banff`, `new-york`, `paris`)
+- **Image files**: `YYMMDD_N.jpg` format (e.g., `250507_1.jpg`, `250507_2.jpg`)
+- **Hero images**: Use the first photo or best photo from the location
 
 ## Design System
 
-- **Color palette:**
-  - Cyan UI elements (#4db8ff)
-  - Red tactical markers (#ff3333)
-  - Deep space background gradient
-- **Typography:** Terminus monospace font for retro-futuristic feel
-- **Aesthetic:** Tactical starship console with corner brackets, grid overlay, and twinkling stars
-- **Pure CSS:** No JavaScript required - radio buttons manage view state
-- **Responsive:** Breakpoints at 1024px, 768px, 480px
-  - Desktop: Sector buttons in top-left
-  - Mobile: Centered buttons below title
+### Color Palette
+- **Primary UI**: Cyan (#00b8ff) - borders, titles, metadata
+- **Secondary**: Deep blue (#0066cc) - accents, dividers
+- **Success**: Green (#00ff88) - operational status
+- **Background**: Deep space gradient (#0a1520 → #000000)
+- **Cards**: Dark translucent (#000a14 with 0.8 opacity)
+
+### Typography
+- **Headers**: Terminus monospace (tactical, futuristic)
+- **Body**: Ubuntu (clean, readable)
+- **Metadata**: Terminus monospace (technical readout)
+
+### Layout
+- **Grid**: `repeat(auto-fill, minmax(350px, 1fr))`
+- **Card aspect ratio**: 16:10 for images
+- **Responsive breakpoints**: 1024px, 768px, 480px
+
+### Visual Effects
+- Scanline overlay on cards (subtle holographic feel)
+- Image gradient overlay (depth and contrast)
+- Card hover: lift + border glow + image zoom
+- Sticky header/footer with backdrop blur
+- Static starfield background
 
 ## Technical Notes
 
-- **Three-layer map system** with stacked SVG backgrounds
-- **State management** via CSS `:checked` pseudo-class on hidden radio inputs
-- **GLOBAL view**: Equirectangular projection (world-map.svg)
-- **AMERICAS view**: Zoomed USA/Canada map (usa.svg)
-- **EUROPE view**: Zoomed Europe map (europe.svg)
-- **Marker visibility**: Controlled by region classes + active view
-- Latitude/longitude grid overlay for navigation authenticity
-- Screen "boot" animation on page load
-- Pulsing red markers with hover previews
-- Grid pulse and corner bracket glow during view transitions
-- Two-layer animated star field for deep space ambiance
+### CSS Grid System
+- **Desktop (1024px+)**: 3-4 columns depending on viewport width
+- **Tablet (768px-1023px)**: 2 columns
+- **Mobile (<768px)**: 1 column
+
+### Performance Optimizations
+- **Zero animations**: All effects are static for instant loading
+- **CSS-only design**: No JavaScript dependencies
+- **Optimized filters**: Minimal use of heavy CSS filters
+- **Fast rendering**: Simple DOM structure with efficient CSS
+
+### Card Components
+Each mission card includes:
+- **Hero image** (16:10 aspect ratio, object-fit: cover)
+- **Image overlay** (gradient for visual depth)
+- **Location name** (cyan, glowing text)
+- **Country name** (secondary text)
+- **Visit date** (metadata)
+- **Image count** (metadata)
+- **Scanline effect** (::before pseudo-element)
+
+### Accessibility
+- Semantic HTML5 elements (`<article>`, `<header>`, `<footer>`)
+- Descriptive alt text for images
+- Clear hover states for interactivity
+- Keyboard-navigable links
+
+## Current Locations
+
+- **Banff, Canada** (2025-05-07) - 7 images
+
+## Maintenance
+
+### Adding a Location Checklist
+- [ ] Create location folder in `/images/travel/[location]/`
+- [ ] Add photos with `YYMMDD_N.jpg` naming
+- [ ] Create gallery page in `/travel/[location]/index.html`
+- [ ] Copy mission card template from comments
+- [ ] Customize card with location details
+- [ ] Paste at top of grid for chronological order
+- [ ] Update footer counters (destinations + total images)
+- [ ] Commit and push changes
+
+### Quality Guidelines
+- **Hero images**: High quality, representative of the location
+- **Image count**: Accurate count of photos in gallery
+- **Dates**: Use actual visit date in YYYY-MM-DD format
+- **Naming**: Consistent lowercase, descriptive folder names
+
+---
+
+**Last Updated**: 2026-01-10
+**Design Version**: Mission Log Archive v2.0
+**Total Destinations**: 1
