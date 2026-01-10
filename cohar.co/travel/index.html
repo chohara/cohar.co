@@ -51,9 +51,10 @@
                         <!-- Destination Markers -->
 
                         <!-- Banff, Canada: 51.1784°N, 115.5708°W -->
-                        <!-- Position: left = (-115.5708 + 180) / 360 * 100 = 17.897% -->
-                        <!--          top = (90 - 51.1784) / 180 * 100 = 21.567% -->
-                        <div class="nav-marker" style="left: 17.897%; top: 21.567%;">
+                        <!-- SVG Coordinates: ~X: 400, Y: 242 (in viewBox 0 0 2000 857) -->
+                        <!-- Position: left = 400/2000 * 100 = 20.0% -->
+                        <!--          top = 242/857 * 100 = 28.24% -->
+                        <div class="nav-marker" style="left: 20.0%; top: 28.24%;">
                         <div class="marker-pulse"></div>
                         <a href="/travel/banff/" class="marker-link">
                             <span class="marker-label">Banff, Canada</span>
@@ -71,19 +72,22 @@
 
                          Copy the block below for each new destination:
 
-                         1. Get coordinates from Google Maps (e.g., Paris: 48.8566°N, 2.3522°E)
+                         POSITIONING METHOD (SVG-based for accuracy):
+                         The world-map.svg uses viewBox="0 0 2000 857"
 
-                         2. Calculate position percentages:
-                            left = (longitude + 180) / 360 * 100
-                            top = (90 - latitude) / 180 * 100
-
-                            Example for Paris (48.8566°N, 2.3522°E):
-                            left = (2.3522 + 180) / 360 * 100 = 50.65%
-                            top = (90 - 48.8566) / 180 * 100 = 22.86%
-
-                         3. Update: position, name, href, and image paths
-
-                         4. Paste the block below in the markers section above
+                         1. Get lat/long from Google Maps
+                         2. Estimate SVG X,Y coordinates from map regions:
+                            - Width: 0-2000 (West to East)
+                            - Height: 0-857 (North to South)
+                            Reference points:
+                            • Western N. America coast: X ≈ 350-370
+                            • Europe: X ≈ 970-1050
+                            • Northern latitudes (60°N+): Y ≈ 180-220
+                            • Mid latitudes (30-50°N): Y ≈ 230-300
+                         3. Convert to percentages:
+                            left = X / 2000 * 100
+                            top = Y / 857 * 100
+                         4. Test and adjust position as needed
 
                          ═══════════════════════════════════════════════════════════
 
