@@ -3,30 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DS Games</title>
+    <title>DS ARCHIVE TERMINAL</title>
     <link rel="stylesheet" href="console_styles.css">
 </head>
 <body>
-    <!-- Console Header Section -->
-    <section id="consoles">
-        <div class="console-grid">
-            <div class="console-card">
-		<img src="/images/console_logos/ds.png" alt="DS">
-            </div>
+    <div class="crt-screen">
+        <div class="scanlines"></div>
+        <div class="terminal-container">
+            <header class="terminal-header">
+                <div class="terminal-border-top">╔═══════════════════════════════════════════════════════════════╗</div>
+                <div class="terminal-title"><span class="terminal-prompt">█</span> DS ARCHIVE<span class="cursor-blink">_</span></div>
+                <div class="terminal-border-bottom">╚═══════════════════════════════════════════════════════════════╝</div>
+                <div class="system-info">DATABASE LOADED: <span class="status-ok">1 ENTRY</span></div>
+            </header>
+            <section class="console-display">
+                <div class="console-logo-container">
+                    <img src="/images/console_logos/ds.png" alt="DS">
+                </div>
+            </section>
+            <section class="games-section">
+                <div class="games-grid">
+                    <div class="game-card">
+                        <a href="/games/ds/chrono_trigger.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/.html.jpg" alt="Chrono_Trigger">
+                                <div class="game-title">Chrono Trigger</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <footer class="terminal-footer">
+                <div class="footer-line">═══════════════════════════════════════════════════════════════</div>
+                <div class="footer-text">END OF ARCHIVE</div>
+            </footer>
         </div>
-    </section>
-    <!-- All Games Section -->
-    <section id="all-games">
-        <div class="game-grid">
-            <!-- Add more  as needed -->
-	    <div class="game-card">
-                <a href="/games/ds/chrono_trigger.html">
-                    <img src="/images/game_covers/chrono_trigger.jpg" alt="Chrono Trigger">
-                    <p>Chrono Trigger</p>
-                </a>
-            </div>
-        </div>
-    </section>
+    </div>
 </body>
 </html>
-

@@ -3,54 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3DS Games</title>
+    <title>3DS ARCHIVE TERMINAL</title>
     <link rel="stylesheet" href="console_styles.css">
 </head>
 <body>
-    <!-- Console Header Section -->
-    <section id="consoles">
-        <div class="console-grid">
-            <div class="console-card">
-		<img src="/images/console_logos/3ds.png" alt="3DS">
-            </div>
+    <!-- Hidden Sort Controls -->
+    <input type="radio" name="sort" id="sort-date" class="sort-control" checked>
+    <input type="radio" name="sort" id="sort-rating" class="sort-control">
+
+    <!-- CRT Screen Container -->
+    <div class="crt-screen">
+        <!-- Scanline Overlay -->
+        <div class="scanlines"></div>
+
+        <!-- Terminal Container -->
+        <div class="terminal-container">
+            <!-- Header -->
+            <header class="terminal-header">
+                <div class="terminal-border-top">╔═══════════════════════════════════════════════════════════════╗</div>
+                <div class="terminal-title">
+                    <span class="terminal-prompt">█</span> NINTENDO 3DS ARCHIVE
+                    <span class="cursor-blink">_</span>
+                </div>
+                <div class="terminal-border-bottom">╚═══════════════════════════════════════════════════════════════╝</div>
+                <div class="system-info">DATABASE LOADED: <span class="status-ok">5 ENTRIES</span></div>
+            </header>
+
+            <!-- Console Logo -->
+            <section class="console-display">
+                <div class="console-logo-container">
+                    <img src="/images/console_logos/3ds.png" alt="Nintendo 3DS">
+                </div>
+            </section>
+
+            <!-- Sort Controls -->
+            <section class="sort-section">
+                <div class="sort-header">[ SORT PARAMETERS ]</div>
+                <div class="sort-buttons">
+                    <label for="sort-date" class="sort-btn">
+                        <span class="btn-bracket">&gt;</span> DATE
+                        <span class="sort-indicator">●</span>
+                    </label>
+                    <label for="sort-rating" class="sort-btn">
+                        <span class="btn-bracket">&gt;</span> RATING
+                        <span class="sort-indicator">●</span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Games Grid -->
+            <section class="games-section">
+                <div class="games-grid">
+                    <!-- WarioWare Gold: 2025-03-11, 4.0 -->
+                    <div class="game-card" data-date="20250311" data-rating="40">
+                        <a href="/games/3ds/warioware_gold.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/warioware_gold.jpg" alt="WarioWare Gold">
+                                <div class="game-title">WarioWare Gold</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-03-11</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Kirby Battle Royale: 2025-02-08, 2.5 -->
+                    <div class="game-card" data-date="20250208" data-rating="25">
+                        <a href="/games/3ds/kirby_battle_royale.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/kirby_battle_royale.jpg" alt="Kirby Battle Royale">
+                                <div class="game-title">Kirby Battle Royale</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-02-08</span>
+                                    <span class="meta-rating">★★⯪☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Kid Icarus Uprising: 2025-01-10, 4.5 -->
+                    <div class="game-card" data-date="20250110" data-rating="45">
+                        <a href="/games/3ds/kid_icarus_uprising.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/kid_icarus_uprising.jpg" alt="Kid Icarus: Uprising">
+                                <div class="game-title">Kid Icarus: Uprising</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-01-10</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- FE Echoes SoV: 2024-11-20, 3.5 -->
+                    <div class="game-card" data-date="20241120" data-rating="35">
+                        <a href="/games/3ds/fe_echoes_sov.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/fe_echoes_sov.jpg" alt="Fire Emblem Echoes: Shadows of Valentia">
+                                <div class="game-title">Fire Emblem Echoes: Shadows of Valentia</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2024-11-20</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- FE Awakening: 2024-11-20, 4.5 -->
+                    <div class="game-card" data-date="20241120" data-rating="45">
+                        <a href="/games/3ds/fe_awakening.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/fe_awakening.jpg" alt="Fire Emblem: Awakening">
+                                <div class="game-title">Fire Emblem: Awakening</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2024-11-20</span>
+                                    <span class="meta-rating">★★★★⯪</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="terminal-footer">
+                <div class="footer-line">═══════════════════════════════════════════════════════════════</div>
+                <div class="footer-text">END OF ARCHIVE</div>
+            </footer>
         </div>
-    </section>
-    <!-- All Games Section -->
-    <section id="all-games">
-        <div class="game-grid">
-            <!-- Add more  as needed -->
-	    <div class="game-card">
-                <a href="/games/3ds/warioware_gold.html">
-                    <img src="/images/game_covers/warioware_gold.jpg" alt="WarioWare Gold">
-                    <p>WarioWare Gold</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/3ds/kirby_battle_royale.html">
-                    <img src="/images/game_covers/kirby_battle_royale.jpg" alt="Kirby Battle Royale">
-                    <p>Kirby Battle Royale</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/3ds/kid_icarus_uprising.html">
-                    <img src="/images/game_covers/kid_icarus_uprising.jpg" alt="Kid Icarus: Uprising">
-                    <p>Kid Icarus: Uprising</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/3ds/fe_echoes_sov.html">
-                    <img src="/images/game_covers/fe_echoes_sov.jpg" alt="Fire Emblem Echoes: Shadows of Valentia">
-                    <p>Fire Emblem Echoes: Shadows of Valentia</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/3ds/fe_awakening.html">
-                    <img src="/images/game_covers/fe_awakening.jpg" alt="Fire Emblem: Awakening">
-                    <p>Fire Emblem: Awakening</p>
-                </a>
-            </div>
-        </div>
-    </section>
+    </div>
 </body>
 </html>
-
