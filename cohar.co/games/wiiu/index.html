@@ -3,42 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wii U Games</title>
+    <title>WII U ARCHIVE TERMINAL</title>
     <link rel="stylesheet" href="console_styles.css">
 </head>
 <body>
-    <!-- Console Header Section -->
-    <section id="consoles">
-        <div class="console-grid">
-            <div class="console-card">
-		<img src="/images/console_logos/wiiu.png" alt="Wii U">
-            </div>
+    <input type="radio" name="sort" id="sort-date" class="sort-control" checked>
+    <input type="radio" name="sort" id="sort-rating" class="sort-control">
+    <div class="crt-screen">
+        <div class="scanlines"></div>
+        <div class="terminal-container">
+            <header class="terminal-header">
+                <div class="terminal-border-top">╔═══════════════════════════════════════════════════════════════╗</div>
+                <div class="terminal-title"><span class="terminal-prompt">█</span> WII U ARCHIVE<span class="cursor-blink">_</span></div>
+                <div class="terminal-border-bottom">╚═══════════════════════════════════════════════════════════════╝</div>
+                <div class="system-info">DATABASE LOADED: <span class="status-ok">3 ENTRIES</span></div>
+            </header>
+            <section class="console-display">
+                <div class="console-logo-container">
+                    <img src="/images/console_logos/wiiu.png" alt="Wii U">
+                </div>
+            </section>
+            <section class="sort-section">
+                <div class="sort-header">[ SORT PARAMETERS ]</div>
+                <div class="sort-buttons">
+                    <label for="sort-date" class="sort-btn"><span class="btn-bracket">&gt;</span> DATE<span class="sort-indicator">●</span></label>
+                    <label for="sort-rating" class="sort-btn"><span class="btn-bracket">&gt;</span> RATING<span class="sort-indicator">●</span></label>
+                </div>
+            </section>
+            <section class="games-section">
+                <div class="games-grid">
+                    <div class="game-card" data-date="20250324" data-rating="30">
+                        <a href="/games/wiiu/game_and_wario.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/game_and_wario.jpg" alt="Game & Wario">
+                                <div class="game-title">Game & Wario</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-03-24</span>
+                                    <span class="meta-rating">★★★☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="game-card" data-date="20250310" data-rating="35">
+                        <a href="/games/wiiu/paper_mario_color_splash.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/paper_mario_color_splash.jpg" alt="Paper Mario: Color Splash">
+                                <div class="game-title">Paper Mario: Color Splash</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-03-10</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="game-card" data-date="20250127" data-rating="30">
+                        <a href="/games/wiiu/star_fox_zero.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/star_fox_zero.jpg" alt="Star Fox Zero">
+                                <div class="game-title">Star Fox Zero</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-01-27</span>
+                                    <span class="meta-rating">★★★☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <footer class="terminal-footer">
+                <div class="footer-line">═══════════════════════════════════════════════════════════════</div>
+                <div class="footer-text">END OF ARCHIVE</div>
+            </footer>
         </div>
-    </section>
-    <!-- All Games Section -->
-    <section id="all-games">
-        <div class="game-grid">
-            <!-- Add more  as needed -->
-	    <div class="game-card">
-                <a href="/games/wiiu/game_and_wario.html">
-                    <img src="/images/game_covers/game_and_wario.jpg" alt="Game & Wario">
-                    <p>Game & Wario</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/wiiu/paper_mario_color_splash.html">
-                    <img src="/images/game_covers/paper_mario_color_splash.jpg" alt="Paper Mario: Color Splash">
-                    <p>Paper Mario: Color Splash</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/wiiu/star_fox_zero.html">
-                    <img src="/images/game_covers/star_fox_zero.jpg" alt="Star Fox Zero">
-                    <p>Star Fox Zero</p>
-                </a>
-            </div>
-        </div>
-    </section>
+    </div>
 </body>
 </html>
-

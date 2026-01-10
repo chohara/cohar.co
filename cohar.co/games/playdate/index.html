@@ -3,60 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playdate Games</title>
+    <title>PLAYDATE ARCHIVE TERMINAL</title>
     <link rel="stylesheet" href="console_styles.css">
 </head>
 <body>
-    <!-- Console Header Section -->
-    <section id="consoles">
-        <div class="console-grid">
-            <div class="console-card">
-		<img src="/images/console_logos/playdate.png" alt="Playdate">
-            </div>
+    <!-- Hidden Sort Controls -->
+    <input type="radio" name="sort" id="sort-date" class="sort-control" checked>
+    <input type="radio" name="sort" id="sort-rating" class="sort-control">
+
+    <!-- CRT Screen Container -->
+    <div class="crt-screen">
+        <!-- Scanline Overlay -->
+        <div class="scanlines"></div>
+
+        <!-- Terminal Container -->
+        <div class="terminal-container">
+            <!-- Header -->
+            <header class="terminal-header">
+                <div class="terminal-border-top">╔═══════════════════════════════════════════════════════════════╗</div>
+                <div class="terminal-title">
+                    <span class="terminal-prompt">█</span> PLAYDATE ARCHIVE
+                    <span class="cursor-blink">_</span>
+                </div>
+                <div class="terminal-border-bottom">╚═══════════════════════════════════════════════════════════════╝</div>
+                <div class="system-info">DATABASE LOADED: <span class="status-ok">6 ENTRIES</span></div>
+            </header>
+
+            <!-- Console Logo -->
+            <section class="console-display">
+                <div class="console-logo-container">
+                    <img src="/images/console_logos/playdate.png" alt="Playdate">
+                </div>
+            </section>
+
+            <!-- Sort Controls -->
+            <section class="sort-section">
+                <div class="sort-header">[ SORT PARAMETERS ]</div>
+                <div class="sort-buttons">
+                    <label for="sort-date" class="sort-btn">
+                        <span class="btn-bracket">&gt;</span> DATE
+                        <span class="sort-indicator">●</span>
+                    </label>
+                    <label for="sort-rating" class="sort-btn">
+                        <span class="btn-bracket">&gt;</span> RATING
+                        <span class="sort-indicator">●</span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Games Grid -->
+            <section class="games-section">
+                <div class="games-grid">
+                    <!-- Tiny Turnip: 2025-11-06, 4.0 -->
+                    <div class="game-card" data-date="20251106" data-rating="40">
+                        <a href="/games/playdate/tiny_turnip.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/tiny_turnip.png" alt="Tiny Turnip">
+                                <div class="game-title">Tiny Turnip</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-11-06</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Spilled Mushrooms: 2025-10-23, 5.0 -->
+                    <div class="game-card" data-date="20251023" data-rating="50">
+                        <a href="/games/playdate/spilled_mushrooms.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/spilled_mushrooms.png" alt="Spilled Mushrooms">
+                                <div class="game-title">Spilled Mushrooms</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-10-23</span>
+                                    <span class="meta-rating">★★★★★</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Otto's Galactic Groove: 2025-07-31, 3.5 -->
+                    <div class="game-card" data-date="20250731" data-rating="35">
+                        <a href="/games/playdate/ottos_galactic_groove.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/ottos_galactic_groove.jpg" alt="Otto's Galactic Groove">
+                                <div class="game-title">Otto's Galactic Groove</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-07-31</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Wheelsprung: 2025-06-19, 3.5 -->
+                    <div class="game-card" data-date="20250619" data-rating="35">
+                        <a href="/games/playdate/wheelsprung.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/wheelsprung.png" alt="Wheelsprung">
+                                <div class="game-title">Wheelsprung</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-06-19</span>
+                                    <span class="meta-rating">★★★⯪☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Dig Dig Dino: 2025-06-02, 4.0 -->
+                    <div class="game-card" data-date="20250602" data-rating="40">
+                        <a href="/games/playdate/dig_dig_dino.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/dig_dig_dino.png" alt="Dig Dig Dino">
+                                <div class="game-title">Dig Dig Dino</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-06-02</span>
+                                    <span class="meta-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- The Scrolling Enigma: 2025-06-02, 2.0 -->
+                    <div class="game-card" data-date="20250602" data-rating="20">
+                        <a href="/games/playdate/scrolling_enigma.html">
+                            <div class="game-card-inner">
+                                <img src="/images/game_covers/scrolling_enigma.webp" alt="The Scrolling Enigma">
+                                <div class="game-title">The Scrolling Enigma</div>
+                                <div class="game-meta">
+                                    <span class="meta-date">2025-06-02</span>
+                                    <span class="meta-rating">★★☆☆☆</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="terminal-footer">
+                <div class="footer-line">═══════════════════════════════════════════════════════════════</div>
+                <div class="footer-text">END OF ARCHIVE</div>
+            </footer>
         </div>
-    </section>
-    <!-- All Games Section -->
-    <section id="all-games">
-        <div class="game-grid">
-            <!-- Add more  as needed -->
-	    <div class="game-card">
-                <a href="/games/playdate/tiny_turnip.html">
-                    <img src="/images/game_covers/tiny_turnip.png" alt="Tiny Turnip">
-                    <p>Tiny Turnip</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/playdate/spilled_mushrooms.html">
-                    <img src="/images/game_covers/spilled_mushrooms.png" alt="Spilled Mushrooms">
-                    <p>Spilled Mushrooms</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/playdate/ottos_galactic_groove.html">
-                    <img src="/images/game_covers/ottos_galactic_groove.jpg" alt="Otto's Galactic Groove">
-                    <p>Otto's Galactic Groove</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/playdate/wheelsprung.html">
-                    <img src="/images/game_covers/wheelsprung.png" alt="Wheelsprung">
-                    <p>Wheelsprung</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/playdate/scrolling_enigma.html">
-                    <img src="/images/game_covers/scrolling_enigma.webp" alt="The Scrolling Enigma">
-                    <p>The Scrolling Enigma</p>
-                </a>
-            </div>
-	    <div class="game-card">
-                <a href="/games/playdate/dig_dig_dino.html">
-                    <img src="/images/game_covers/dig_dig_dino.png" alt="Dig Dig Dino">
-                    <p>Dig Dig Dino</p>
-                </a>
-            </div>
-        </div>
-    </section>
+    </div>
 </body>
 </html>
-
