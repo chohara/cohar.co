@@ -42,15 +42,18 @@
                     <!-- Scanline Effect -->
                     <div class="scanline"></div>
 
-                    <!-- World Map Background -->
-                    <div class="world-map"></div>
+                    <!-- Map Wrapper (maintains SVG aspect ratio 2000:857) -->
+                    <div class="map-wrapper">
 
-                    <!-- Destination Markers -->
+                        <!-- World Map Background -->
+                        <div class="world-map"></div>
 
-                    <!-- Banff, Canada: 51.1784°N, 115.5708°W -->
-                    <!-- Position: left = (-115.5708 + 180) / 360 * 100 = 17.897% -->
-                    <!--          top = (90 - 51.1784) / 180 * 100 = 21.567% -->
-                    <div class="nav-marker" style="left: 17.897%; top: 21.567%;">
+                        <!-- Destination Markers -->
+
+                        <!-- Banff, Canada: 51.1784°N, 115.5708°W -->
+                        <!-- Position: left = (-115.5708 + 180) / 360 * 100 = 17.897% -->
+                        <!--          top = (90 - 51.1784) / 180 * 100 = 21.567% -->
+                        <div class="nav-marker" style="left: 17.897%; top: 21.567%;">
                         <div class="marker-pulse"></div>
                         <a href="/travel/banff/" class="marker-link">
                             <span class="marker-label">Banff, Canada</span>
@@ -100,7 +103,9 @@
                          END TEMPLATE
                          ═══════════════════════════════════════════════════════════ -->
 
-                </div>
+                    </div> <!-- /map-wrapper -->
+
+                </div> <!-- /map-container -->
 
             </div>
         </main>
