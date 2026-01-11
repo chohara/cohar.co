@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════
-   MISSION LOG ARCHIVE - TRAVEL CONSOLE
-   Mass Effect-Inspired Interface
+   EXPLORER'S JOURNEY LOG - TRAVEL ARCHIVE
+   Warm Adventure-Themed Interface
    ═══════════════════════════════════════════════════════════════ */
 
 /* Font Imports */
@@ -30,15 +30,15 @@
 
 body {
     font-family: 'Ubuntu', 'Terminus', monospace, sans-serif;
-    background: radial-gradient(ellipse at center, #0a1520 0%, #050a12 50%, #000000 100%);
-    color: #c0e0ff;
+    background: radial-gradient(ellipse at center, #1a0f0a 0%, #0f0805 50%, #000000 100%);
+    color: #ffd4a3;
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   STATIC STARFIELD BACKGROUND
+   WARM STARFIELD BACKGROUND
    ═══════════════════════════════════════════════════════════════ */
 
 body::before {
@@ -49,24 +49,24 @@ body::before {
     top: 0;
     left: 0;
     background-image:
-        radial-gradient(1px 1px at 15% 25%, rgba(255, 255, 255, 0.8), transparent),
-        radial-gradient(1px 1px at 35% 45%, rgba(200, 220, 255, 0.7), transparent),
-        radial-gradient(2px 2px at 55% 15%, rgba(255, 240, 220, 0.9), transparent),
-        radial-gradient(1px 1px at 75% 35%, rgba(255, 255, 255, 0.6), transparent),
-        radial-gradient(1px 1px at 85% 65%, rgba(220, 230, 255, 0.7), transparent),
-        radial-gradient(1px 1px at 25% 75%, rgba(255, 250, 240, 0.8), transparent),
-        radial-gradient(1px 1px at 45% 85%, rgba(255, 255, 255, 0.5), transparent),
-        radial-gradient(2px 2px at 65% 55%, rgba(240, 245, 255, 0.9), transparent),
-        radial-gradient(1px 1px at 10% 60%, rgba(255, 255, 255, 0.7), transparent),
-        radial-gradient(1px 1px at 90% 20%, rgba(255, 255, 255, 0.8), transparent),
-        radial-gradient(2px 2px at 22% 18%, rgba(255, 255, 255, 1), transparent),
-        radial-gradient(1px 1px at 48% 62%, rgba(220, 235, 255, 1), transparent),
-        radial-gradient(1px 1px at 68% 38%, rgba(255, 245, 235, 1), transparent),
-        radial-gradient(2px 2px at 12% 72%, rgba(255, 255, 255, 1), transparent),
-        radial-gradient(1px 1px at 82% 28%, rgba(235, 245, 255, 1), transparent),
-        radial-gradient(1px 1px at 38% 88%, rgba(255, 250, 240, 1), transparent);
+        radial-gradient(1px 1px at 15% 25%, rgba(255, 200, 100, 0.8), transparent),
+        radial-gradient(1px 1px at 35% 45%, rgba(255, 180, 80, 0.7), transparent),
+        radial-gradient(2px 2px at 55% 15%, rgba(255, 215, 0, 0.9), transparent),
+        radial-gradient(1px 1px at 75% 35%, rgba(255, 160, 60, 0.6), transparent),
+        radial-gradient(1px 1px at 85% 65%, rgba(255, 190, 90, 0.7), transparent),
+        radial-gradient(1px 1px at 25% 75%, rgba(255, 210, 100, 0.8), transparent),
+        radial-gradient(1px 1px at 45% 85%, rgba(255, 170, 70, 0.5), transparent),
+        radial-gradient(2px 2px at 65% 55%, rgba(255, 200, 85, 0.9), transparent),
+        radial-gradient(1px 1px at 10% 60%, rgba(255, 180, 75, 0.7), transparent),
+        radial-gradient(1px 1px at 90% 20%, rgba(255, 195, 95, 0.8), transparent),
+        radial-gradient(2px 2px at 22% 18%, rgba(255, 215, 0, 1), transparent),
+        radial-gradient(1px 1px at 48% 62%, rgba(255, 185, 80, 1), transparent),
+        radial-gradient(1px 1px at 68% 38%, rgba(255, 200, 90, 1), transparent),
+        radial-gradient(2px 2px at 12% 72%, rgba(255, 175, 70, 1), transparent),
+        radial-gradient(1px 1px at 82% 28%, rgba(255, 190, 85, 1), transparent),
+        radial-gradient(1px 1px at 38% 88%, rgba(255, 210, 95, 1), transparent);
     background-size: 100% 100%;
-    opacity: 0.9;
+    opacity: 0.7;
     pointer-events: none;
     z-index: 0;
 }
@@ -92,9 +92,9 @@ body::before {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background: linear-gradient(180deg, rgba(0, 10, 20, 0.9) 0%, rgba(0, 10, 20, 0.7) 100%);
-    border-bottom: 2px solid #00b8ff;
-    box-shadow: 0 0 20px rgba(0, 184, 255, 0.3);
+    background: linear-gradient(180deg, rgba(26, 15, 10, 0.95) 0%, rgba(26, 15, 10, 0.8) 100%);
+    border-bottom: 2px solid #ff8c00;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -109,7 +109,7 @@ body::before {
     gap: 12px;
     font-size: 0.85em;
     letter-spacing: 1px;
-    color: #60a0c0;
+    color: #d4a574;
 }
 
 .header-right {
@@ -117,19 +117,19 @@ body::before {
 }
 
 .console-id {
-    color: #00b8ff;
+    color: #ff8c00;
     font-weight: bold;
     text-transform: uppercase;
 }
 
 .system-name {
-    color: #80b0d0;
+    color: #ffb347;
     text-transform: uppercase;
 }
 
 .separator {
-    color: #0066cc;
-    opacity: 0.5;
+    color: #cc6600;
+    opacity: 0.6;
 }
 
 .header-center {
@@ -139,12 +139,12 @@ body::before {
 
 .console-title {
     font-size: 2.2em;
-    color: #00b8ff;
+    color: #ff8c00;
     letter-spacing: 6px;
     text-transform: uppercase;
     text-shadow:
-        0 0 10px rgba(0, 184, 255, 0.8),
-        0 0 20px rgba(0, 184, 255, 0.4),
+        0 0 10px rgba(255, 140, 0, 0.8),
+        0 0 20px rgba(255, 140, 0, 0.4),
         2px 2px 4px rgba(0, 0, 0, 0.8);
     font-family: 'Terminus', monospace;
 }
@@ -155,100 +155,168 @@ body::before {
     align-items: center;
     gap: 6px;
     padding: 8px 16px;
-    background: rgba(0, 0, 0, 0.6);
-    border: 1px solid #00b8ff;
+    background: rgba(26, 15, 10, 0.6);
+    border: 1px solid #ff8c00;
     border-radius: 3px;
-    color: #00b8ff;
+    color: #ff8c00;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 0.9em;
     letter-spacing: 1.5px;
     transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 184, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.2);
 }
 
 .return-btn:hover {
-    background: rgba(0, 184, 255, 0.15);
-    border-color: #00d4ff;
+    background: rgba(255, 140, 0, 0.15);
+    border-color: #ffa500;
     box-shadow:
-        0 0 20px rgba(0, 184, 255, 0.5),
-        inset 0 0 10px rgba(0, 184, 255, 0.1);
+        0 0 20px rgba(255, 140, 0, 0.5),
+        inset 0 0 10px rgba(255, 140, 0, 0.1);
     transform: translateY(-1px);
 }
 
 .btn-bracket {
-    color: #0066cc;
+    color: #cc6600;
     font-weight: bold;
 }
 
 .return-btn:hover .btn-bracket {
-    color: #00b8ff;
+    color: #ff8c00;
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   MISSION LOG GRID
+   JOURNEY TIMELINE
    ═══════════════════════════════════════════════════════════════ */
 
 .mission-log {
     flex: 1;
-    padding: 40px 20px;
+    padding: 60px 20px;
     position: relative;
 }
 
 .log-container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 30px;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   MISSION CARD
-   ═══════════════════════════════════════════════════════════════ */
-
-.mission-card {
-    background: rgba(0, 10, 20, 0.8);
-    border: 2px solid #00b8ff;
-    border-radius: 4px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow:
-        0 0 20px rgba(0, 184, 255, 0.2),
-        inset 0 0 20px rgba(0, 184, 255, 0.05);
     position: relative;
 }
 
-.mission-card::before {
+/* Journey Line */
+.log-container::before {
     content: '';
     position: absolute;
+    left: 50%;
     top: 0;
-    left: 0;
-    right: 0;
     bottom: 0;
-    background: repeating-linear-gradient(
-        0deg,
-        rgba(0, 184, 255, 0.02) 0px,
-        rgba(0, 184, 255, 0.02) 1px,
-        transparent 1px,
-        transparent 3px
+    width: 3px;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        #ff8c00 5%,
+        #ffa500 50%,
+        #ff8c00 95%,
+        transparent 100%
     );
-    pointer-events: none;
-    z-index: 1;
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.6);
+    transform: translateX(-50%);
 }
 
-.mission-card:hover {
-    border-color: #00d4ff;
-    box-shadow:
-        0 0 30px rgba(0, 212, 255, 0.4),
-        inset 0 0 30px rgba(0, 184, 255, 0.1);
-    transform: translateY(-4px);
+/* ═══════════════════════════════════════════════════════════════
+   MISSION CARD (TIMELINE STYLE)
+   ═══════════════════════════════════════════════════════════════ */
+
+.mission-card {
+    position: relative;
+    margin-bottom: 80px;
+    display: flex;
+    width: 100%;
 }
 
+/* Alternate left/right */
+.mission-card:nth-child(odd) {
+    justify-content: flex-start;
+    padding-right: 50%;
+    padding-left: 20px;
+}
+
+.mission-card:nth-child(even) {
+    justify-content: flex-end;
+    padding-left: 50%;
+    padding-right: 20px;
+}
+
+/* Journey Marker (Compass Point) */
+.mission-card::before {
+    content: '◆';
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: #ffd700;
+    text-shadow:
+        0 0 10px rgba(255, 215, 0, 0.8),
+        0 0 20px rgba(255, 215, 0, 0.4);
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(26, 15, 10, 0.9);
+    border-radius: 50%;
+    border: 2px solid #ffd700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+/* Connecting Line to Card */
+.mission-card::after {
+    content: '';
+    position: absolute;
+    top: 40px;
+    width: calc(50% - 60px);
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        #ff8c00,
+        #ffa500
+    );
+    box-shadow: 0 0 5px rgba(255, 140, 0, 0.4);
+}
+
+.mission-card:nth-child(odd)::after {
+    right: 50%;
+    margin-right: 30px;
+    background: linear-gradient(90deg, #ffa500, #ff8c00);
+}
+
+.mission-card:nth-child(even)::after {
+    left: 50%;
+    margin-left: 30px;
+}
+
+/* Card Content */
 .card-link {
     display: block;
     text-decoration: none;
     color: inherit;
+    width: 100%;
+    background: rgba(26, 15, 10, 0.85);
+    border: 2px solid #ff8c00;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow:
+        0 0 20px rgba(255, 140, 0, 0.3),
+        inset 0 0 20px rgba(255, 140, 0, 0.05);
+}
+
+.mission-card:hover .card-link {
+    border-color: #ffa500;
+    box-shadow:
+        0 0 30px rgba(255, 165, 0, 0.5),
+        inset 0 0 30px rgba(255, 140, 0, 0.1);
+    transform: translateY(-4px);
 }
 
 /* Card Image */
@@ -265,12 +333,12 @@ body::before {
     height: 100%;
     object-fit: cover;
     transition: all 0.3s ease;
-    filter: brightness(0.9) saturate(0.9);
+    filter: brightness(0.85) saturate(1.1) sepia(0.15);
 }
 
 .mission-card:hover .card-image img {
     transform: scale(1.05);
-    filter: brightness(1) saturate(1);
+    filter: brightness(1) saturate(1.2) sepia(0.1);
 }
 
 .image-overlay {
@@ -282,8 +350,8 @@ body::before {
     background: linear-gradient(
         180deg,
         transparent 0%,
-        rgba(0, 10, 20, 0.3) 50%,
-        rgba(0, 10, 20, 0.8) 100%
+        rgba(26, 15, 10, 0.3) 50%,
+        rgba(26, 15, 10, 0.85) 100%
     );
     pointer-events: none;
 }
@@ -292,28 +360,27 @@ body::before {
 .card-content {
     padding: 20px;
     position: relative;
-    z-index: 2;
 }
 
 .card-header {
     margin-bottom: 12px;
-    border-bottom: 1px solid rgba(0, 184, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 140, 0, 0.4);
     padding-bottom: 10px;
 }
 
 .location-name {
-    font-size: 1.5em;
-    color: #00b8ff;
+    font-size: 1.6em;
+    color: #ff8c00;
     font-family: 'Terminus', monospace;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 4px;
-    text-shadow: 0 0 10px rgba(0, 184, 255, 0.5);
+    text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
 }
 
 .location-country {
-    font-size: 0.9em;
-    color: #80b0d0;
+    font-size: 0.95em;
+    color: #ffb347;
     letter-spacing: 1px;
 }
 
@@ -333,19 +400,19 @@ body::before {
 }
 
 .meta-label {
-    color: #60a0c0;
+    color: #d4a574;
     text-transform: uppercase;
     font-size: 0.9em;
 }
 
 .meta-value {
-    color: #00b8ff;
+    color: #ffd700;
     font-weight: bold;
 }
 
 .meta-divider {
-    color: #0066cc;
-    opacity: 0.5;
+    color: #cc6600;
+    opacity: 0.6;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -357,9 +424,9 @@ body::before {
     justify-content: space-between;
     align-items: center;
     padding: 16px 40px;
-    background: linear-gradient(0deg, rgba(0, 10, 20, 0.9) 0%, rgba(0, 10, 20, 0.7) 100%);
-    border-top: 2px solid #00b8ff;
-    box-shadow: 0 0 20px rgba(0, 184, 255, 0.3);
+    background: linear-gradient(0deg, rgba(26, 15, 10, 0.95) 0%, rgba(26, 15, 10, 0.8) 100%);
+    border-top: 2px solid #ff8c00;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
     font-size: 0.85em;
     letter-spacing: 1px;
     z-index: 100;
@@ -390,18 +457,18 @@ body::before {
 }
 
 .status-label {
-    color: #60a0c0;
+    color: #d4a574;
     text-transform: uppercase;
 }
 
 .status-value {
-    color: #00b8ff;
+    color: #ff8c00;
     font-weight: bold;
 }
 
 .status-operational {
-    color: #00ff88;
-    text-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
+    color: #ffa500;
+    text-shadow: 0 0 8px rgba(255, 165, 0, 0.6);
 }
 
 .stat-item {
@@ -411,19 +478,19 @@ body::before {
 }
 
 .stat-label {
-    color: #60a0c0;
+    color: #d4a574;
     text-transform: uppercase;
     font-size: 0.9em;
 }
 
 .stat-value {
-    color: #00b8ff;
+    color: #ffd700;
     font-weight: bold;
     font-size: 1.1em;
 }
 
 .status-timestamp {
-    color: #0066cc;
+    color: #cc6600;
     font-size: 0.9em;
 }
 
@@ -449,11 +516,6 @@ body::before {
     .return-btn {
         font-size: 0.8em;
         padding: 6px 12px;
-    }
-
-    .log-container {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 25px;
     }
 
     .status-bar {
@@ -482,12 +544,30 @@ body::before {
     }
 
     .mission-log {
-        padding: 30px 15px;
+        padding: 40px 10px;
     }
 
-    .log-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
+    /* Mobile: Stack cards vertically, remove alternating */
+    .mission-card:nth-child(odd),
+    .mission-card:nth-child(even) {
+        padding: 0 10px 0 50px;
+        justify-content: flex-start;
+    }
+
+    /* Move journey line to left */
+    .log-container::before {
+        left: 20px;
+    }
+
+    .mission-card::before {
+        left: 20px;
+    }
+
+    .mission-card::after {
+        left: 35px;
+        right: auto;
+        width: 30px;
+        margin: 0;
     }
 
     .status-bar {
@@ -525,7 +605,7 @@ body::before {
     }
 
     .mission-log {
-        padding: 20px 10px;
+        padding: 30px 5px;
     }
 
     .location-name {
