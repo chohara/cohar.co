@@ -99,6 +99,40 @@ body {
     z-index: 1;
 }
 
+/* ═══ RETURN TO ORBIT BUTTON ═══ */
+.return-to-orbit {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+}
+
+.orbit-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--phosphor-green-dark);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.85em;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
+.orbit-btn:hover {
+    border-color: var(--phosphor-green);
+    background: rgba(0, 40, 0, 0.9);
+    box-shadow: var(--shadow-glow-strong);
+    transform: translateX(-2px);
+}
+
+.orbit-bracket {
+    color: var(--phosphor-green);
+    font-weight: bold;
+}
+
 /* ═══ TERMINAL HEADER ═══ */
 .terminal-header {
     text-align: center;
