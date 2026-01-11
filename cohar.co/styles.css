@@ -87,6 +87,12 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
 }
 
+.sun:hover .planet-name {
+    transform: scale(1.2);
+    display: block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+}
+
 @keyframes orbit {
     from {
         transform: rotate(0deg) translateX(var(--distance)) rotate(0deg);
