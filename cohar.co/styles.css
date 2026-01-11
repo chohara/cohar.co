@@ -76,8 +76,11 @@ body {
     padding: 5px;
     border-radius: 5px;
     font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.2;
     color: #00ff00;
     z-index: 20; /* ensure planet name appears in front */
+    white-space: nowrap;
 }
 
 .planet:hover  .planet-name {
