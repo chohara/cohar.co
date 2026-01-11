@@ -64,7 +64,8 @@ body {
     display: none;
     position: absolute;
     bottom: -30px;
-    left: -10%;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.7);
     padding: 5px;
     border-radius: 5px;
@@ -74,13 +75,13 @@ body {
 }
 
 .planet:hover  .planet-name {
-    transform: scale(1.2);
+    transform: translateX(-50%) scale(1.2);
     display: block;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
 }
 
 .sun:hover .planet-name {
-    transform: scale(1.2);
+    transform: translateX(-50%) scale(1.2);
     display: block;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
 }
