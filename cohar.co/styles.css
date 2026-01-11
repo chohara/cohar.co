@@ -45,8 +45,9 @@ body {
     line-height: 200px;
     font-size: 24px;
     color: #000;
+    z-index: 0 !important;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
 }
 
@@ -71,21 +72,20 @@ body {
     padding: 5px;
     border-radius: 5px;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
-    line-height: 1.2;
     color: #00ff00;
     z-index: 20; /* ensure planet name appears in front */
-    white-space: nowrap;
 }
 
 .planet:hover  .planet-name {
+    transform: scale(1.2);
     display: block;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
 }
 
 .sun:hover .planet-name {
+    transform: scale(1.2);
     display: block;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
 }
 
 @keyframes orbit {
@@ -176,6 +176,4 @@ body {
     animation-delay: 0s; 
     z-index: 0 !important;
 }
-
-
 
