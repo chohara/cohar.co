@@ -51,6 +51,10 @@ body {
     text-decoration: none;
 }
 
+.sun:hover {
+    box-shadow: 0 0 30px rgba(255, 204, 0, 0.6), 0 0 60px rgba(255, 204, 0, 0.3);
+}
+
 .planet {
     position: absolute;
     border-radius: 50%;
@@ -77,15 +81,13 @@ body {
 }
 
 .planet:hover  .planet-name {
-    transform: scale(1.2);
     display: block;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .sun:hover .planet-name {
-    transform: scale(1.2);
     display: block;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes orbit {
