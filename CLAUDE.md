@@ -2,18 +2,19 @@
 
 ## Project Overview
 
-**cohar.co** is a static website repository that hosts a personal portfolio with four main sections:
+**cohar.co** is a static website repository that hosts a personal portfolio with five main sections:
 - **About Me**: Professional profile and biography
 - **MtG (Magic the Gathering)**: Commander deck collection
 - **Games**: Video game reviews organized by gaming console
+- **Music**: Audio track hosting with Berghain-inspired dark industrial rave aesthetic
 - **Travel**: Travel photography and destination guides
 
 The site is deployed to AWS S3 with CloudFront CDN distribution, automatically updated via GitHub Actions on pushes to the main branch.
 
 ## Technology Stack
 
-- **Frontend**: Pure HTML5 + CSS3 (no frameworks)
-- **Fonts**: Custom web fonts (Terminus, Noto Sans Symbols 2, Ubuntu)
+- **Frontend**: Pure HTML5 + CSS3 (minimal JavaScript for music page only)
+- **Fonts**: Custom web fonts (Terminus, Noto Sans Symbols 2, Ubuntu, Orbitron)
 - **Deployment**: AWS S3 + CloudFront
 - **CI/CD**: GitHub Actions
 - **Version Control**: Git
@@ -34,14 +35,17 @@ cohar.co/
 │   ├── fonts/                     # Web fonts
 │   │   ├── terminus.woff2
 │   │   ├── notosanssymbols2.woff2
-│   │   └── ubuntu-regular.woff2
+│   │   ├── ubuntu-regular.woff2
+│   │   └── orbitron-regular.woff2
 │   ├── images/
 │   │   ├── bg_space_seamless.png  # Site-wide background
 │   │   ├── about_me/              # Professional headshot and images
 │   │   ├── console_logos/         # Gaming console logos
 │   │   ├── game_covers/           # Game cover art
 │   │   ├── game_screenshots/      # In-game screenshots
+│   │   ├── music/                 # Music track cover art
 │   │   └── travel/                # Travel photos organized by destination
+│   ├── audio/                     # Audio files (MP3 format)
 │   ├── about/
 │   │   ├── index.html             # About Me page
 │   │   └── styles.css             # About Me styles
@@ -62,6 +66,10 @@ cohar.co/
 │   ├── mtg/
 │   │   ├── index.html             # MTG deck gallery
 │   │   └── style.css              # MTG styles
+│   ├── music/
+│   │   ├── index.html             # Music page with audio players
+│   │   ├── styles.css             # Music page styles (Berghain dark aesthetic)
+│   │   └── waveform.js            # Minimal JavaScript for waveform animation
 │   └── travel/
 │       ├── index.html             # Interactive globe with destinations
 │       ├── styles.css             # Travel page styles
@@ -682,6 +690,10 @@ aws cloudfront create-invalidation --distribution-id=<ID> --paths '/*'
    - Use absolute paths from site root: `/images/`, `/games/`, etc.
    - Never use relative paths like `../`
    - Paths are case-sensitive
+   - **IMPORTANT**: Planet pages (about, games, music, travel, mtg) must reference stylesheets as `planet-name/styles.css` due to S3/CloudFront hosting configuration
+     - Example: Music page at `/music/index.html` uses `<link rel="stylesheet" href="music/styles.css">`
+     - Example: About page at `/about/index.html` uses `<link rel="stylesheet" href="about/styles.css">`
+     - This applies to all resources in planet directories (CSS, JS, etc.)
 
 3. **Naming Conventions**
    - HTML files: lowercase with underscores
