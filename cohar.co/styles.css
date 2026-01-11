@@ -42,12 +42,9 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    line-height: 200px;
-    font-size: 24px;
     color: #000;
-    z-index: 0 !important;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s;
     text-decoration: none;
 }
 
@@ -181,4 +178,5 @@ body {
     animation-delay: 0s; 
     z-index: 0 !important;
 }
+
 
