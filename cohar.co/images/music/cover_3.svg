@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#0a0a0a"/>
+  <polygon points="200,80 320,280 80,280" fill="none" stroke="#ff00ff" stroke-width="3" opacity="0.8"/>
+  <polygon points="200,120 280,260 120,260" fill="none" stroke="#00ffff" stroke-width="2" opacity="0.7"/>
+  <polygon points="200,160 240,240 160,240" fill="none" stroke="#ff6600" stroke-width="2" opacity="0.6"/>
+  <circle cx="200" cy="200" r="5" fill="#00ffff" opacity="0.9"/>
+  <text x="200" y="360" text-anchor="middle" fill="#ff00ff" font-family="monospace" font-size="24" font-weight="bold">TRACK 03</text>
+</svg>
