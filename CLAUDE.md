@@ -2,7 +2,8 @@
 
 ## Project Overview
 
-**cohar.co** is a static website repository that hosts a personal portfolio with three main sections:
+**cohar.co** is a static website repository that hosts a personal portfolio with four main sections:
+- **About Me**: Professional profile and biography
 - **MtG (Magic the Gathering)**: Commander deck collection
 - **Games**: Video game reviews organized by gaming console
 - **Travel**: Travel photography and destination guides
@@ -36,10 +37,14 @@ cohar.co/
 │   │   └── ubuntu-regular.woff2
 │   ├── images/
 │   │   ├── bg_space_seamless.png  # Site-wide background
+│   │   ├── about_me/              # Professional headshot and images
 │   │   ├── console_logos/         # Gaming console logos
 │   │   ├── game_covers/           # Game cover art
 │   │   ├── game_screenshots/      # In-game screenshots
 │   │   └── travel/                # Travel photos organized by destination
+│   ├── about/
+│   │   ├── index.html             # About Me page
+│   │   └── styles.css             # About Me styles
 │   ├── games/
 │   │   ├── index.html             # Games hub page
 │   │   ├── styles.css             # Games hub styles
@@ -81,7 +86,38 @@ games/{console}/
 
 ## Content Organization
 
-### 1. Games Section
+### 1. About Me Section
+
+The About Me page serves as a professional profile and biography, accessible from the homepage's sun element.
+
+#### Page Structure
+- **Navigation Bar**: Sticky navigation with "← Back to Orbit" link to homepage
+- **Profile Header**:
+  - Professional headshot (140px circular image)
+  - Name and tagline
+  - Professional links (LinkedIn, GitHub, Email)
+- **About Me Section**: Biography and personal introduction
+- **Professional Experience**: Work history and accomplishments
+- **Skills & Expertise**: Grid layout showcasing technical and creative abilities
+- **Interests**: Personal projects and hobbies
+- **Footer**: Copyright and attribution
+
+#### Design Aesthetic
+- **Style**: Editorial document aesthetic with sophisticated professional branding
+- **Typography**: System fonts (-apple-system, BlinkMacSystemFont, Segoe UI)
+- **Color Scheme**:
+  - Background: Off-white (#FCFCFC)
+  - Text: Near-black (#1a1a1a)
+  - Borders: Light gray (#E8E8E8)
+- **Layout**: Single-column, centered content (max-width: 780px)
+- **Responsive**: Mobile-first design with clean, readable typography
+
+#### Content Management
+- Profile image stored in `/images/about_me/headshot.jpg`
+- Links can be updated to point to actual professional profiles
+- Placeholder text sections ready for personalized content
+
+### 2. Games Section
 
 #### Console-Level Organization
 - Each console has its own directory under `/games/`
@@ -461,7 +497,7 @@ Update the Quick Reference table below with the new console entry count and tota
 
 ---
 
-### 2. Travel Section
+### 3. Travel Section
 
 The travel page features an interactive globe with multiple view levels:
 - **GLOBAL**: World map view
@@ -480,7 +516,7 @@ Each destination includes:
 4. Add marker to appropriate map layer in `/travel/index.html`
 5. Calculate coordinates and convert to map percentage positions
 
-### 3. MTG Section
+### 4. MTG Section
 
 Simple gallery layout linking to external Manabox deck lists:
 - Commander card images fetched from Scryfall
@@ -692,6 +728,7 @@ aws cloudfront create-invalidation --distribution-id=<ID> --paths '/*'
 
 | Task | Files to Edit |
 |------|---------------|
+| Update About Me content | `about/index.html`, `images/about_me/` for profile images |
 | Add new game review | `games/{console}/{game}.html`, `games/{console}/index.html`, optionally `games/index.html` |
 | Add new console | Create `games/{console}/`, add to `games/index.html` |
 | Add travel destination | `travel/index.html`, create `travel/{dest}/index.html` |
