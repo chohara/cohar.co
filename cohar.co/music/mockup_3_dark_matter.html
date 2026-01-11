@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup 3: Dark Matter</title>
+    <style>
+        /* FONTS */
+        @font-face {
+            font-family: 'Terminus';
+            src: url('/fonts/terminus.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Orbitron';
+            src: url('/fonts/orbitron-regular.woff2') format('woff2');
+        }
+
+        /* COLORS */
+        :root {
+            --color-void: #000000;
+            --color-deep: #050510;
+            --color-hull: #0f0f1a;
+            --color-steel: #1a1a2e;
+            --color-cyan: #00ffff;
+            --color-magenta: #ff00ff;
+            --color-purple: #7b2cbf;
+            --color-orange: #ff6600;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Terminus', monospace;
+            background-color: var(--color-void);
+            background-image:
+                radial-gradient(circle at 20% 80%, rgba(123, 44, 191, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.05) 0%, transparent 50%);
+            color: #cccccc;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* SUBTLE GRID + SCANLINES */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(0deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(255, 102, 0, 0.01) 0px,
+                    transparent 1px,
+                    transparent 2px,
+                    rgba(255, 102, 0, 0.01) 3px
+                );
+            background-size: 60px 60px, 60px 60px, 100% 4px;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.7;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* HEADER */
+        .header {
+            background: linear-gradient(to bottom,
+                rgba(15, 15, 26, 0.9) 0%,
+                rgba(5, 5, 16, 0.8) 100%
+            );
+            border-bottom: 2px solid var(--color-purple);
+            padding: 45px 20px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(123, 44, 191, 0.3);
+            position: relative;
+        }
+
+        .mockup-label {
+            font-size: 10px;
+            color: var(--color-cyan);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 255, 255, 0.4);
+            display: inline-block;
+            padding: 6px 20px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+
+        .header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 52px;
+            color: #ffffff;
+            letter-spacing: 12px;
+            margin-bottom: 15px;
+            text-shadow:
+                0 0 20px rgba(0, 255, 255, 0.8),
+                0 0 40px rgba(255, 0, 255, 0.5);
+        }
+
+        .subtext {
+            font-size: 13px;
+            color: rgba(0, 255, 255, 0.9);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        /* SUBTLE WAVEFORM ACCENT */
+        .header-accent {
+            display: flex;
+            justify-content: center;
+            gap: 3px;
+            margin-top: 25px;
+            height: 2px;
+        }
+
+        .accent-bar {
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(to right, var(--color-cyan), var(--color-magenta));
+            box-shadow: 0 0 8px var(--color-cyan);
+        }
+
+        .accent-bar:nth-child(2) {
+            background: linear-gradient(to right, var(--color-magenta), var(--color-purple));
+        }
+
+        .accent-bar:nth-child(3) {
+            background: linear-gradient(to right, var(--color-purple), var(--color-cyan));
+        }
+
+        /* NAV */
+        .nav-bar {
+            background-color: rgba(15, 15, 26, 0.95);
+            border-bottom: 1px solid var(--color-steel);
+            padding: 18px 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-link {
+            color: var(--color-cyan);
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        /* TRACK CONTAINER */
+        .track-container {
+            background: linear-gradient(135deg,
+                rgba(26, 26, 46, 0.6) 0%,
+                rgba(15, 15, 26, 0.8) 50%,
+                rgba(5, 5, 16, 0.9) 100%
+            );
+            border: 2px solid rgba(123, 44, 191, 0.5);
+            border-left: 4px solid var(--color-cyan);
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                0 0 40px rgba(123, 44, 191, 0.25),
+                inset 0 0 60px rgba(0, 255, 255, 0.03);
+        }
+
+        /* SUBTLE WAVEFORM ACCENT ON SIDE */
+        .track-waveform {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom,
+                transparent 0%,
+                var(--color-cyan) 10%,
+                transparent 15%,
+                transparent 25%,
+                var(--color-magenta) 30%,
+                transparent 45%,
+                transparent 55%,
+                var(--color-purple) 65%,
+                transparent 80%,
+                var(--color-cyan) 90%,
+                transparent 100%
+            );
+            opacity: 0.6;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        /* TRACK HEADER */
+        .track-header {
+            background: linear-gradient(to right,
+                rgba(123, 44, 191, 0.2) 0%,
+                rgba(0, 255, 255, 0.1) 100%
+            );
+            border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+            padding: 25px 30px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .track-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 38px;
+            font-weight: bold;
+            color: var(--color-orange);
+            min-width: 65px;
+            text-shadow: 0 0 15px rgba(255, 102, 0, 0.8);
+        }
+
+        .track-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 30px;
+            color: #ffffff;
+            letter-spacing: 8px;
+            flex-grow: 1;
+            text-shadow: 0 0 12px rgba(0, 255, 255, 0.6);
+        }
+
+        .track-status {
+            font-size: 10px;
+            color: var(--color-cyan);
+            padding: 7px 16px;
+            border: 1px solid rgba(0, 255, 255, 0.5);
+            letter-spacing: 2px;
+            background-color: rgba(0, 255, 255, 0.1);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+
+        /* TRACK CONTENT */
+        .track-content {
+            display: flex;
+            gap: 40px;
+            padding: 35px;
+        }
+
+        .track-cover {
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .track-cover img {
+            width: 290px;
+            height: 290px;
+            border: 3px solid rgba(0, 255, 255, 0.4);
+            box-shadow:
+                0 0 40px rgba(0, 255, 255, 0.3),
+                0 0 80px rgba(255, 0, 255, 0.2);
+        }
+
+        /* CORNER BRACKETS */
+        .track-cover::before,
+        .track-cover::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--color-magenta);
+        }
+
+        .track-cover::before {
+            top: -5px;
+            left: -5px;
+            border-right: none;
+            border-bottom: none;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.4);
+        }
+
+        .track-cover::after {
+            bottom: -5px;
+            right: -5px;
+            border-left: none;
+            border-top: none;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.4);
+        }
+
+        /* MINI WAVEFORM BESIDE COVER */
+        .cover-waveform {
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            width: 12px;
+        }
+
+        .mini-wave {
+            height: 2px;
+            background: var(--color-magenta);
+            box-shadow: 0 0 6px var(--color-magenta);
+        }
+
+        .mini-wave:nth-child(1) { width: 60%; }
+        .mini-wave:nth-child(2) { width: 90%; }
+        .mini-wave:nth-child(3) { width: 45%; }
+        .mini-wave:nth-child(4) { width: 100%; }
+        .mini-wave:nth-child(5) { width: 70%; }
+        .mini-wave:nth-child(6) { width: 55%; }
+
+        .track-info {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        /* METADATA */
+        .track-meta {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 25px;
+            background: linear-gradient(to right,
+                rgba(0, 0, 0, 0.5) 0%,
+                rgba(26, 26, 46, 0.4) 100%
+            );
+            border: 1px solid rgba(123, 44, 191, 0.3);
+            border-left: 3px solid rgba(0, 255, 255, 0.5);
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .meta-label {
+            font-size: 10px;
+            color: rgba(0, 255, 255, 0.7);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .meta-value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 20px;
+            color: #ffffff;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+        }
+
+        /* DESCRIPTION */
+        .track-description {
+            font-size: 14px;
+            color: #dddddd;
+            line-height: 2;
+            padding: 25px;
+            background: linear-gradient(to right,
+                rgba(0, 255, 255, 0.08) 0%,
+                rgba(255, 0, 255, 0.08) 100%
+            );
+            border-left: 3px solid rgba(0, 255, 255, 0.5);
+            border-right: 3px solid rgba(255, 0, 255, 0.5);
+            font-style: italic;
+            position: relative;
+        }
+
+        /* SUBTLE GRID ON DESCRIPTION */
+        .track-description::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(0deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 0, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+        }
+
+        /* AUDIO PLAYER */
+        .player-container {
+            margin-top: auto;
+            padding: 25px;
+            background: linear-gradient(to right,
+                rgba(0, 255, 255, 0.1) 0%,
+                rgba(123, 44, 191, 0.15) 50%,
+                rgba(255, 0, 255, 0.1) 100%
+            );
+            border: 2px solid rgba(123, 44, 191, 0.4);
+            box-shadow:
+                0 0 20px rgba(123, 44, 191, 0.2),
+                inset 0 0 20px rgba(0, 255, 255, 0.05);
+        }
+
+        .audio-player {
+            width: 100%;
+            height: 45px;
+            filter: contrast(1.2) brightness(1.1);
+        }
+
+        /* CONCEPT DESCRIPTION */
+        .concept-description {
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg,
+                rgba(26, 26, 46, 0.6) 0%,
+                rgba(15, 15, 26, 0.8) 100%
+            );
+            border: 2px solid rgba(123, 44, 191, 0.5);
+            box-shadow: 0 0 30px rgba(123, 44, 191, 0.2);
+        }
+
+        .concept-description h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--color-cyan);
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+        }
+
+        .concept-description ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .concept-description li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        .concept-description li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--color-magenta);
+            text-shadow: 0 0 8px var(--color-magenta);
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="header">
+            <div class="mockup-label">◢ MOCKUP 3 ◣</div>
+            <h1>DARK MATTER</h1>
+            <div class="subtext">ATMOSPHERIC SIGNAL TRANSMISSION</div>
+            <div class="header-accent">
+                <div class="accent-bar"></div>
+                <div class="accent-bar"></div>
+                <div class="accent-bar"></div>
+            </div>
+        </div>
+
+        <nav class="nav-bar">
+            <a href="index.html" class="nav-link">← BACK TO MUSIC PAGE</a>
+        </nav>
+
+        <div class="container">
+            <div class="track-container">
+                <div class="track-waveform"></div>
+
+                <div class="track-header">
+                    <div class="track-number">01</div>
+                    <div class="track-title">NEON ABYSS</div>
+                    <div class="track-status">ONLINE</div>
+                </div>
+
+                <div class="track-content">
+                    <div class="track-cover">
+                        <img src="/images/music/cover_1.svg" alt="Neon Abyss Cover">
+                        <div class="cover-waveform">
+                            <div class="mini-wave"></div>
+                            <div class="mini-wave"></div>
+                            <div class="mini-wave"></div>
+                            <div class="mini-wave"></div>
+                            <div class="mini-wave"></div>
+                            <div class="mini-wave"></div>
+                        </div>
+                    </div>
+
+                    <div class="track-info">
+                        <div class="track-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">Genre</span>
+                                <span class="meta-value">TECHNO</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">BPM</span>
+                                <span class="meta-value">138</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Duration</span>
+                                <span class="meta-value">5:47</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Date</span>
+                                <span class="meta-value">2026-01-11</span>
+                            </div>
+                        </div>
+
+                        <div class="track-description">
+                            Deep pulsing basslines meet crystalline synths in the void. Industrial percussion drives through neon-lit corridors of sound.
+                        </div>
+
+                        <div class="player-container">
+                            <audio controls class="audio-player">
+                                <source src="/audio/track_1.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-description">
+                <h2>CONCEPT 3: DARK MATTER</h2>
+                <ul>
+                    <li><strong>Balanced aesthetic</strong> - sophisticated blend of industrial and rave elements</li>
+                    <li><strong>Subtle grid overlay</strong> - visible but not dominating (60px grid at 3% opacity)</li>
+                    <li><strong>Light scanlines</strong> - gentle CRT effect without overwhelming the content</li>
+                    <li><strong>Tasteful neon glows</strong> - cyan/magenta/purple with moderate intensity</li>
+                    <li><strong>Integrated waveform elements</strong> - subtle accent bars, not overwhelming</li>
+                    <li><strong>Orbitron for headers/metadata</strong> - Terminus for body text (hierarchy)</li>
+                    <li><strong>Atmospheric gradients</strong> - radial background creates depth without distraction</li>
+                    <li><strong>Corner brackets + mini waveforms</strong> - decorative touches that don't dominate</li>
+                    <li><strong>Professional yet creative</strong> - elegant, moody, sophisticated underground club aesthetic</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
