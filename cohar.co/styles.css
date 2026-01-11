@@ -42,14 +42,12 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    line-height: 200px;
+    font-size: 24px;
     color: #000;
     cursor: pointer;
     transition: transform 0.3s;
     text-decoration: none;
-}
-
-.sun:hover {
-    box-shadow: 0 0 30px rgba(255, 204, 0, 0.6), 0 0 60px rgba(255, 204, 0, 0.3);
 }
 
 .planet {
@@ -178,5 +176,6 @@ body {
     animation-delay: 0s; 
     z-index: 0 !important;
 }
+
 
 
