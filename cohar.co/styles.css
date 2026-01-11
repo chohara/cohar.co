@@ -51,11 +51,6 @@ body {
     text-decoration: none;
 }
 
-.sun:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px rgba(255, 204, 0, 0.8);
-}
-
 .planet {
     position: absolute;
     border-radius: 50%;
@@ -181,3 +176,4 @@ body {
     animation-delay: 0s; 
     z-index: 0 !important;
 }
+
