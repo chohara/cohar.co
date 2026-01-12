@@ -6,7 +6,7 @@
 - **About Me**: Professional profile and biography
 - **MtG (Magic the Gathering)**: Commander deck collection
 - **Games**: Video game reviews organized by gaming console
-- **Music**: Audio track hosting with Berghain-inspired dark industrial rave aesthetic
+- **Music**: Audio track hosting with space horror techno aesthetic
 - **Travel**: Travel photography and destination guides
 
 The site is deployed to AWS S3 with CloudFront CDN distribution, automatically updated via GitHub Actions on pushes to the main branch.
@@ -68,7 +68,7 @@ cohar.co/
 │   │   └── style.css              # MTG styles
 │   ├── music/
 │   │   ├── index.html             # Music page with audio players
-│   │   ├── styles.css             # Music page styles (Berghain dark aesthetic)
+│   │   ├── styles.css             # Music page styles (space horror techno aesthetic)
 │   └── travel/
 │       ├── index.html             # Interactive globe with destinations
 │       ├── styles.css             # Travel page styles
@@ -865,4 +865,5 @@ aws cloudfront create-invalidation --distribution-id=<ID> --paths '/*'
 **Last Updated**: 2025-12-06
 **Repository**: github.com/chohara/cohar.co
 **Site**: https://cohar.co
+
 
