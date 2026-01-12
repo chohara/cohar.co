@@ -17,8 +17,9 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   COLOR PALETTE - BERGHAIN DARK AESTHETIC
+   COLOR PALETTE - INDUSTRIAL TECHNO AESTHETIC
    ═══════════════════════════════════════════════════════════════
+   Consolidated to 2-3 core colors: Orange/Amber + Teal + Black
    Pure static HTML/CSS - No JavaScript
    ═══════════════════════════════════════════════════════════════ */
 
@@ -28,11 +29,8 @@
     --color-hull: #121212;
     --color-steel: #1a1a1a;
     --color-panel: #1f1f1f;
-    --color-warning: #8b4000;
-    --color-emergency: #660000;
+    --color-orange: #8b4000;
     --color-teal: #004d4d;
-    --color-purple: #4a1a66;
-    --color-magenta: #660033;
     --color-text-dim: #666666;
     --color-text-main: #999999;
     --color-text-bright: #cccccc;
@@ -67,7 +65,7 @@ body::before {
     height: 100%;
     background-image:
         linear-gradient(0deg, rgba(0, 77, 77, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(74, 26, 102, 0.02) 1px, transparent 1px);
+        linear-gradient(90deg, rgba(139, 64, 0, 0.02) 1px, transparent 1px);
     background-size: 80px 80px;
     pointer-events: none;
     z-index: 1;
@@ -80,7 +78,7 @@ body::before {
 
 .header {
     background: linear-gradient(to bottom, var(--color-hull), var(--color-void));
-    border-bottom: 2px solid var(--color-warning);
+    border-bottom: 2px solid var(--color-orange);
     padding: 35px 20px;
     text-align: center;
     display: flex;
@@ -94,7 +92,7 @@ body::before {
 
 .signal-indicator {
     font-size: 42px;
-    color: var(--color-warning);
+    color: var(--color-orange);
 }
 
 .header-text h1 {
@@ -146,7 +144,7 @@ body::before {
 }
 
 .status-active {
-    color: var(--color-warning);
+    color: var(--color-orange);
     font-size: 11px;
 }
 
@@ -174,15 +172,15 @@ body::before {
 }
 
 .track-container:nth-child(1) {
-    border-left: 3px solid var(--color-teal);
+    border-left: 3px solid var(--color-orange);
 }
 
 .track-container:nth-child(2) {
-    border-left: 3px solid var(--color-purple);
+    border-left: 3px solid var(--color-teal);
 }
 
 .track-container:nth-child(3) {
-    border-left: 3px solid var(--color-magenta);
+    border-left: 3px solid var(--color-orange);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -202,7 +200,7 @@ body::before {
     font-family: 'Orbitron', sans-serif;
     font-size: 32px;
     font-weight: bold;
-    color: var(--color-warning);
+    color: var(--color-orange);
     min-width: 50px;
 }
 
@@ -286,7 +284,7 @@ body::before {
     padding: 20px;
     background-color: var(--color-deep);
     border: 1px solid var(--color-steel);
-    border-left: 2px solid var(--color-purple);
+    border-left: 2px solid var(--color-teal);
 }
 
 .meta-item {
@@ -332,11 +330,11 @@ body::before {
     margin-top: auto;
     padding: 25px;
     background: linear-gradient(to right,
-        rgba(0, 77, 77, 0.08),
-        rgba(74, 26, 102, 0.08)
+        rgba(139, 64, 0, 0.08),
+        rgba(0, 77, 77, 0.08)
     );
     border: 1px solid var(--color-steel);
-    border-left: 2px solid var(--color-magenta);
+    border-left: 2px solid var(--color-orange);
     position: relative;
 }
 
@@ -353,7 +351,7 @@ body::before {
 
 .wave-bar {
     flex: 1;
-    background: linear-gradient(to top, var(--color-teal), var(--color-purple));
+    background: linear-gradient(to top, var(--color-teal), var(--color-orange));
     min-height: 4px;
     height: 20%;
     opacity: 0.4;
@@ -408,7 +406,7 @@ body::before {
     margin-top: 60px;
     padding: 30px 20px;
     background: linear-gradient(to top, var(--color-hull), var(--color-void));
-    border-top: 2px solid var(--color-emergency);
+    border-top: 2px solid var(--color-orange);
     text-align: center;
     position: relative;
     z-index: 2;
@@ -419,7 +417,7 @@ body::before {
     background: linear-gradient(
         to right,
         transparent,
-        var(--color-emergency),
+        var(--color-orange),
         transparent
     );
     margin-bottom: 15px;
