@@ -13,7 +13,7 @@ The site is deployed to AWS S3 with CloudFront CDN distribution, automatically u
 
 ## Technology Stack
 
-- **Frontend**: Pure HTML5 + CSS3 (minimal JavaScript for music page only)
+- **Frontend**: Pure HTML5 + CSS3
 - **Fonts**: Custom web fonts (Terminus, Noto Sans Symbols 2, Ubuntu, Orbitron)
 - **Deployment**: AWS S3 + CloudFront
 - **CI/CD**: GitHub Actions
@@ -69,7 +69,6 @@ cohar.co/
 │   ├── music/
 │   │   ├── index.html             # Music page with audio players
 │   │   ├── styles.css             # Music page styles (Berghain dark aesthetic)
-│   │   └── waveform.js            # Minimal JavaScript for waveform animation
 │   └── travel/
 │       ├── index.html             # Interactive globe with destinations
 │       ├── styles.css             # Travel page styles
@@ -866,3 +865,4 @@ aws cloudfront create-invalidation --distribution-id=<ID> --paths '/*'
 **Last Updated**: 2025-12-06
 **Repository**: github.com/chohara/cohar.co
 **Site**: https://cohar.co
+
