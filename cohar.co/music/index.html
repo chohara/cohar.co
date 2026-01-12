@@ -17,6 +17,19 @@
     <div class="signal-indicator">⚠</div>
 </div>
 
+<!-- OSCILLOSCOPE DISPLAY -->
+<div class="oscilloscope-container">
+    <div class="scope-header">
+        <span class="scope-label">[SIGNAL ANALYSIS]</span>
+        <span class="scope-freq">440.00 Hz</span>
+        <span class="scope-status">ACTIVE</span>
+    </div>
+    <div class="oscilloscope">
+        <div class="scope-grid"></div>
+        <div class="scope-line"></div>
+    </div>
+</div>
+
 <nav class="nav-bar">
     <a href="/index.html" class="nav-link">← BACK TO ORBIT</a>
     <div class="status-line">
@@ -29,15 +42,27 @@
 
     <!-- Track 1 -->
     <div class="track-container">
+        <div class="tactical-border top-left"></div>
+        <div class="tactical-border top-right"></div>
+        <div class="tactical-border bottom-left"></div>
+        <div class="tactical-border bottom-right"></div>
+
         <div class="track-header">
-            <div class="track-number">01</div>
+            <div class="track-number">
+                <span class="number-bracket">[</span>01<span class="number-bracket">]</span>
+            </div>
             <div class="track-title">NEON ABYSS</div>
-            <div class="track-status">READY</div>
+            <div class="track-status">
+                <span class="status-dot">●</span> READY
+            </div>
         </div>
 
         <div class="track-content">
             <div class="track-cover">
-                <img src="/images/music/cover_1.svg" alt="Neon Abyss Cover">
+                <div class="cover-frame">
+                    <img src="/images/music/cover_1.svg" alt="Neon Abyss Cover">
+                    <div class="cover-overlay"></div>
+                </div>
             </div>
 
             <div class="track-info">
@@ -61,12 +86,34 @@
                 </div>
 
                 <div class="track-description">
+                    <div class="desc-label">// ANALYSIS:</div>
                     Deep pulsing basslines meet crystalline synths in the void. Industrial percussion drives through neon-lit corridors of sound.
                 </div>
 
                 <div class="player-container">
-                    <canvas class="oscilloscope-canvas" data-track="1"></canvas>
-                    <audio controls class="audio-player" data-track="1">
+                    <div class="waveform-visualizer">
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                    </div>
+                    <audio controls class="audio-player">
                         <source src="/audio/track_1.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
@@ -77,15 +124,27 @@
 
     <!-- Track 2 -->
     <div class="track-container">
+        <div class="tactical-border top-left"></div>
+        <div class="tactical-border top-right"></div>
+        <div class="tactical-border bottom-left"></div>
+        <div class="tactical-border bottom-right"></div>
+
         <div class="track-header">
-            <div class="track-number">02</div>
+            <div class="track-number">
+                <span class="number-bracket">[</span>02<span class="number-bracket">]</span>
+            </div>
             <div class="track-title">INDUSTRIAL PULSE</div>
-            <div class="track-status">READY</div>
+            <div class="track-status">
+                <span class="status-dot">●</span> READY
+            </div>
         </div>
 
         <div class="track-content">
             <div class="track-cover">
-                <img src="/images/music/cover_2.svg" alt="Industrial Pulse Cover">
+                <div class="cover-frame">
+                    <img src="/images/music/cover_2.svg" alt="Industrial Pulse Cover">
+                    <div class="cover-overlay"></div>
+                </div>
             </div>
 
             <div class="track-info">
@@ -109,12 +168,34 @@
                 </div>
 
                 <div class="track-description">
+                    <div class="desc-label">// ANALYSIS:</div>
                     Hypnotic arpeggios cascade through mechanical rhythms. Ethereal pads clash with brutal percussion in zero gravity.
                 </div>
 
                 <div class="player-container">
-                    <canvas class="oscilloscope-canvas" data-track="2"></canvas>
-                    <audio controls class="audio-player" data-track="2">
+                    <div class="waveform-visualizer">
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                    </div>
+                    <audio controls class="audio-player">
                         <source src="/audio/track_2.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
@@ -125,15 +206,27 @@
 
     <!-- Track 3 -->
     <div class="track-container">
+        <div class="tactical-border top-left"></div>
+        <div class="tactical-border top-right"></div>
+        <div class="tactical-border bottom-left"></div>
+        <div class="tactical-border bottom-right"></div>
+
         <div class="track-header">
-            <div class="track-number">03</div>
+            <div class="track-number">
+                <span class="number-bracket">[</span>03<span class="number-bracket">]</span>
+            </div>
             <div class="track-title">EVENT HORIZON</div>
-            <div class="track-status">READY</div>
+            <div class="track-status">
+                <span class="status-dot">●</span> READY
+            </div>
         </div>
 
         <div class="track-content">
             <div class="track-cover">
-                <img src="/images/music/cover_3.svg" alt="Event Horizon Cover">
+                <div class="cover-frame">
+                    <img src="/images/music/cover_3.svg" alt="Event Horizon Cover">
+                    <div class="cover-overlay"></div>
+                </div>
             </div>
 
             <div class="track-info">
@@ -157,12 +250,34 @@
                 </div>
 
                 <div class="track-description">
+                    <div class="desc-label">// ANALYSIS:</div>
                     Breakbeats fracture time and space. Sub-bass frequencies resonate through hull breaches. Atmospheric tension builds to critical mass.
                 </div>
 
                 <div class="player-container">
-                    <canvas class="oscilloscope-canvas" data-track="3"></canvas>
-                    <audio controls class="audio-player" data-track="3">
+                    <div class="waveform-visualizer">
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                    </div>
+                    <audio controls class="audio-player">
                         <source src="/audio/track_3.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
