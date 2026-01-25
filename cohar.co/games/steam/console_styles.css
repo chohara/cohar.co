@@ -380,32 +380,33 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   PURE CSS SORTING MAGIC - 22 GAMES
+   PURE CSS SORTING MAGIC - 23 GAMES
    ═══════════════════════════════════════════════════════════════ */
 
 /* Sort by DATE (newest first - default) */
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20251208"] { order: 1; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20251115"] { order: 2; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20251105"][data-rating="45"] { order: 3; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20251105"][data-rating="30"] { order: 4; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20251029"] { order: 5; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250922"] { order: 6; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250905"] { order: 7; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250720"] { order: 8; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250711"] { order: 9; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250623"] { order: 10; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250619"][data-rating="30"] { order: 11; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250619"][data-rating="35"] { order: 12; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250602"] { order: 13; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250514"] { order: 14; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250502"][data-rating="35"] { order: 15; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250502"][data-rating="45"] { order: 16; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250421"] { order: 17; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250324"] { order: 18; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250115"] { order: 19; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250104"] { order: 20; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20241214"] { order: 21; }
-#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20241202"] { order: 22; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20260118"] { order: 1; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20251208"] { order: 2; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20251115"] { order: 3; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20251105"][data-rating="45"] { order: 4; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20251105"][data-rating="30"] { order: 5; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20251029"] { order: 6; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250922"] { order: 7; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250905"] { order: 8; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250720"] { order: 9; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250711"] { order: 10; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250623"] { order: 11; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250619"][data-rating="30"] { order: 12; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250619"][data-rating="35"] { order: 13; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250602"] { order: 14; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250514"] { order: 15; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250502"][data-rating="35"] { order: 16; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250502"][data-rating="45"] { order: 17; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250421"] { order: 18; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250324"] { order: 19; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250115"] { order: 20; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250104"] { order: 21; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20241214"] { order: 22; }
+#sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20241202"] { order: 23; }
 
 /* Sort by RATING (highest first) */
 /* Tie-breaking: when ratings are equal, maintain date order */
@@ -413,24 +414,25 @@ body {
 #sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="45"][data-date="20250711"] { order: 2; }
 #sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="45"][data-date="20250502"] { order: 3; }
 #sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="45"][data-date="20241202"] { order: 4; }
-#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="40"][data-date="20251115"] { order: 5; }
-#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="40"][data-date="20250623"] { order: 6; }
-#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="40"][data-date="20250514"] { order: 7; }
-#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="40"][data-date="20250421"] { order: 8; }
-#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="40"][data-date="20250104"] { order: 9; }
-#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="40"][data-date="20241214"] { order: 10; }
-#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="35"][data-date="20251208"] { order: 11; }
-#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="35"][data-date="20250922"] { order: 12; }
-#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="35"][data-date="20250905"] { order: 13; }
-#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="35"][data-date="20250720"] { order: 14; }
-#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="35"][data-date="20250619"] { order: 15; }
-#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="35"][data-date="20250602"] { order: 16; }
-#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="35"][data-date="20250502"] { order: 17; }
-#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="35"][data-date="20250324"] { order: 18; }
-#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="35"][data-date="20250115"] { order: 19; }
-#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="30"][data-date="20251105"] { order: 20; }
-#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="30"][data-date="20250619"] { order: 21; }
-#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="25"] { order: 22; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="40"][data-date="20260118"] { order: 5; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="40"][data-date="20251115"] { order: 6; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="40"][data-date="20250623"] { order: 7; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="40"][data-date="20250514"] { order: 8; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="40"][data-date="20250421"] { order: 9; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="40"][data-date="20250104"] { order: 10; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="40"][data-date="20241214"] { order: 11; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="35"][data-date="20251208"] { order: 12; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="35"][data-date="20250922"] { order: 13; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="35"][data-date="20250905"] { order: 14; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="35"][data-date="20250720"] { order: 15; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="35"][data-date="20250619"] { order: 16; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="35"][data-date="20250602"] { order: 17; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="35"][data-date="20250502"] { order: 18; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="35"][data-date="20250324"] { order: 19; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="35"][data-date="20250115"] { order: 20; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="30"][data-date="20251105"] { order: 21; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="30"][data-date="20250619"] { order: 22; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="25"] { order: 23; }
 
 /* ═══ TERMINAL FOOTER ═══ */
 .terminal-footer {
