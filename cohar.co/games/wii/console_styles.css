@@ -387,7 +387,7 @@ body {
 #sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20250731"] { order: 1; }
 
 /* Sort by RATING (highest first) */
-#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="25"] { order: 1; }
+#sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="20"] { order: 1; }
 
 /* ═══ TERMINAL FOOTER ═══ */
 .terminal-footer {
