@@ -466,6 +466,167 @@ Update the Quick Reference table below with the new console entry count and tota
 
 ---
 
+## 📋 COMPLETE GUIDE: Changing a Game's Rating
+
+Ratings may need to be adjusted retrospectively as you play more games and want to maintain consistency across your reviews. This guide covers all files that must be updated when changing a game's rating.
+
+### Overview: Files Affected by Rating Changes
+
+When changing a game's rating, you must update **5 files**:
+
+| File | What to Update |
+|------|----------------|
+| `games/{console}/{game_name}.html` | Star symbols and "X out of 5" text |
+| `games/{console}/index.html` | Comment, `data-rating` attribute, `meta-rating` stars |
+| `games/{console}/console_styles.css` | Rating sorting rules (move game to correct rating group) |
+| `games/all/index.html` | `data-rating` attribute, `meta-rating` stars |
+| `games/all/console_styles.css` | Rating sorting rules (move game to correct rating group) |
+
+### Step 1: Update the Review Page
+
+Open `/cohar.co/games/{console}/{game_name}.html` and update the rating box:
+
+**Before (example: 4 stars):**
+```html
+<div class="rating-box">
+    <span class="stars">★★★★☆</span>
+    <p>4 out of 5</p>
+</div>
+```
+
+**After (example: 3.5 stars):**
+```html
+<div class="rating-box">
+    <span class="stars">★★★⯪☆</span>
+    <p>3.5 out of 5</p>
+</div>
+```
+
+**Star Rating Reference:**
+| Rating | Stars | Text |
+|--------|-------|------|
+| 5.0 | `★★★★★` | 5 out of 5 |
+| 4.5 | `★★★★⯪` | 4.5 out of 5 |
+| 4.0 | `★★★★☆` | 4 out of 5 |
+| 3.5 | `★★★⯪☆` | 3.5 out of 5 |
+| 3.0 | `★★★☆☆` | 3 out of 5 |
+| 2.5 | `★★⯪☆☆` | 2.5 out of 5 |
+| 2.0 | `★★☆☆☆` | 2 out of 5 |
+| 1.5 | `★⯪☆☆☆` | 1.5 out of 5 |
+| 1.0 | `★☆☆☆☆` | 1 out of 5 |
+
+### Step 2: Update Console Index Page
+
+Open `/cohar.co/games/{console}/index.html` and find the game card:
+
+1. **Update the comment** (for documentation):
+   ```html
+   <!-- Game Title: YYYY-MM-DD, 3.5 -->  ← Update rating here
+   ```
+
+2. **Update `data-rating` attribute** (rating × 10):
+   ```html
+   <div class="game-card" data-date="20260131" data-rating="35">  ← 3.5 × 10 = 35
+   ```
+
+3. **Update `meta-rating` stars**:
+   ```html
+   <span class="meta-rating">★★★⯪☆</span>
+   ```
+
+### Step 3: Update Console CSS Sorting Rules
+
+Open `/cohar.co/games/{console}/console_styles.css` and update the rating sorting section:
+
+1. **Remove the game from its OLD rating group**
+2. **Add the game to its NEW rating group** (in correct date order - newest first)
+3. **Renumber ALL affected entries** to maintain sequential order
+
+**Example: Moving a game from 4.0 to 3.5 stars**
+
+Before:
+```css
+/* 4.0 star games */
+#sort-rating:checked ~ ... .game-card[data-rating="40"][data-date="20260131"] { order: 4; }  ← REMOVE
+#sort-rating:checked ~ ... .game-card[data-rating="40"][data-date="20250805"] { order: 5; }
+/* 3.5 star games */
+#sort-rating:checked ~ ... .game-card[data-rating="35"][data-date="20260107"] { order: 8; }
+```
+
+After:
+```css
+/* 4.0 star games - renumbered */
+#sort-rating:checked ~ ... .game-card[data-rating="40"][data-date="20250805"] { order: 4; }  ← Shifted up
+/* 3.5 star games - with new entry */
+#sort-rating:checked ~ ... .game-card[data-rating="35"][data-date="20260131"] { order: 7; }  ← NEW (newest date first)
+#sort-rating:checked ~ ... .game-card[data-rating="35"][data-date="20260107"] { order: 8; }
+```
+
+**Critical**: After moving the game:
+- All games in the OLD rating group with higher order numbers shift UP by 1
+- All games in the NEW rating group at or after the insertion point shift DOWN by 1
+- The new entry is inserted in DATE order (newest first) within its rating group
+
+### Step 4: Update All Games Index Page
+
+Open `/cohar.co/games/all/index.html` and find the game card:
+
+1. **Update `data-rating` attribute**:
+   ```html
+   <div class="game-card" data-date="20260131" data-rating="35" data-console="gba">
+   ```
+
+2. **Update `meta-rating` stars**:
+   ```html
+   <span class="meta-rating">★★★⯪☆</span>
+   ```
+
+### Step 5: Update All Games CSS Sorting Rules
+
+Open `/cohar.co/games/all/console_styles.css` and follow the same process as Step 3:
+
+1. Remove the game from its OLD rating group
+2. Add the game to its NEW rating group (in correct date order)
+3. Renumber ALL affected entries
+
+**Note**: The All Games page has many more entries, so be careful when renumbering. Games are sorted by:
+1. Rating (highest first)
+2. Date (newest first within same rating)
+
+### Step 6: Commit and Push
+
+```bash
+git add cohar.co/games/{console}/{game_name}.html
+git add cohar.co/games/{console}/index.html
+git add cohar.co/games/{console}/console_styles.css
+git add cohar.co/games/all/index.html
+git add cohar.co/games/all/console_styles.css
+
+git commit -m "Change {Game Title} rating from X to Y stars"
+git push origin main
+```
+
+### Quick Checklist for Rating Changes
+
+- [ ] Review page: Updated stars and "X out of 5" text
+- [ ] Console index: Updated comment, `data-rating`, and `meta-rating`
+- [ ] Console CSS: Moved game to correct rating group, renumbered all affected entries
+- [ ] All Games index: Updated `data-rating` and `meta-rating`
+- [ ] All Games CSS: Moved game to correct rating group, renumbered all affected entries
+- [ ] Committed and pushed all 5 files
+
+### Common Rating Change Mistakes
+
+| Mistake | Consequence | Prevention |
+|---------|-------------|------------|
+| Forgot to update CSS sorting | Game appears in wrong position when sorted by rating | Always update BOTH console and All Games CSS files |
+| Didn't renumber after removal | Gap in order numbers, unpredictable sorting | Check sequence: 1, 2, 3... with no skips |
+| Wrong `data-rating` value | Sorting breaks completely | Remember: rating × 10 (e.g., 3.5 → 35) |
+| Updated index but not review page | Inconsistent rating displayed | Always start with the review page |
+| Inserted in wrong date position | Game appears out of order within rating group | Sort by date (newest first) within each rating |
+
+---
+
 ## Common Pitfalls & Troubleshooting
 
 ### ❌ Issue: Game not appearing on console page
