@@ -417,11 +417,26 @@ If you add a new 4.5-star game reviewed on 2026-01-15:
 - In date sorting: It becomes `order: 1`, all previous games shift down (1→2, 2→3, etc.)
 - In rating sorting: Find where 4.5-star games are, insert by date, renumber all lower-rated games
 
-**D. Update Games Hub (Optional)**
+**D. Update Games Homepage "Recently Played" Section**
 
-If the new game should appear in "Recently Played" on `/games/index.html`:
-1. Replace one of the 5 games in the "Recently Played" section
-2. Keep the 5 most recent/notable games displayed
+**CRITICAL**: Every new game MUST be added to the "Recently Played" section on `/games/index.html`:
+
+1. Open `/cohar.co/games/index.html`
+2. Find the `<div class="game-grid">` within the "RECENTLY PLAYED" section
+3. Add the new game as the **first** game card in the grid
+4. Remove the **last** (5th) game card to maintain exactly 5 games
+5. Update the entry count in the "MASTER ARCHIVE" section: `<div class="archive-subtitle">XX ENTRIES • SORTABLE DATABASE</div>`
+
+```html
+<div class="game-card">
+    <a href="/games/{console}/{game_name}.html">
+        <div class="game-card-inner">
+            <img src="/images/game_covers/{game_name}.jpg" alt="Game Title">
+            <div class="game-title">Game Title</div>
+        </div>
+    </a>
+</div>
+```
 
 **E. Update Documentation Counts**
 
@@ -433,10 +448,10 @@ Update the Quick Reference table below with the new console entry count and tota
 
 | Console | Directory | Logo | Entry Count Variable |
 |---------|-----------|------|---------------------|
-| **All Games (Master)** | `games/all/` | N/A | **Currently: 80** |
+| **All Games (Master)** | `games/all/` | N/A | **Currently: 83** |
 | Nintendo DS | `games/ds/` | `ds.png` | Currently: 1 |
 | GameCube | `games/gamecube/` | `gamecube.png` | Currently: 1 |
-| Game Boy Advance | `games/gba/` | `gba.png` | Currently: 15 |
+| Game Boy Advance | `games/gba/` | `gba.png` | Currently: 17 |
 | Nintendo 3DS | `games/3ds/` | `3ds.png` | Currently: 5 |
 | Playdate | `games/playdate/` | `playdate.png` | Currently: 6 |
 | PlayStation 2 | `games/ps2/` | `ps2.png` | Currently: 1 |
@@ -447,7 +462,7 @@ Update the Quick Reference table below with the new console entry count and tota
 | Nintendo Wii | `games/wii/` | `wii.png` | Currently: 1 |
 | Wii U | `games/wiiu/` | `wiiu.png` | Currently: 3 |
 
-**Total Games Across All Consoles: 80**
+**Total Games Across All Consoles: 83**
 
 ---
 
