@@ -194,6 +194,7 @@ Navigate to the console directory (e.g., `/cohar.co/games/ps5/`) and create `{ga
 
 <div class="review-container">
     <div class="title-box">
+        <a href="/games/" class="home-button">[ ◀ HOME ]</a>
         <h1>Game Title</h1>
     </div>
 
@@ -993,6 +994,7 @@ aws cloudfront create-invalidation --distribution-id=<ID> --paths '/*'
 
 <div class="review-container">
     <div class="title-box">
+        <a href="/games/" class="home-button">[ ◀ HOME ]</a>
         <h1>Game Title</h1>
     </div>
 
