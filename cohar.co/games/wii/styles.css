@@ -30,8 +30,8 @@
     --text-secondary: #33ff66;
     --text-dim: #00aa2a;
     --border-color: #00ff41;
-    --shadow-glow: 0 0 10px rgba(0, 255, 65, 0.5);
-    --shadow-glow-strong: 0 0 20px rgba(0, 255, 65, 0.8);
+    --shadow-glow: 0 0 5px rgba(0, 255, 65, 0.4);
+    --shadow-glow-strong: 0 0 10px rgba(0, 255, 65, 0.7);
 }
 
 /* ═══ BASE STYLES ═══ */
@@ -72,12 +72,6 @@ body::before {
         rgba(0, 0, 0, 0.15) 3px
     );
     z-index: 1000;
-    animation: scanlineMove 8s linear infinite;
-}
-
-@keyframes scanlineMove {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(4px); }
 }
 
 /* ═══ CRT SCREEN GLOW ═══ */
@@ -108,12 +102,6 @@ body::after {
     max-width: 900px;
     margin: 0 auto;
     z-index: 1;
-    animation: screenFlicker 0.15s infinite alternate;
-}
-
-@keyframes screenFlicker {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.98; }
 }
 
 /* Home Button - positioned within title box */
@@ -128,7 +116,7 @@ body::after {
     padding: 4px 8px;
     border: 1px solid var(--phosphor-green-dark);
     background: rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
+    transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
     text-shadow: 0 0 3px rgba(0, 255, 65, 0.3);
     z-index: 10;
 }
@@ -374,4 +362,12 @@ a {
 a:hover {
     color: var(--phosphor-green);
     text-shadow: var(--shadow-glow-strong);
+}
+
+/* ═══ ACCESSIBILITY ═══ */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
 }
