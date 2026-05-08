@@ -1,7 +1,7 @@
-﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ═══════════════════════════════════════════════════════════════
    CONSOLE ARCHIVE TERMINAL - 3DS
    CRT Terminal Design with Pure CSS Sorting
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   ═══════════════════════════════════════════════════════════════ */
 
 /* Terminus Font */
 @font-face {
@@ -19,7 +19,7 @@
     font-style: normal;
 }
 
-/* â•â•â• ROOT VARIABLES â•â•â• */
+/* ═══ ROOT VARIABLES ═══ */
 :root {
     --phosphor-green: #00ff41;
     --phosphor-green-dim: #00cc33;
@@ -34,7 +34,7 @@
     --shadow-glow-strong: 0 0 10px rgba(0, 255, 65, 0.7);
 }
 
-/* â•â•â• BASE STYLES â•â•â• */
+/* ═══ BASE STYLES ═══ */
 * {
     margin: 0;
     padding: 0;
@@ -54,14 +54,14 @@ body {
     min-height: 100vh;
 }
 
-/* â•â•â• HIDDEN SORT CONTROLS â•â•â• */
+/* ═══ HIDDEN SORT CONTROLS ═══ */
 .sort-control {
     position: absolute;
     opacity: 0;
     pointer-events: none;
 }
 
-/* â•â•â• CRT SCREEN CONTAINER â•â•â• */
+/* ═══ CRT SCREEN CONTAINER ═══ */
 .crt-screen {
     position: relative;
     margin: 20px auto;
@@ -76,7 +76,7 @@ body {
     border: 3px solid #001a00;
 }
 
-/* â•â•â• SCANLINES OVERLAY â•â•â• */
+/* ═══ SCANLINES OVERLAY ═══ */
 .scanlines {
     position: absolute;
     top: 0;
@@ -95,13 +95,13 @@ body {
     z-index: 1000;
 }
 
-/* â•â•â• TERMINAL CONTAINER â•â•â• */
+/* ═══ TERMINAL CONTAINER ═══ */
 .terminal-container {
     position: relative;
     z-index: 1;
 }
 
-/* â•â•â• TERMINAL HEADER â•â•â• */
+/* ═══ TERMINAL HEADER ═══ */
 .terminal-header {
     text-align: center;
     margin-bottom: 30px;
@@ -159,7 +159,13 @@ body {
 }
 
 .cursor-blink {
+    animation: blink 1s step-end infinite;
     color: var(--phosphor-green);
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
 }
 
 .system-info {
@@ -175,7 +181,7 @@ body {
     text-shadow: var(--shadow-glow);
 }
 
-/* â•â•â• CONSOLE LOGO DISPLAY â•â•â• */
+/* ═══ CONSOLE LOGO DISPLAY ═══ */
 .console-display {
     text-align: center;
     padding: 30px;
@@ -196,7 +202,7 @@ body {
     filter: brightness(0.9) drop-shadow(0 0 8px rgba(0, 255, 65, 0.3));
 }
 
-/* â•â•â• SORT SECTION â•â•â• */
+/* ═══ SORT SECTION ═══ */
 .sort-section {
     margin: 30px 0;
     padding: 20px;
@@ -272,7 +278,7 @@ body {
     box-shadow: var(--shadow-glow-strong);
 }
 
-/* â•â•â• GAMES GRID â•â•â• */
+/* ═══ GAMES GRID ═══ */
 .games-section {
     margin: 40px 0;
 }
@@ -362,9 +368,9 @@ body {
     text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ═══════════════════════════════════════════════════════════════
    PURE CSS SORTING MAGIC - 9 GAMES
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   ═══════════════════════════════════════════════════════════════ */
 
 /* Sort by DATE (newest first - default) */
 #sort-date:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-date="20260313"] { order: 1; }
@@ -389,7 +395,7 @@ body {
 #sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="25"][data-date="20260302"] { order: 8; }
 #sort-rating:checked ~ .crt-screen .terminal-container .games-grid .game-card[data-rating="25"][data-date="20250208"] { order: 9; }
 
-/* â•â•â• TERMINAL FOOTER â•â•â• */
+/* ═══ TERMINAL FOOTER ═══ */
 .terminal-footer {
     text-align: center;
     margin-top: 50px;
@@ -411,7 +417,7 @@ body {
     text-shadow: var(--shadow-glow);
 }
 
-/* â•â•â• RESPONSIVE DESIGN â•â•â• */
+/* ═══ RESPONSIVE DESIGN ═══ */
 @media (max-width: 1200px) {
     .games-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -473,7 +479,7 @@ body {
     }
 }
 
-/* â•â•â• SCREEN EFFECTS â•â•â• */
+/* ═══ SCREEN EFFECTS ═══ */
 .crt-screen::before {
     content: '';
     position: absolute;
@@ -511,7 +517,7 @@ body {
     z-index: 998;
 }
 
-/* â•â•â• ACCESSIBILITY â•â•â• */
+/* ═══ ACCESSIBILITY ═══ */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation: none !important;

@@ -1,7 +1,7 @@
-﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ═══════════════════════════════════════════════════════════════
    CRT TERMINAL ARCHIVE SYSTEM
    Design: Retrofuturistic Computer Terminal Interface
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   ═══════════════════════════════════════════════════════════════ */
 
 /* Terminus Font */
 @font-face {
@@ -11,7 +11,7 @@
     font-style: normal;
 }
 
-/* â•â•â• ROOT VARIABLES â•â•â• */
+/* ═══ ROOT VARIABLES ═══ */
 :root {
     --phosphor-green: #00ff41;
     --phosphor-green-dim: #00cc33;
@@ -26,7 +26,7 @@
     --shadow-glow-strong: 0 0 10px rgba(0, 255, 65, 0.7);
 }
 
-/* â•â•â• BASE STYLES â•â•â• */
+/* ═══ BASE STYLES ═══ */
 * {
     margin: 0;
     padding: 0;
@@ -46,7 +46,7 @@ body {
     min-height: 100vh;
 }
 
-/* â•â•â• CRT SCREEN CONTAINER â•â•â• */
+/* ═══ CRT SCREEN CONTAINER ═══ */
 .crt-screen {
     position: relative;
     margin: 20px auto;
@@ -61,7 +61,7 @@ body {
     border: 3px solid #001a00;
 }
 
-/* â•â•â• SCANLINES OVERLAY â•â•â• */
+/* ═══ SCANLINES OVERLAY ═══ */
 .scanlines {
     position: absolute;
     top: 0;
@@ -80,13 +80,13 @@ body {
     z-index: 1000;
 }
 
-/* â•â•â• TERMINAL CONTAINER â•â•â• */
+/* ═══ TERMINAL CONTAINER ═══ */
 .terminal-container {
     position: relative;
     z-index: 1;
 }
 
-/* â•â•â• RETURN TO ORBIT BUTTON â•â•â• */
+/* ═══ RETURN TO ORBIT BUTTON ═══ */
 .return-to-orbit {
     position: absolute;
     top: 20px;
@@ -120,7 +120,7 @@ body {
     font-weight: bold;
 }
 
-/* â•â•â• TERMINAL HEADER â•â•â• */
+/* ═══ TERMINAL HEADER ═══ */
 .terminal-header {
     text-align: center;
     margin-bottom: 30px;
@@ -153,7 +153,13 @@ body {
 }
 
 .cursor-blink {
+    animation: blink 1s step-end infinite;
     color: var(--phosphor-green);
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
 }
 
 .system-info {
@@ -169,7 +175,7 @@ body {
     text-shadow: var(--shadow-glow);
 }
 
-/* â•â•â• SECTION STYLING â•â•â• */
+/* ═══ SECTION STYLING ═══ */
 .terminal-section {
     margin: 40px 0;
     padding: 30px;
@@ -192,7 +198,7 @@ body {
     font-weight: bold;
 }
 
-/* â•â•â• GAME GRID (Recently Played) â•â•â• */
+/* ═══ GAME GRID (Recently Played) ═══ */
 .game-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -257,7 +263,7 @@ body {
     justify-content: center;
 }
 
-/* â•â•â• ALL GAMES FEATURED SECTION â•â•â• */
+/* ═══ ALL GAMES FEATURED SECTION ═══ */
 .terminal-section.featured {
     border: 3px solid var(--phosphor-green);
     background: rgba(0, 255, 65, 0.05);
@@ -346,7 +352,7 @@ body {
     text-shadow: var(--shadow-glow);
 }
 
-/* â•â•â• CONSOLE GRID â•â•â• */
+/* ═══ CONSOLE GRID ═══ */
 .console-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -417,7 +423,7 @@ body {
     font-weight: bold;
 }
 
-/* â•â•â• TERMINAL FOOTER â•â•â• */
+/* ═══ TERMINAL FOOTER ═══ */
 .terminal-footer {
     text-align: center;
     margin-top: 50px;
@@ -439,7 +445,7 @@ body {
     text-shadow: var(--shadow-glow);
 }
 
-/* â•â•â• RESPONSIVE DESIGN â•â•â• */
+/* ═══ RESPONSIVE DESIGN ═══ */
 @media (max-width: 1200px) {
     .game-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -528,7 +534,7 @@ body {
     }
 }
 
-/* â•â•â• SCREEN EFFECTS â•â•â• */
+/* ═══ SCREEN EFFECTS ═══ */
 /* Vignette effect */
 .crt-screen::before {
     content: '';
@@ -568,7 +574,7 @@ body {
     z-index: 998;
 }
 
-/* â•â•â• ACCESSIBILITY â•â•â• */
+/* ═══ ACCESSIBILITY ═══ */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation: none !important;
