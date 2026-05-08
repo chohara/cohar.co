@@ -159,12 +159,7 @@ body {
 }
 
 .cursor-blink {
-    animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
+    color: var(--phosphor-green);
 }
 
 .system-info {
