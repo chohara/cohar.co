@@ -441,7 +441,9 @@ If you add a new 4.5-star game reviewed on 2026-01-15:
 
 **E. Update Documentation Counts**
 
-Update the Quick Reference table below with the new console entry count and total game count.
+**Required, same-commit step** — whenever a game is added or removed, update all three affected numbers in the Quick Reference table below: the specific console's row, the "All Games (Master)" row, and the "Total Games Across All Consoles" line. This is not optional follow-up work; a commit that changes game counts without updating these numbers is incomplete.
+
+**Documentation hygiene**: periodically (e.g. roughly every 20 games added, or whenever the step-by-step guides in this file start feeling repetitive or bloated) review CLAUDE.md for redundant or overly verbose sections — this guide currently repeats near-identical step sequences for "Adding a New Game," "Changing a Game's Rating," etc. — and compress them to reduce token consumption for AI assistants reading this file, without dropping any instruction that changes behavior.
 
 ---
 
@@ -449,22 +451,22 @@ Update the Quick Reference table below with the new console entry count and tota
 
 | Console | Directory | Logo | Entry Count Variable |
 |---------|-----------|------|---------------------|
-| **All Games (Master)** | `games/all/` | N/A | **Currently: 106** |
+| **All Games (Master)** | `games/all/` | N/A | **Currently: 108** |
 | Nintendo DS | `games/ds/` | `ds.png` | Currently: 2 |
-| GameCube | `games/gamecube/` | `gamecube.png` | Currently: 1 |
-| Game Boy Advance | `games/gba/` | `gba.png` | Currently: 17 |
+| GameCube | `games/gamecube/` | `gamecube.png` | Currently: 2 |
+| Game Boy Advance | `games/gba/` | `gba.png` | Currently: 19 |
 | Game Boy Color | `games/gbc/` | `gbc.png` | Currently: 1 |
-| Nintendo 3DS | `games/3ds/` | `3ds.png` | Currently: 6 |
+| Nintendo 3DS | `games/3ds/` | `3ds.png` | Currently: 10 |
 | Playdate | `games/playdate/` | `playdate.png` | Currently: 6 |
 | PlayStation 2 | `games/ps2/` | `ps2.png` | Currently: 1 |
-| PlayStation 5 | `games/ps5/` | `ps5.png` | Currently: 7 |
-| Steam/PC | `games/steam/` | `steam.png` | Currently: 22 |
-| Nintendo Switch | `games/switch/` | `switch.png` | Currently: 11 |
-| Nintendo Switch 2 | `games/switch2/` | `switch2.png` | Currently: 7 |
-| Nintendo Wii | `games/wii/` | `wii.png` | Currently: 1 |
+| PlayStation 5 | `games/ps5/` | `ps5.png` | Currently: 10 |
+| Steam/PC | `games/steam/` | `steam.png` | Currently: 29 |
+| Nintendo Switch | `games/switch/` | `switch.png` | Currently: 12 |
+| Nintendo Switch 2 | `games/switch2/` | `switch2.png` | Currently: 11 |
+| Nintendo Wii | `games/wii/` | `wii.png` | Currently: 2 |
 | Wii U | `games/wiiu/` | `wiiu.png` | Currently: 3 |
 
-**Total Games Across All Consoles: 106**
+**Total Games Across All Consoles: 108**
 
 ---
 
@@ -1041,7 +1043,7 @@ aws cloudfront create-invalidation --distribution-id=<ID> --paths '/*'
 
 ---
 
-**Last Updated**: 2025-12-06
+**Last Updated**: 2026-07-11
 **Repository**: github.com/chohara/cohar.co
 **Site**: https://cohar.co
 
