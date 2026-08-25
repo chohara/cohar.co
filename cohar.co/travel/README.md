@@ -17,7 +17,8 @@ The futuristic console features cyan holographic aesthetics, scanline overlays, 
       └── styles.css
 
 /images/travel/[location]/
-  └── photo*.jpg          (1200-1800px gallery images)
+  ├── photo*.jpg           (full-resolution gallery images)
+  └── photo*_card.jpg      (900px-wide, ~quality 78 thumbnail for the index.html hero card)
 ```
 
 ## Adding New Locations
@@ -25,12 +26,13 @@ The futuristic console features cyan holographic aesthetics, scanline overlays, 
 ### Quick 6-Step Process
 
 1. **Copy the template** from HTML comments in `/travel/index.html`
-2. **Update location name** and country
-3. **Update `href`** to match folder name (e.g., `/travel/paris/`)
-4. **Update hero image path** (use your best photo from the location)
-5. **Update visit date** (format: YYYY-MM-DD)
-6. **Update image count** (total photos in that location's gallery)
-7. **Paste at the TOP** of the grid for newest-first chronological order
+2. **Generate a hero thumbnail**: resize your chosen hero photo to 900px wide, JPEG quality ~78, save it as `{photo}_card.jpg` next to the full-resolution original (camera originals are several MB each — the landing page must never link directly to one, or every visit reloads tens of MB of images)
+3. **Update location name** and country
+4. **Update `href`** to match folder name (e.g., `/travel/paris/`)
+5. **Update hero image path** to the `_card.jpg` thumbnail, and set its `width`/`height` to match the thumbnail's actual pixel dimensions
+6. **Update visit date** (format: YYYY-MM-DD)
+7. **Update image count** (total photos in that location's gallery)
+8. **Paste at the TOP** of the grid for newest-first chronological order
 
 ### Detailed Example: Adding Paris, France
 
@@ -49,7 +51,7 @@ The template is located in `/travel/index.html` between the comment markers:
 <article class="mission-card">
     <a href="/travel/paris/" class="card-link">
         <div class="card-image">
-            <img src="/images/travel/paris/250815_1.jpg" alt="Paris, France">
+            <img src="/images/travel/paris/250815_1_card.jpg" alt="Paris, France" width="900" height="596" loading="lazy" decoding="async">
             <div class="image-overlay"></div>
         </div>
         <div class="card-content">
@@ -112,7 +114,7 @@ In the footer, update:
 - Scanline overlay on cards (subtle holographic feel)
 - Image gradient overlay (depth and contrast)
 - Card hover: lift + border glow + image zoom
-- Sticky header/footer with backdrop blur
+- Sticky header/footer with solid gradient panels (no backdrop-filter, to avoid the scroll-time repaint cost of live blur)
 - Static starfield background
 
 ## Technical Notes
@@ -123,9 +125,10 @@ In the footer, update:
 - **Mobile (<768px)**: 1 column
 
 ### Performance Optimizations
-- **Zero animations**: All effects are static for instant loading
+- **Hero thumbnails, not camera originals**: every card `<img>` on `/travel/index.html` points at a `*_card.jpg` (900px wide, ~quality 78) instead of the multi-MB full-resolution photo — the first 3 cards load `eager`, the rest `loading="lazy"`, and all have explicit `width`/`height` to avoid layout shift
+- **No `backdrop-filter`**: sticky header/footer use solid gradients instead of live blur, which is expensive to recompute on every scroll frame
 - **CSS-only design**: No JavaScript dependencies
-- **Optimized filters**: Minimal use of heavy CSS filters
+- **Scoped transitions**: card/button/image `transition` rules list specific properties instead of `all`, so the browser isn't watching every animatable property during hover
 - **Fast rendering**: Simple DOM structure with efficient CSS
 
 ### Card Components
