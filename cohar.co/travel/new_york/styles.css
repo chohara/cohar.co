@@ -208,12 +208,14 @@ body {
         rgba(0, 0, 0, 0.7) 50%,
         transparent 100%);
     padding: 20px 15px 15px;
-    transform: translateY(calc(100% - 45px));
-    transition: transform 0.3s ease;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .photo-card:hover .photo-overlay {
     transform: translateY(0);
+    opacity: 1;
 }
 
 .photo-info {
