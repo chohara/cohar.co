@@ -249,7 +249,7 @@ Open `/cohar.co/games/{console}/index.html` and add a new game card within the `
 <div class="game-card" data-date="YYYYMMDD" data-rating="XX">
     <a href="/games/{console}/game_name.html">
         <div class="game-card-inner">
-            <img src="/images/game_covers/game_name.jpg" alt="Game Title">
+            <img src="/images/game_covers/game_name.jpg" alt="Game Title" loading="lazy">
             <div class="game-title">Game Title</div>
             <div class="game-meta">
                 <span class="meta-date">YYYY-MM-DD</span>
@@ -352,7 +352,7 @@ Open `/cohar.co/games/all/index.html` and add the new game card within `<div cla
 <div class="game-card" data-date="YYYYMMDD" data-rating="XX" data-console="console">
     <a href="/games/{console}/game_name.html">
         <div class="game-card-inner">
-            <img src="/images/game_covers/game_name.jpg" alt="Game Title">
+            <img src="/images/game_covers/game_name.jpg" alt="Game Title" loading="lazy">
             <div class="game-title">Game Title</div>
             <div class="game-meta">
                 <span class="meta-console">CONSOLE</span>
@@ -896,6 +896,7 @@ aws cloudfront create-invalidation --distribution-id=<ID> --paths '/*'
    - Review dates: right-aligned, format `YYYY-MM-DD`
    - Star ratings: use proper font (Noto Sans Symbols 2)
    - Quotes: centered, italicized
+   - Game cover thumbnails on console and All Games grid pages: include `loading="lazy"` on the `<img>` tag (see game card templates below). Review page cover art and console logos stay eager (unmarked).
 
 ### When Adding New Features
 
@@ -1035,7 +1036,7 @@ aws cloudfront create-invalidation --distribution-id=<ID> --paths '/*'
 ```html
 <div class="game-card">
     <a href="/games/{console}/{game_name}.html">
-        <img src="/images/game_covers/{game_name}.jpg" alt="Game Title">
+        <img src="/images/game_covers/{game_name}.jpg" alt="Game Title" loading="lazy">
         <p>Game Title</p>
     </a>
 </div>
