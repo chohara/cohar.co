@@ -451,10 +451,10 @@ If you add a new 4.5-star game reviewed on 2026-01-15:
 
 | Console | Directory | Logo | Entry Count Variable |
 |---------|-----------|------|---------------------|
-| **All Games (Master)** | `games/all/` | N/A | **Currently: 118** |
+| **All Games (Master)** | `games/all/` | N/A | **Currently: 119** |
 | Nintendo DS | `games/ds/` | `ds.png` | Currently: 2 |
 | GameCube | `games/gamecube/` | `gamecube.png` | Currently: 2 |
-| Game Boy Advance | `games/gba/` | `gba.png` | Currently: 19 |
+| Game Boy Advance | `games/gba/` | `gba.png` | Currently: 20 |
 | Game Boy Color | `games/gbc/` | `gbc.png` | Currently: 2 |
 | Nintendo 3DS | `games/3ds/` | `3ds.png` | Currently: 12 |
 | Playdate | `games/playdate/` | `playdate.png` | Currently: 6 |
@@ -466,7 +466,7 @@ If you add a new 4.5-star game reviewed on 2026-01-15:
 | Nintendo Wii | `games/wii/` | `wii.png` | Currently: 3 |
 | Wii U | `games/wiiu/` | `wiiu.png` | Currently: 4 |
 
-**Total Games Across All Consoles: 118**
+**Total Games Across All Consoles: 119**
 
 ---
 
